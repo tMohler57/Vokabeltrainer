@@ -4,7 +4,7 @@ Programmieren II / Software Engineering Projekt
 
 Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohler
 
-### Inhaltsverzeichnis
+## Inhaltsverzeichnis
 
 1. [Einleitung](#einleitung)
 1. [Userstories](#userstories)
