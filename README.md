@@ -13,5 +13,9 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 ## 1. Einleitung
 
 ## 2. Userstories
+| **Userstory Nr.** |   **Userstories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
+|:-:|------|:-:|:-:|-----|
+| 1. | Als Nutzer möchte ich das Programm starten können, um mit dem Vokabeltraining beginnen zu können. | 1 | 2 | Angenommen das Programm ist bereit, gestartet zu werden, wenn der Start-Button gedrückt wird, dann startet das Programm. |
+
 
 ## 3. Releaseplan
