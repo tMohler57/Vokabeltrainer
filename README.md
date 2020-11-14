@@ -13,7 +13,7 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 1. [Releaseplan](#releaseplan)
 
 ## 1. Einleitung
-Einleitung + Ziele + Randbedingunen
+Einleitung + Ziele + Randbedingungen
 
 ## 2. Build-Anleitung
 
@@ -27,6 +27,15 @@ Einleitung + Ziele + Randbedingunen
 | 3. Vokabeln anzeigen | Als Nutzer möchte ich Vokabeln angezeigt bekommen, um zu wissen, welches Wort ich übersetzen soll.| 1 | 1 | Angenommen das Programm hat ein Wort ausgewählt, wenn dieses Wort zur Übersetzung angezeigt wird, dann wird der Nutzer zur Eingabe aufgefordert. |
 | 4. Übersetzung eingeben | Als Nutzer möchte ich eine Übersetzung eingeben können, um meine Vokabelkenntnisse zu trainieren. | 1 | 3 | Angenommen ein zu übersetzendes Wort wird angezeigt, wenn der Nutzer seine Übersetzung eingibt, dann trainiert er seine Vokabelkenntnisse. |
 | 5. Eingabe bestätigen | Als Nutzer möchte meine Eingabe bestätigen können, um sie überprüfen zu lassen. | 1 | 1 | Angenommen die Übersetzung des angezeigten Wortes wurde eingegeben, wenn der Nutzer seine Eingabe bestätigt, dann wird die Eingabe angenommen. |
+| 6. Übersetzung prüfen | Als Nutzer möchte ich, dass meine eingegebene Übersetzung überprüft wird, um zu wissen, ob meine Übersetzung stimmt. | 2 | 1 | Angenommen eine Übersetzung wurde eingegeben, wenn das Programm die Richtigkeit der Eingabe prüft, dann wird dem Nutzer mitgeteilt, ob seine Eingabe korrekt war. |
+| 7. Korrekte Übersetzung anzeigen | Als Nutzer möchte ich, dass die Korrektur angezeigt wird, um zu sehen, ob meine Übersetzung korrekt war. | 1 | 1 | Angenommen die Eingabe wurde bestätigt, wenn eine Übersetzung eingegeben wurde, dann wird die korrekte Lösung angezeigt. |
+| 8. Programm beenden | Als Nutzer möchte das Programm jederzeit beenden können, um mit dem Vokabeltraining aufzuhören. | 2 | 2 | Angenommen das Vokabeltraining ist aktiv, wenn der Nutzer das Vokabeltraining beendet, dann wird dem Nutzer seine Erfolgsquote angezeigt. |
+
+
+
+
+
+
 
 
 
