@@ -7,12 +7,19 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#einleitung)
+1. [Build-Anleitung](#build-anleitung)
+1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
 1. [Userstories](#userstories)
 1. [Releaseplan](#releaseplan)
 
 ## 1. Einleitung
+Einleitung + Ziele + Randbedingunen
 
-## 2. Userstories
+## 2. Build-Anleitung
+
+## 3. Kurze Bedienungsanleitung
+
+## 4. Userstories
 | **Titel** |   **Userstories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
 |:-----:|------|:-:|:-:|-----|
 | 1. Programm starten | Als Nutzer möchte ich das Programm starten können, um mit dem Vokabeltraining beginnen zu können. | 1 | 2 | Angenommen das Programm ist bereit, gestartet zu werden, wenn der Start-Button gedrückt wird, dann startet das Programm. |
@@ -24,4 +31,4 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 
 
 
-## 3. Releaseplan
+## 5. Releaseplan
