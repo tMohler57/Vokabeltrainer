@@ -7,12 +7,19 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#einleitung)
+1. [Build-Anleitung](#build-anleitung)
+1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
 1. [Userstories](#userstories)
 1. [Releaseplan](#releaseplan)
 
 ## 1. Einleitung
+Einleitung + Ziele + Randbedingungen
 
-## 2. Userstories
+## 2. Build-Anleitung
+
+## 3. Kurze Bedienungsanleitung
+
+## 4. Userstories
 | **Titel** |   **Userstories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
 |:-----:|------|:-:|:-:|-----|
 | 1. Programm starten | Als Nutzer möchte ich das Programm starten können, um mit dem Vokabeltraining beginnen zu können. | 1 | 2 | Angenommen das Programm ist bereit, gestartet zu werden, wenn der Start-Button gedrückt wird, dann startet das Programm. |
@@ -20,8 +27,16 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 | 3. Vokabeln anzeigen | Als Nutzer möchte ich Vokabeln angezeigt bekommen, um zu wissen, welches Wort ich übersetzen soll.| 1 | 1 | Angenommen das Programm hat ein Wort ausgewählt, wenn dieses Wort zur Übersetzung angezeigt wird, dann wird der Nutzer zur Eingabe aufgefordert. |
 | 4. Übersetzung eingeben | Als Nutzer möchte ich eine Übersetzung eingeben können, um meine Vokabelkenntnisse zu trainieren. | 1 | 3 | Angenommen ein zu übersetzendes Wort wird angezeigt, wenn der Nutzer seine Übersetzung eingibt, dann trainiert er seine Vokabelkenntnisse. |
 | 5. Eingabe bestätigen | Als Nutzer möchte meine Eingabe bestätigen können, um sie überprüfen zu lassen. | 1 | 1 | Angenommen die Übersetzung des angezeigten Wortes wurde eingegeben, wenn der Nutzer seine Eingabe bestätigt, dann wird die Eingabe angenommen. |
+| 6. Übersetzung prüfen | Als Nutzer möchte ich, dass meine eingegebene Übersetzung überprüft wird, um zu wissen, ob meine Übersetzung stimmt. | 2 | 1 | Angenommen eine Übersetzung wurde eingegeben, wenn das Programm die Richtigkeit der Eingabe prüft, dann wird dem Nutzer mitgeteilt, ob seine Eingabe korrekt war. |
+| 7. Korrekte Übersetzung anzeigen | Als Nutzer möchte ich, dass die Korrektur angezeigt wird, um zu sehen, ob meine Übersetzung korrekt war. | 1 | 1 | Angenommen die Eingabe wurde bestätigt, wenn eine Übersetzung eingegeben wurde, dann wird die korrekte Lösung angezeigt. |
+| 8. Programm beenden | Als Nutzer möchte das Programm jederzeit beenden können, um mit dem Vokabeltraining aufzuhören. | 2 | 2 | Angenommen das Vokabeltraining ist aktiv, wenn der Nutzer das Vokabeltraining beendet, dann wird dem Nutzer seine Erfolgsquote angezeigt. |
+| 9. Erfolgsquote | Als Nutzer möchte ich die Anzahl richtiger Antworten sehen, um meine Erfolgsquote zu verfolgen. | 2 | 2 | Angenommen das Programm wird beendet, wenn ein Vokabeltraining absolviert wurde, dann wird die Anzahl richtiger Antworten angezeigt. |
+| 10. Thema wählen | Als Nutzer möchte ich ein Thema wählen können, um Wörter aus verschiedenen Bereichen zu lernen. | 3 | 8 | Angenommen das Programm wurde geöffnet, wenn der Nutzer ein Thema wählt, dann werden nur Wörter aus dem zugehörigen Bereich zur Übersetzung ausgewählt. |
+| 11. Sprache wählen | Als Nutzer möchte ich wählen können, welche Sprache ich lernen möchte, um das Programm zum erlernen verschiedener Sprachen benutzen zu können. | 3 | 8 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die zu erlernende Sprache wählt, dann wird die Korrektur für die jeweilige Sprache vorgenommen. |
+| 12. Übersetzungsrichtung wählen | Als Nutzer möchte ich eine Übersetzungsrichtung wählen können, um die einzugebende Sprache zu verändern. | 3 | 3 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die Übersetzungsrichtung wählt, dann wird die einzugebende Sprache angepasst. |
+| 13. Wiederholen schwieriger Vokabeln | Als Nutzer möchte ich Vokabeln, die ich falsch übersetzt habe, noch einmal wiederholen, um diese besser zu lernen. | 3 | 5 | Angenommen eine Übersetzung war inkorrekt, wenn der Nutzer alle zum jeweiligen Thema gehörenden Wörter einmal übersetzt hat, dann werden diese Vokabeln erneut abgefragt. |
 
 
 
 
-## 3. Releaseplan
+## 5. Releaseplan
