@@ -30,12 +30,11 @@ Einleitung + Ziele + Randbedingungen
 | 6. Übersetzung prüfen | Als Nutzer möchte ich, dass meine eingegebene Übersetzung überprüft wird, um zu wissen, ob meine Übersetzung stimmt. | 2 | 1 | Angenommen eine Übersetzung wurde eingegeben, wenn das Programm die Richtigkeit der Eingabe prüft, dann wird dem Nutzer mitgeteilt, ob seine Eingabe korrekt war. |
 | 7. Korrekte Übersetzung anzeigen | Als Nutzer möchte ich, dass die Korrektur angezeigt wird, um zu sehen, ob meine Übersetzung korrekt war. | 1 | 1 | Angenommen die Eingabe wurde bestätigt, wenn eine Übersetzung eingegeben wurde, dann wird die korrekte Lösung angezeigt. |
 | 8. Programm beenden | Als Nutzer möchte das Programm jederzeit beenden können, um mit dem Vokabeltraining aufzuhören. | 2 | 2 | Angenommen das Vokabeltraining ist aktiv, wenn der Nutzer das Vokabeltraining beendet, dann wird dem Nutzer seine Erfolgsquote angezeigt. |
-
-
-
-
-
-
+| 9. Erfolgsquote | Als Nutzer möchte ich die Anzahl richtiger Antworten sehen, um meine Erfolgsquote zu verfolgen. | 2 | 2 | Angenommen das Programm wird beendet, wenn ein Vokabeltraining absolviert wurde, dann wird die Anzahl richtiger Antworten angezeigt. |
+| 10. Thema wählen | Als Nutzer möchte ich ein Thema wählen können, um Wörter aus verschiedenen Bereichen zu lernen. | 3 | 8 | Angenommen das Programm wurde geöffnet, wenn der Nutzer ein Thema wählt, dann werden nur Wörter aus dem zugehörigen Bereich zur Übersetzung ausgewählt. |
+| 11. Sprache wählen | Als Nutzer möchte ich wählen können, welche Sprache ich lernen möchte, um das Programm zum erlernen verschiedener Sprachen benutzen zu können. | 3 | 8 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die zu erlernende Sprache wählt, dann wird die Korrektur für die jeweilige Sprache vorgenommen. |
+| 12. Übersetzungsrichtung wählen | Als Nutzer möchte ich eine Übersetzungsrichtung wählen können, um die einzugebende Sprache zu verändern. | 3 | 3 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die Übersetzungsrichtung wählt, dann wird die einzugebende Sprache angepasst. |
+| 13. Wiederholen schwieriger Vokabeln | Als Nutzer möchte ich Vokabeln, die ich falsch übersetzt habe, noch einmal wiederholen, um diese besser zu lernen. | 3 | 5 | Angenommen eine Übersetzung war inkorrekt, wenn der Nutzer alle zum jeweiligen Thema gehörenden Wörter einmal übersetzt hat, dann werden diese Vokabeln erneut abgefragt. |
 
 
 
