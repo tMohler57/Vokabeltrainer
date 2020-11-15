@@ -2,7 +2,11 @@
 
 Programmieren II / Software Engineering Projekt
 
-Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohler
+#### Mitglieder: 
+Karolina Schmidt: Oberflächen Designer / Programmierer
+Morgan Farnworth: Software Architect / Programmierer
+Isabelle Dittmann: SCRUM Master / Programmierer
+Tanja Mohler: Product Ownder / Programmierer
 
 ## Inhaltsverzeichnis
 
