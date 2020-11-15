@@ -13,7 +13,17 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 1. [Releaseplan](#releaseplan)
 
 ## 1. Einleitung
-Einleitung + Ziele + Randbedingungen
+Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Dieser wird alleine gespielt.
+
+Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
+
+#### Randbedingungen:
+- Die Programmierung der Anwendung erfolgt in Java
+- Das Projekt ist auf GitHub öffentlich einsehbar
+- Das Projekt wurte getestet
+- Das Projekt wurde mit dem Git-Workflow Vincent Driessen erstellt
+- Die Build-Automatisierung erfolgt mittels Maven
+- Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
 ## 2. Build-Anleitung
 
