@@ -13,7 +13,7 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 1. [Releaseplan](#releaseplan)
 
 ## 1. Einleitung
-Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Dieser wird alleine gespielt.
+Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Dieser wird alleine bedient.
 
 Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
 
