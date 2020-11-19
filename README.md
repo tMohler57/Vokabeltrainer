@@ -2,7 +2,14 @@
 
 Programmieren II / Software Engineering Projekt
 
-Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohler
+#### Mitglieder: 
+Isabelle Dittmann: SCRUM Master / Entwickler
+
+Karolina Schmidt: Oberflächen Designer / Entwickler
+
+Morgan Farnworth: Software Architect / Entwickler
+
+Tanja Mohler: Product Ownder / Entwicker
 
 ## Inhaltsverzeichnis
 
@@ -13,9 +20,24 @@ Mitglieder: Karolina Schmidt, Morgan Farnworth, Isabelle Dittmann und Tanja Mohl
 1. [Releaseplan](#releaseplan)
 
 ## 1. Einleitung
-Einleitung + Ziele + Randbedingungen
+Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
+
+Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
+
+#### Randbedingungen:
+- Die Programmierung der Anwendung erfolgt in Java.
+- Das Projekt ist auf GitHub öffentlich einsehbar.
+- Das Projekt wurde getestet.
+- Das Projekt wurde mit dem Git-Workflow Vincent Driessen erstellt.
+- Die Build-Automatisierung erfolgt mittels Maven.
+- Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
 ## 2. Build-Anleitung
+
+Buildanleitung unabhängig vom Betriebssystem:
+- Sie benötigen eine Java Umgebung auf ihrem Computer.
+- Die .java-Dateien können per Doppelklick geöffnet werden.
+- Zum Starten der Benutzeroberfläche muss die Datei Launcher.java ausgeführt werden.
 
 ## 3. Kurze Bedienungsanleitung
 
@@ -35,8 +57,21 @@ Einleitung + Ziele + Randbedingungen
 | 11. Sprache wählen | Als Nutzer möchte ich wählen können, welche Sprache ich lernen möchte, um das Programm zum erlernen verschiedener Sprachen benutzen zu können. | 3 | 8 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die zu erlernende Sprache wählt, dann wird die Korrektur für die jeweilige Sprache vorgenommen. |
 | 12. Übersetzungsrichtung wählen | Als Nutzer möchte ich eine Übersetzungsrichtung wählen können, um die einzugebende Sprache zu verändern. | 3 | 3 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die Übersetzungsrichtung wählt, dann wird die einzugebende Sprache angepasst. |
 | 13. Wiederholen schwieriger Vokabeln | Als Nutzer möchte ich Vokabeln, die ich falsch übersetzt habe, noch einmal wiederholen, um diese besser zu lernen. | 3 | 5 | Angenommen eine Übersetzung war inkorrekt, wenn der Nutzer alle zum jeweiligen Thema gehörenden Wörter einmal übersetzt hat, dann werden diese Vokabeln erneut abgefragt. |
+| 14. Initialisierung | Als Entwickler möchte ich eine Grundstruktur für mein Programm haben, um mich gut darin zurechtzufinden und alle nötigen Klassen und Dateien zur Verfügung zu haben. | 1 | 8 | Angenommen ich möchte mein Programm schreiben, wenn bereits eine Grundstruktur vorhanden ist, dann ist es einfach, den Überblick zu behalten. |
+
 
 
 
 
 ## 5. Releaseplan
+| **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
+|----|----|----|
+| 14. Initialisierung | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
+| 1. Programm starten | 8. Programm beenden | 12. Übersetzungsrichtung wählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 13. Wiederholen schwieriger Vokablen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
+| 5. Eingabe bestätigen | 10. Thema wählen |  |
+| 7. Korrekte Übersetzung anzeigen |  |  |
+| 8. Programm beenden |  |  |
+
+Velocity von 16 Storypoints pro Sprint
