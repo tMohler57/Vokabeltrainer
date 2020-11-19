@@ -27,12 +27,17 @@ Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann,
 #### Randbedingungen:
 - Die Programmierung der Anwendung erfolgt in Java
 - Das Projekt ist auf GitHub öffentlich einsehbar
-- Das Projekt wurte getestet
+- Das Projekt wurde getestet
 - Das Projekt wurde mit dem Git-Workflow Vincent Driessen erstellt
 - Die Build-Automatisierung erfolgt mittels Maven
 - Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
 ## 2. Build-Anleitung
+
+Buildanleitung unabhängig vom Betriebssystem:
+- Sie benötigen eine Java Umgebung auf ihrem Computer
+- Die .jar-Dateien können per Doppelklick geöffnet werden.
+- Zum Starten der Benutzeroberfläche muss die Datei Launcher.jar ausgeführt werden.
 
 ## 3. Kurze Bedienungsanleitung
 
