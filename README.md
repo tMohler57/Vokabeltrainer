@@ -64,6 +64,14 @@ Buildanleitung unabhängig vom Betriebssystem:
 
 
 ## 5. Releaseplan
-| **Sprint 1** |   **Sprint 2**  |  **Sprint 3** | **Sprint 4** |
+| **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
 |----|----|----|----|
-| 3. Vokabeln anzeigen | 1. Programm Starten | 2. Vokabeln zufällig auswählen | 13. Wiedrholen schwieriger Vokablen |
+| 14. Initialisierung | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
+| 1. Programm Starten | 8. Programm beenden | 12. Übersetzungsrichtung wählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 13. Wiederholen schwieriger Vokablen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
+| 5. Eingabe bestätigen | 10. Thema wählen |  |
+| 7. Korrekt Übersetzung anzeigen |  |  |
+| 8. Programm beenden |  |  |
+
+Velosity von 16 Storypoints pro Sprint
