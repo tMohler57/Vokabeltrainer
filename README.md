@@ -52,8 +52,13 @@ Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann,
 | 11. Sprache wählen | Als Nutzer möchte ich wählen können, welche Sprache ich lernen möchte, um das Programm zum erlernen verschiedener Sprachen benutzen zu können. | 3 | 8 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die zu erlernende Sprache wählt, dann wird die Korrektur für die jeweilige Sprache vorgenommen. |
 | 12. Übersetzungsrichtung wählen | Als Nutzer möchte ich eine Übersetzungsrichtung wählen können, um die einzugebende Sprache zu verändern. | 3 | 3 | Angenommen das Programm wurde geöffnet, wenn der Nutzer die Übersetzungsrichtung wählt, dann wird die einzugebende Sprache angepasst. |
 | 13. Wiederholen schwieriger Vokabeln | Als Nutzer möchte ich Vokabeln, die ich falsch übersetzt habe, noch einmal wiederholen, um diese besser zu lernen. | 3 | 5 | Angenommen eine Übersetzung war inkorrekt, wenn der Nutzer alle zum jeweiligen Thema gehörenden Wörter einmal übersetzt hat, dann werden diese Vokabeln erneut abgefragt. |
+| 14. Initialisierung | Als Entwickler möchte ich eine Grundstruktur für mein Programm haben, um mich gut darin zurechtzufinden und alle nötigen Klassen und Dateien zur Verfügung zu haben. | 1 | 8 | Angenommen ich möchte mein Programm schreiben, wenn bereits eine Grundstruktur vorhanden ist, dann ist es einfach, den Überblick zu behalten. |
+
 
 
 
 
 ## 5. Releaseplan
+| **Sprint 1** |   **Sprint 2**  |  **Sprint 3** | **Sprint 4** |
+|----|----|----|----|
+| 3. Vokabeln anzeigen | 1. Programm Starten | 2. Vokabeln zufällig auswählen | 13. Wiedrholen schwieriger Vokablen |
