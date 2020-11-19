@@ -72,6 +72,5 @@ Buildanleitung unabhängig vom Betriebssystem:
 | 4. Übersetzung eingeben | 9. Erfolgsquote |  |
 | 5. Eingabe bestätigen | 10. Thema wählen |  |
 | 7. Korrekte Übersetzung anzeigen |  |  |
-| 8. Programm beenden |  |  |
 
 Velocity von 16 Storypoints pro Sprint
