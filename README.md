@@ -65,7 +65,7 @@ Buildanleitung unabhängig vom Betriebssystem:
 
 ## 5. Releaseplan
 | **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
-|----|----|----|----|
+|----|----|----|
 | 14. Initialisierung | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
 | 1. Programm Starten | 8. Programm beenden | 12. Übersetzungsrichtung wählen |
 | 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 13. Wiederholen schwieriger Vokablen |
