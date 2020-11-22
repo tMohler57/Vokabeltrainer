@@ -1,5 +1,5 @@
 package com.vokabeltrainer;
 
-public class Eingabe extends UserInterface {
+public class Eingabe extends UserInterface{
 
 }

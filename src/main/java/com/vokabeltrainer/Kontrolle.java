@@ -1,5 +1,5 @@
 package com.vokabeltrainer;
 
-public class Kontrolle extends UserInterface {
+public class Kontrolle extends UserInterface{
 
 }

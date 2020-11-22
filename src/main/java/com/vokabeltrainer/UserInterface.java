@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public abstract class UserInterface extends Application {
+public class UserInterface extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
