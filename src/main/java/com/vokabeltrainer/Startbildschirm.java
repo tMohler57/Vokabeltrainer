@@ -14,7 +14,7 @@ public class Startbildschirm implements View {
 	public Startbildschirm(EventHandler<ActionEvent> startEvent) {
 		Label willkommen = new Label("Willkommen zum Vokabeltraining!");
 		
-		Button start = new Button();
+		Button start = new Button("Start");
 		start.setOnAction(startEvent);
 		
 		gridPane.add(willkommen, 2, 3);
