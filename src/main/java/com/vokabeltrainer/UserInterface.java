@@ -6,14 +6,16 @@ import javafx.stage.Stage;
 public class UserInterface extends Application {
 	
 	private Stage stage = null;
+	private View other, start;
+	
+	public UserInterface() {
+		start = new Startbildschirm(evt -> showView(other));
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
-		
-		// controller (sollte später mal ausgelagert werden:
-		showView(new Startbildschirm());
-		
+		showView(start);
 		stage.show();
 		
 	}
