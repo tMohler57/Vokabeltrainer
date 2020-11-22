@@ -1,6 +1,7 @@
 package com.vokabeltrainer;
 
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 
 public interface View {
 
