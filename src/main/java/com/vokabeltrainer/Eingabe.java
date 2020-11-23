@@ -17,8 +17,9 @@ public class Eingabe implements View{
 
 	public Eingabe(EventHandler<ActionEvent> startEvent) {
 		Label losgehts = new Label("Los gehts. Wir trainieren jetzt Vokabeln!");
-		Vokabeln v = new Vokabeln();
-		Label vokabelAnzeige = new Label("Was heißt " + v.vokabeln() + " auf Französisch?");
+		SetVokabeln v = new SetVokabeln();
+		v.textdateiEinlesen();
+		Label vokabelAnzeige = new Label("Was heißt " + v.getWort().get(0).getVokabel() + " auf Französisch?");		
 		
 		Button kontrolle = new Button("Kontrolle");
 		kontrolle.setOnAction(startEvent);
