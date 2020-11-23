@@ -18,7 +18,7 @@ public class SetVokabeln {
 			String [] result = s.split(";|\n");		
 
 			for(int i = 0; i < result.length; i+=2) {
-				wort.add(new Vokabel(result[i], result[i + 1]));
+				wort.add(new Vokabel(result[i].trim(), result[i + 1].trim()));
 			
 			}
 			

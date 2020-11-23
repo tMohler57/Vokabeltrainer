@@ -34,12 +34,12 @@ public class Kontrolle implements View {
 		neueVokabel.setMinWidth(115);
 		neueVokabel.setMinHeight(50);
 		neueVokabel.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
-		neueVokabel.getStyle();
+		//neueVokabel.getStyle();
 		
 		ende.setMinWidth(115);
 		ende.setMinHeight(50);
 		ende.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
-		ende.getStyle();
+		//ende.getStyle();
 
 		gridPane.setHgap(10);
 		gridPane.setHgap(10);

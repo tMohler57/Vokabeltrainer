@@ -11,8 +11,9 @@ public class UserInterface extends Application {
 	
 	public UserInterface() {
 		start = new Startbildschirm(startButton -> showView(training));
-		training = new Eingabe(kontrolleButton -> showView(kontrolle));
-		kontrolle = new Kontrolle(neueVokabelButton -> showView(training), endButton -> showView(ende));
+		//training = new Eingabe(kontrolleButton -> showView(kontrolle));
+		//kontrolle = new Kontrolle(neueVokabelButton -> showView(training), endButton -> showView(ende));
+		training = new Trainingsbildschirm(event -> showView(ende));
 		ende = new Endbildschirm(beendenButton ->  {
 	        Platform.exit();
 	        System.exit(0);
