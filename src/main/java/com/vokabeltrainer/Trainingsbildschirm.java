@@ -26,6 +26,9 @@ public class Trainingsbildschirm implements View {
 		ende.setOnAction(trainingBeenden);
 		
 		weiter.setOnAction(event -> {
+			if (index >= wörtli.getWort().size()) {
+				trainingBeenden.handle(event);
+			}
 			antwort.clear();
 			lösung.setText(null);
 			bestätigen.setVisible(true);
