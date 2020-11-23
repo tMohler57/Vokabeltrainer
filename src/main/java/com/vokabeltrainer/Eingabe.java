@@ -17,6 +17,8 @@ public class Eingabe implements View{
 
 	public Eingabe(EventHandler<ActionEvent> startEvent) {
 		Label losgehts = new Label("Los gehts. Wir trainieren jetzt Vokabeln!");
+		Vokabeln v = new Vokabeln();
+		Label vokabelAnzeige = new Label("Was heißt " + v.vokabeln() + " auf Französisch?");
 		
 		Button kontrolle = new Button("Kontrolle");
 		kontrolle.setOnAction(startEvent);
@@ -24,6 +26,7 @@ public class Eingabe implements View{
 		gridPane.setStyle("-fx-background-color: #F7819F");
 		
 		losgehts.setFont(new Font("Arial", 26));
+		vokabelAnzeige.setFont(new Font("Arial", 20));
 		
 		kontrolle.setMinWidth(115);
 		kontrolle.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
@@ -41,6 +44,7 @@ public class Eingabe implements View{
 		}
 		
 		gridPane.add(losgehts, 1, 2, 5, 1);
+		gridPane.add(vokabelAnzeige, 1, 3, 5, 1);
 		gridPane.add(kontrolle, 7, 2);
 		scene = new Scene(gridPane, 1000, 500);
 	}
