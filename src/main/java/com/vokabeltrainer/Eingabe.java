@@ -19,7 +19,7 @@ public class Eingabe implements View{
 		Label losgehts = new Label("Los gehts. Wir trainieren jetzt Vokabeln!");
 		SetVokabeln v = new SetVokabeln();
 		v.textdateiEinlesen();
-		Label vokabelAnzeige = new Label("Was heißt " + v.getWort().get(0).getVokabel() + " auf Französisch?");		
+		Label vokabelAnzeige = new Label("Was heißt '" + v.getWort().get(0).getVokabel() + "' auf Französisch?");		
 		
 		Button kontrolle = new Button("Kontrolle");
 		kontrolle.setOnAction(startEvent);
@@ -45,7 +45,7 @@ public class Eingabe implements View{
 		}
 		
 		gridPane.add(losgehts, 1, 2, 5, 1);
-		gridPane.add(vokabelAnzeige, 1, 3, 5, 1);
+		gridPane.add(vokabelAnzeige, 1, 3, 7, 1);
 		gridPane.add(kontrolle, 7, 2);
 		scene = new Scene(gridPane, 1000, 500);
 	}

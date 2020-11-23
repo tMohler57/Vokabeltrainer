@@ -18,7 +18,8 @@ public class Kontrolle implements View {
 	public Kontrolle(EventHandler<ActionEvent> startEvent, EventHandler<ActionEvent> endEvent) {
 		Label loesung = new Label("Dies ist die korrekte Lösung");
 		SetVokabeln u = new SetVokabeln();
-		Label uebersetzungAnzeige = new Label("Die richtige Lösung ist " + u.getWort().get(0).getUebersetzung() + ".");
+		u.textdateiEinlesen();
+		Label uebersetzungAnzeige = new Label("Die richtige Lösung ist '" + u.getWort().get(0).getUebersetzung() + "'.");
 		
 		Button neueVokabel = new Button("weiter Lernen");
 		neueVokabel.setOnAction(startEvent);
