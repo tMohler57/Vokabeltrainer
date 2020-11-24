@@ -87,18 +87,30 @@ Buildanleitung unabhängig vom Betriebssystem:
 ## 5. Releaseplan
 | **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
 |----|----|----|
-| 14. Initialisierung | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
-| 1. Programm starten | 8. Programm beenden | 12. Übersetzungsrichtung wählen |
-| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 13. Wiederholen schwieriger Vokablen |
-| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
-| 5. Eingabe bestätigen | 10. Thema wählen |  |
-| 7. Korrekte Übersetzung anzeigen |  |  |
+| 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrichtung wählen |
+| 4. Übersetzung eingeben | 8. Programm beenden | 13. Wiederholen schwieriger Vokablen |
+| 5. Eingabe bestätigen | 9. Erfolgsquote |  |
+| 7. Korrekte Übersetzung anzeigen | 10. Thema wählen |  |
+| 14. Initialisierung |  |  |
 
 Velocity von 16 Storypoints pro Sprint
 
 
 ## 6. Dokumentation Sprint 1
 ### i. Taskliste für die Umsetzung der User Story
+#### User Story 1 - Programm starten (45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Button erstellen | 15' |
+| 2 | Action Handler programmieren | 30' |
+
+#### User Story 3 - Vokabeln anzeigen (35')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Label erstellen | 15' |
+| 2 | Die Vokabel an der Stelle der Zufallszahl des Arrays "vokabeln" mithilfe des Labels ausgeben | 20' |
+
 ### ii. Anreicherung der User Stories für die Umsetzung
 ### iii. UML Package, Klassen- und Sequenzdiagramm
 ### iv. Dokumentation wichtiger Code Snippets
