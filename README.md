@@ -26,6 +26,7 @@ Tanja Mohler: Product Ownder / Entwicker
    1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+   1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
    1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
@@ -133,6 +134,14 @@ Velocity von 16 Storypoints pro Sprint
 | 1 | Label erstellen | 15' |
 | 2 | Auf dem Label die passende Variable "uebersetzung ausgeben | 10' |
 
+#### User Story 8 - Programm beenden (45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Button erstellen | 15' |
+| 2 | Action Handler programmieren | 30' |
+
+Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel vi.
+
 #### User Story 14 -Initialisierung (3h 50')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
 |:--------:|:--------------------|:---------------------:|
@@ -145,7 +154,22 @@ Velocity von 16 Storypoints pro Sprint
 ### iii. UML Package, Klassen- und Sequenzdiagramm
 ### iv. Dokumentation wichtiger Code Snippets
 ### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### vi. Erfahrungen und Anpassungen
+Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
+Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
 
+Somit sah der Releasplan für die Storys 1 und 2 wie folgt aus:
+| **Sprint 1** |   **Sprint 2**  |
+|--------------|-----------------|
+| 1. Programm starten | 2. Vokabeln zufällig auswählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |
+| 5. Eingabe bestätigen | 10. Thema wählen |
+| 7. Korrekte Übersetzung anzeigen |  |
+| 8. Programm beenden |  |
+| 14. Initialisierung |  |
+
+Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint 2 14 Story Points.
 
 ## 7. Dokumentation Sprint 2
 ### i. Taskliste für die Umsetzung der User Story
