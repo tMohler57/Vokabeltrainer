@@ -21,14 +21,14 @@ public class Trainingsbildschirm implements View {
 	private int index = 0;
 	private int countKorrekt = 0;
 	private int countGesamt = 0;
+	private List<Vokabel> aktuelleVokabeln, falscheVokabeln;
 
 	// BiConsumer gibt zwei Integer mit, imgegensatz zu EventHandler<ActionEvent> 
 	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
 		wörtli.textdateiEinlesen();
 		
-		List <Vokabel> aktuelleVokabeln = wörtli.getWort();
-		List <Vokabel> falscheVokabeln = new ArrayList<>();
-		
+		aktuelleVokabeln = wörtli.getWort();
+		falscheVokabeln = new ArrayList<>();
 		Collections.shuffle(aktuelleVokabeln);
 		
 		Text frage = new Text(), lösung = new Text(), geprüfteEingabe = new Text();
@@ -39,12 +39,14 @@ public class Trainingsbildschirm implements View {
 		
 		weiter.setOnAction(event -> {
 			if (index >= aktuelleVokabeln.size()) {
-				//aktuelleVokabeln = falscheVokabeln;
-				aktuelleVokabeln.removeAll(aktuelleVokabeln);
-				aktuelleVokabeln.addAll(falscheVokabeln);
+				aktuelleVokabeln = falscheVokabeln;
+				falscheVokabeln = new ArrayList<>();
+				Collections.shuffle(aktuelleVokabeln);
+				index = 0;
 				
 				if (aktuelleVokabeln.isEmpty()) {
 					trainingBeenden.accept(countKorrekt, countGesamt);
+					return;
 				}
 			}
 			antwort.clear();
@@ -125,13 +127,5 @@ public class Trainingsbildschirm implements View {
 	public Scene getScene() {
 		return scene;
 	}
-
-//	public SetVokabeln getWörtli() {
-//		return wörtli;
-//	}
-//
-//	public int getIndex() {
-//		return index;
-//	}	
 
 }
