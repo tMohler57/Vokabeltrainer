@@ -22,7 +22,8 @@ public class SetVokabeln {
 			
 			}
 			
-			Collections.shuffle(wort);
+			// verschoben nach Trainingsbildschirm
+			// Collections.shuffle(wort);
 
 		} catch(IOException e) {
 			System.err.println("Fehler beim Einlesen der Datei.");
