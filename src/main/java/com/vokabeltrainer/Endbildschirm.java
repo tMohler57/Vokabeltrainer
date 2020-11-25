@@ -9,25 +9,42 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 public class Endbildschirm implements View {
 	
 	private GridPane gridPane = new GridPane();
 	
 	public Endbildschirm(EventHandler<ActionEvent> startEvent) {
-		Label wiedersehen = new Label("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
+		Text wiedersehen = new Text("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
 		
 		Button beenden = new Button("Programm beenden");
 		beenden.setOnAction(startEvent);
 		
+		
+		
+		textStyle(wiedersehen);
+		buttonStyle(beenden);
+		beenden.setMinWidth(100);
+		gridpaneStyle(gridPane);
+		
+		gridPane.add(wiedersehen, 1, 4, 7, 1);
+		gridPane.add(beenden, 6, 6, 3, 1);
+	}
+	
+	public void textStyle(Text text) {
+		text.setFont(new Font("Arial", 30));
+	}
+	
+	public void buttonStyle(Button button) {
+		button.setMinWidth(115);
+		button.setMinHeight(50);
+		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		button.getStyle();
+	}
+	
+	public void gridpaneStyle(GridPane gridPane) {
 		gridPane.setStyle("-fx-background-color: #F7819F");
-		
-		wiedersehen.setFont(new Font("Arial", 26));
-		
-		beenden.setMinWidth(115);
-		beenden.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
-		beenden.getStyle();
-
 		gridPane.setHgap(10);
 		gridPane.setHgap(10);
 		ColumnConstraints columnConstraints = new ColumnConstraints();
@@ -38,9 +55,6 @@ public class Endbildschirm implements View {
 			gridPane.getColumnConstraints().add(columnConstraints);
 			gridPane.getRowConstraints().add(rowConstraints);
 		}
-		
-		gridPane.add(wiedersehen, 1, 4, 7, 1);
-		gridPane.add(beenden, 6, 6);
 	}
 
 	@Override
