@@ -22,6 +22,8 @@ public class Trainingsbildschirm implements View {
 	private final Scene scene;
 	private SetVokabeln wörtli = new SetVokabeln();
 	private int index = 0;
+	private int countKorrekt = 0;
+	private int countGesamt = 0;
 
 	public Trainingsbildschirm(EventHandler<ActionEvent> trainingBeenden) {
 		wörtli.textdateiEinlesen();
@@ -61,10 +63,13 @@ public class Trainingsbildschirm implements View {
 			lösung.setText("Die richtige Lösung ist '" + wörtli.getWort().get(index).getUebersetzung() + "'.");
 			if (eingabe.trim().equals(wörtli.getWort().get(index).getUebersetzung())) {
 				geprüfteEingabe.setText("Ihre Antwort ist richtig.");
+				countKorrekt++;
 			}
 			else {
 				geprüfteEingabe.setText("Ihre Antwort ist falsch.");
 			}
+			countGesamt++;
+			System.out.println(countGesamt + " " + countKorrekt);
 			index++;
 		});
 		
