@@ -1,17 +1,12 @@
 package com.vokabeltrainer;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import java.util.function.BiConsumer;
+
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -22,19 +17,22 @@ public class Trainingsbildschirm implements View {
 	private final Scene scene;
 	private SetVokabeln wörtli = new SetVokabeln();
 	private int index = 0;
+	private int countKorrekt = 0;
+	private int countGesamt = 0;
 
-	public Trainingsbildschirm(EventHandler<ActionEvent> trainingBeenden) {
+	//public Trainingsbildschirm(EventHandler<ActionEvent> trainingBeenden) {
+	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
 		wörtli.textdateiEinlesen();
 		
 		Text frage = new Text(), lösung = new Text(), geprüfteEingabe = new Text();
 		TextField antwort = new TextField();
 		Button weiter = new Button("Weiter"), ende = new Button("Beenden"), bestätigen = new Button("Bestätigen");
 		
-		ende.setOnAction(trainingBeenden);
+		ende.setOnAction(action -> trainingBeenden.accept(countKorrekt, countGesamt));
 		
 		weiter.setOnAction(event -> {
 			if (index >= wörtli.getWort().size()) {
-				trainingBeenden.handle(event);
+				trainingBeenden.accept(countKorrekt, countGesamt);
 			}
 			antwort.clear();
 			antwort.setDisable(false);
@@ -61,10 +59,13 @@ public class Trainingsbildschirm implements View {
 			lösung.setText("Die richtige Lösung ist '" + wörtli.getWort().get(index).getUebersetzung() + "'.");
 			if (eingabe.trim().equals(wörtli.getWort().get(index).getUebersetzung())) {
 				geprüfteEingabe.setText("Ihre Antwort ist richtig.");
+				countKorrekt++;
 			}
 			else {
 				geprüfteEingabe.setText("Ihre Antwort ist falsch.");
 			}
+			countGesamt++;
+			System.out.println(countGesamt + " " + countKorrekt);
 			index++;
 		});
 		
@@ -111,5 +112,13 @@ public class Trainingsbildschirm implements View {
 	public Scene getScene() {
 		return scene;
 	}
+
+	public SetVokabeln getWörtli() {
+		return wörtli;
+	}
+
+	public int getIndex() {
+		return index;
+	}	
 
 }

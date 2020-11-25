@@ -15,20 +15,28 @@ public class Endbildschirm implements View {
 	
 	private GridPane gridPane = new GridPane();
 	
-	public Endbildschirm(EventHandler<ActionEvent> startEvent) {
+	public Endbildschirm(int korrekt, int gesamt, EventHandler<ActionEvent> startEvent) {
 		Text wiedersehen = new Text("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
+		Text count = new Text();
+		Text feedback = new Text();
+		
+		double erfolgsquote = ( (double)korrekt / (double)gesamt ) * 100;
+		count.setText("Sie haben " + korrekt + " von " + gesamt + " Vokabeln richtig übersetzt.");
+		feedback.setText("Damit haben Sie eine Erfolgsquote von " + erfolgsquote + "%");
 		
 		Button beenden = new Button("Programm beenden");
 		beenden.setOnAction(startEvent);
 		
-		
-		
 		textStyle(wiedersehen);
+		textStyle(feedback);
+		textStyle(count);
 		buttonStyle(beenden);
 		beenden.setMinWidth(100);
 		gridpaneStyle(gridPane);
 		
-		gridPane.add(wiedersehen, 1, 4, 7, 1);
+		gridPane.add(wiedersehen, 1, 2, 7, 1);
+		gridPane.add(count, 2, 4, 6, 1);
+		gridPane.add(feedback, 2, 5, 6, 1);
 		gridPane.add(beenden, 6, 6, 3, 1);
 	}
 	
