@@ -5,19 +5,21 @@ import javafx.application.Platform;
 import javafx.stage.Stage;
 
 public class UserInterface extends Application {
-	
+
 	private Stage stage = null;
 	private View start, training, kontrolle, ende;
-	
+
 	public UserInterface() {
 		start = new Startbildschirm(startButton -> showView(training));
-		//training = new Eingabe(kontrolleButton -> showView(kontrolle));
-		//kontrolle = new Kontrolle(neueVokabelButton -> showView(training), endButton -> showView(ende));
-		training = new Trainingsbildschirm(event -> showView(ende));
-		ende = new Endbildschirm(beendenButton ->  {
-	        Platform.exit();
-	        System.exit(0);
-	    });
+		// training = new Eingabe(kontrolleButton -> showView(kontrolle));
+		// kontrolle = new Kontrolle(neueVokabelButton -> showView(training), endButton
+		// -> showView(ende));
+		training = new Trainingsbildschirm(
+				(korrekt, gesamt) -> showView(new Endbildschirm(korrekt, gesamt, beendenButton -> {
+					Platform.exit();
+					System.exit(0);
+				})));
+
 	}
 
 	@Override
@@ -25,9 +27,9 @@ public class UserInterface extends Application {
 		stage = primaryStage;
 		showView(start);
 		stage.show();
-		
+
 	}
-	
+
 	public void showView(View view) {
 		stage.setScene(view.getScene());
 		stage.setTitle(view.getTitle());

@@ -15,13 +15,15 @@ public class Endbildschirm implements View {
 	
 	private GridPane gridPane = new GridPane();
 	
-	public Endbildschirm(EventHandler<ActionEvent> startEvent) {
+	public Endbildschirm(int korrekt, int gesamt, EventHandler<ActionEvent> startEvent) {
 		Text wiedersehen = new Text("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
+		Text feedback = new Text();
+		
+		double erfolgsquote = (double)korrekt / (double)gesamt;
+		System.out.println(erfolgsquote);
 		
 		Button beenden = new Button("Programm beenden");
 		beenden.setOnAction(startEvent);
-		
-		
 		
 		textStyle(wiedersehen);
 		buttonStyle(beenden);
