@@ -26,6 +26,7 @@ Tanja Mohler: Product Ownder / Entwicker
    1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+   1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
    1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
@@ -111,11 +112,64 @@ Velocity von 16 Storypoints pro Sprint
 | 1 | Label erstellen | 15' |
 | 2 | Die Vokabel an der Stelle der Zufallszahl des Arrays "vokabeln" mithilfe des Labels ausgeben | 20' |
 
+#### User Story 4 - Übersetzung eingeben (15')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Textfeld erstellen | 15' |
+
+
+#### User Story 5 - Eingabe bestätigen (1h 45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Prüfen, ob Eingabe erlaut ist | 25' |
+| 2 | Label erstellen | 15' |
+| 3 | Auf dem Label eine Fehlermeldung ausgeben, falls die Eingabe nicht erlaubt ist | 10' |
+| 4 | Ins Textfeld eingegebenen Text einlesen und auf einer String-Variable “eingabe” speichern | 10' |
+| 5 | Button erstellen | 15' |
+| 6 | Action Handler programmieren | 30' |
+
+#### User Story 7 - Korrekte Übersetzung anzeigen (25')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Label erstellen | 15' |
+| 2 | Auf dem Label die passende Variable "uebersetzung ausgeben | 10' |
+
+#### User Story 8 - Programm beenden (45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Button erstellen | 15' |
+| 2 | Action Handler programmieren | 30' |
+
+Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel vi.
+
+#### User Story 14 -Initialisierung (3h 50')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Grundstruktur des Programms erstellen (z.B. Klassen, Unterklassen, Main-Methode, usw.) | 2h |
+| 2 | layout des Programmfensters erstellen | 1h |
+| 3 | Erste Textdatei schreiben | 30' |
+| 4 | Textdatei einlesen | 20' |
+
 ### ii. Anreicherung der User Stories für die Umsetzung
 ### iii. UML Package, Klassen- und Sequenzdiagramm
 ### iv. Dokumentation wichtiger Code Snippets
 ### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### vi. Erfahrungen und Anpassungen
+Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
+Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
 
+Somit sah der Releasplan für die Sprints 1 und 2 wie folgt aus:
+| **Sprint 1** |   **Sprint 2**  |
+|--------------|-----------------|
+| 1. Programm starten | 2. Vokabeln zufällig auswählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |
+| 5. Eingabe bestätigen | 10. Thema wählen |
+| 7. Korrekte Übersetzung anzeigen |  |
+| 8. Programm beenden |  |
+| 14. Initialisierung |  |
+
+Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint 2 14 Story Points.
 
 ## 7. Dokumentation Sprint 2
 ### i. Taskliste für die Umsetzung der User Story
