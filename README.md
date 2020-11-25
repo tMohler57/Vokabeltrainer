@@ -14,17 +14,39 @@ Tanja Mohler: Product Ownder / Entwicker
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#einleitung)
+   1. [Ziele](#ziele)
+   1. [Randbedingungen](#randbedingungen)
 1. [Build-Anleitung](#build-anleitung)
 1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
-1. [Userstories](#userstories)
-1. [Releaseplan](#releaseplan)
+1. [User Stories](#userstories)
+1. [Releaseplan mit den Ausbaustufen](#releaseplan)
+1. [Dokumentation Sprint 1](#dokumentationSprint1)
+   1. [Taskliste für die Umsetzung der User Story](#taskliste)
+   1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
+   1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
+   1. [Dokumentation wichtiger Code Snippets](#snippets)
+   1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+1. [Dokumentation Sprint 2](#dokumentationSprint2)
+   1. [Taskliste für die Umsetzung der User Story](#taskliste)
+   1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
+   1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
+   1. [Dokumentation wichtiger Code Snippets](#snippets)
+   1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+1. [Dokumentation Sprint 3](#dokumentationSprint3)
+   1. [Taskliste für die Umsetzung der User Story](#taskliste)
+   1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
+   1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
+   1. [Dokumentation wichtiger Code Snippets](#snippets)
+   1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+
 
 ## 1. Einleitung
 Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
 
+### i. Ziele
 Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
 
-#### Randbedingungen:
+### ii. Randbedingungen:
 - Die Programmierung der Anwendung erfolgt in Java.
 - Das Projekt ist auf GitHub öffentlich einsehbar.
 - Das Projekt wurde getestet.
@@ -32,17 +54,19 @@ Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann,
 - Die Build-Automatisierung erfolgt mittels Maven.
 - Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
-## 2. Build-Anleitung
 
+## 2. Build-Anleitung
 Buildanleitung unabhängig vom Betriebssystem:
 - Sie benötigen eine Java Umgebung auf ihrem Computer.
 - Die .java-Dateien können per Doppelklick geöffnet werden.
 - Zum Starten der Benutzeroberfläche muss die Datei Launcher.java ausgeführt werden.
 
+
 ## 3. Kurze Bedienungsanleitung
 
-## 4. Userstories
-| **Titel** |   **Userstories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
+
+## 4. User Stories
+| **Titel** |   **User Stories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
 |:-----:|------|:-:|:-:|-----|
 | 1. Programm starten | Als Nutzer möchte ich das Programm starten können, um mit dem Vokabeltraining beginnen zu können. | 1 | 2 | Angenommen das Programm ist bereit, gestartet zu werden, wenn der Start-Button gedrückt wird, dann startet das Programm. |
 | 2. Vokabeln zufällig auswählen | Als Nutzer möchte ich, dass ein Wort zufällig ausgewählt wird, um bei jeder Benutzung des Programms andere Vokabeln zu lernen. | 2 | 3 | Angenommen das Programm wurde gestartet, wenn ein Wort zufällig ausgewählt wird, dann wird dem Nutzer dieses Wort zur Übersetzung angezeigt.|
@@ -60,17 +84,50 @@ Buildanleitung unabhängig vom Betriebssystem:
 | 14. Initialisierung | Als Entwickler möchte ich eine Grundstruktur für mein Programm haben, um mich gut darin zurechtzufinden und alle nötigen Klassen und Dateien zur Verfügung zu haben. | 1 | 8 | Angenommen ich möchte mein Programm schreiben, wenn bereits eine Grundstruktur vorhanden ist, dann ist es einfach, den Überblick zu behalten. |
 
 
-
-
-
 ## 5. Releaseplan
 | **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
 |----|----|----|
-| 14. Initialisierung | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
-| 1. Programm starten | 8. Programm beenden | 12. Übersetzungsrichtung wählen |
-| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 13. Wiederholen schwieriger Vokablen |
-| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
-| 5. Eingabe bestätigen | 10. Thema wählen |  |
-| 7. Korrekte Übersetzung anzeigen |  |  |
+| 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |  
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrichtung wählen |
+| 4. Übersetzung eingeben | 8. Programm beenden | 13. Wiederholen schwieriger Vokablen |
+| 5. Eingabe bestätigen | 9. Erfolgsquote |  |
+| 7. Korrekte Übersetzung anzeigen | 10. Thema wählen |  |
+| 14. Initialisierung |  |  |
 
 Velocity von 16 Storypoints pro Sprint
+
+
+## 6. Dokumentation Sprint 1
+### i. Taskliste für die Umsetzung der User Story
+#### User Story 1 - Programm starten (45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Button erstellen | 15' |
+| 2 | Action Handler programmieren | 30' |
+
+#### User Story 3 - Vokabeln anzeigen (35')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Label erstellen | 15' |
+| 2 | Die Vokabel an der Stelle der Zufallszahl des Arrays "vokabeln" mithilfe des Labels ausgeben | 20' |
+
+### ii. Anreicherung der User Stories für die Umsetzung
+### iii. UML Package, Klassen- und Sequenzdiagramm
+### iv. Dokumentation wichtiger Code Snippets
+### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+
+
+## 7. Dokumentation Sprint 2
+### i. Taskliste für die Umsetzung der User Story
+### ii. Anreicherung der User Stories für die Umsetzung
+### iii. UML Package, Klassen- und Sequenzdiagramm
+### iv. Dokumentation wichtiger Code Snippets
+### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+
+
+## 8. Dokumentation Sprint 3
+### i. Taskliste für die Umsetzung der User Story
+### ii. Anreicherung der User Stories für die Umsetzung
+### iii. UML Package, Klassen- und Sequenzdiagramm
+### iv. Dokumentation wichtiger Code Snippets
+### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
