@@ -111,6 +111,36 @@ Velocity von 16 Storypoints pro Sprint
 | 1 | Label erstellen | 15' |
 | 2 | Die Vokabel an der Stelle der Zufallszahl des Arrays "vokabeln" mithilfe des Labels ausgeben | 20' |
 
+#### User Story 4 - Übersetzung eingeben (15')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Textfeld erstellen | 15' |
+
+
+#### User Story 5 - Eingabe bestätigen (1h 45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Prüfen, ob Eingabe erlaut ist | 25' |
+| 2 | Label erstellen | 15' |
+| 3 | Auf dem Label eine Fehlermeldung ausgeben, falls die Eingabe nicht erlaubt ist | 10' |
+| 4 | Ins Textfeld eingegebenen Text einlesen und auf einer String-Variable “eingabe” speichern | 10' |
+| 5 | Button erstellen | 15' |
+| 6 | Action Handler programmieren | 30' |
+
+#### User Story 7 - Korrekte Übersetzung anzeigen (25')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Label erstellen | 15' |
+| 2 | Auf dem Label die passende Variable "uebersetzung ausgeben | 10' |
+
+#### User Story 14 -Initialisierung (3h 50')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Grundstruktur des Programms erstellen (z.B. Klassen, Unterklassen, Main-Methode, usw.) | 2h |
+| 2 | layout des Programmfensters erstellen | 1h |
+| 3 | Erste Textdatei schreiben | 30' |
+| 4 | Textdatei einlesen | 20' |
+
 ### ii. Anreicherung der User Stories für die Umsetzung
 ### iii. UML Package, Klassen- und Sequenzdiagramm
 ### iv. Dokumentation wichtiger Code Snippets
