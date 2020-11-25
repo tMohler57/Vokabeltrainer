@@ -39,7 +39,13 @@ public class Trainingsbildschirm implements View {
 		
 		weiter.setOnAction(event -> {
 			if (index >= aktuelleVokabeln.size()) {
-				trainingBeenden.accept(countKorrekt, countGesamt);
+				//aktuelleVokabeln = falscheVokabeln;
+				aktuelleVokabeln.removeAll(aktuelleVokabeln);
+				aktuelleVokabeln.addAll(falscheVokabeln);
+				
+				if (aktuelleVokabeln.isEmpty()) {
+					trainingBeenden.accept(countKorrekt, countGesamt);
+				}
 			}
 			antwort.clear();
 			antwort.setDisable(false);
@@ -70,6 +76,7 @@ public class Trainingsbildschirm implements View {
 			}
 			else {
 				geprüfteEingabe.setText("Ihre Antwort ist falsch.");
+				falscheVokabeln.add(aktuelleVokabeln.get(index));
 			}
 			countGesamt++;
 			index++;
