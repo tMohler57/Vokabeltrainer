@@ -26,7 +26,7 @@ public class Trainingsbildschirm implements View {
 	public Trainingsbildschirm(EventHandler<ActionEvent> trainingBeenden) {
 		wörtli.textdateiEinlesen();
 		
-		Text frage = new Text(), lösung = new Text(), fehlermeldung = new Text();
+		Text frage = new Text(), lösung = new Text(), geprüfteEingabe = new Text();
 		TextField antwort = new TextField();
 		Button weiter = new Button("Weiter"), ende = new Button("Beenden"), bestätigen = new Button("Bestätigen");
 		
@@ -39,6 +39,7 @@ public class Trainingsbildschirm implements View {
 			antwort.clear();
 			antwort.setDisable(false);
 			lösung.setText(null);
+			geprüfteEingabe.setText(null);
 			bestätigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
@@ -49,21 +50,27 @@ public class Trainingsbildschirm implements View {
 		bestätigen.setOnAction(event -> {
 			String eingabe = antwort.getText();
 			if (!eingabe.matches(".*[a-zA-Z].*")) {
-				fehlermeldung.setText("Die Eingabe ist ungültig!");
+				geprüfteEingabe.setText("Die Eingabe ist ungültig!");
 				return;
 			}
-			fehlermeldung.setText(null);
+			geprüfteEingabe.setText(null);
 			antwort.setDisable(true);
 			bestätigen.setDisable(true);
 			weiter.setVisible(true);
 			ende.setVisible(true);
 			lösung.setText("Die richtige Lösung ist '" + wörtli.getWort().get(index).getUebersetzung() + "'.");
+			if (eingabe.trim().equals(wörtli.getWort().get(index).getUebersetzung())) {
+				geprüfteEingabe.setText("Ihre Antwort ist richtig.");
+			}
+			else {
+				geprüfteEingabe.setText("Ihre Antwort ist falsch.");
+			}
 			index++;
 		});
 		
 		textStyle(frage);
 		textStyle(lösung);
-		textStyle(fehlermeldung);
+		textStyle(geprüfteEingabe);
 		
 		buttonStyle(bestätigen);
 		buttonStyle(weiter);
@@ -71,7 +78,7 @@ public class Trainingsbildschirm implements View {
 		
 		HBox hbox1 = new HBox(antwort, bestätigen);
 		HBox hbox2 = new HBox(weiter, ende);
-		HBox hbox3 = new HBox(fehlermeldung);
+		HBox hbox3 = new HBox(geprüfteEingabe);
 		hboxStyle(hbox1);hboxStyle(hbox2);hboxStyle(hbox3);
 		VBox vbox1 = new VBox(frage, hbox1, lösung, hbox2, hbox3);
 		vboxStyle(vbox1);
