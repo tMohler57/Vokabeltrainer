@@ -10,26 +10,41 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 public class Startbildschirm implements View {
 
 	private GridPane gridPane = new GridPane();
 
 	public Startbildschirm(EventHandler<ActionEvent> startEvent) {
-		Label willkommen = new Label("Willkommen zum Vokabeltraining!");
+		Text willkommen = new Text("Willkommen zum Vokabeltraining!");
 
 		Button start = new Button("Start");
 		start.setOnAction(startEvent);
 		
-		gridPane.setStyle("-fx-background-color: #F7819F");
 		
-		willkommen.setFont(new Font("Arial", 30));
 		
-		start.setMinWidth(115);
-		start.setMinHeight(50);
-		start.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
-		start.getStyle();
+		textStyle(willkommen);		
+		buttonStyle(start);
+		gridpaneStyle(gridPane);
 
+		gridPane.add(willkommen, 1, 4, 6, 1);
+		gridPane.add(start,7, 4);
+	}
+	
+	public void textStyle(Text text) {
+		text.setFont(new Font("Arial", 30));
+	}
+	
+	public void buttonStyle(Button button) {
+		button.setMinWidth(115);
+		button.setMinHeight(50);
+		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		button.getStyle();
+	}
+	
+	public void gridpaneStyle(GridPane gridPane) {
+		gridPane.setStyle("-fx-background-color: #F7819F");
 		gridPane.setHgap(10);
 		gridPane.setHgap(10);
 		ColumnConstraints columnConstraints = new ColumnConstraints();
@@ -40,9 +55,6 @@ public class Startbildschirm implements View {
 			gridPane.getColumnConstraints().add(columnConstraints);
 			gridPane.getRowConstraints().add(rowConstraints);
 		}
-
-		gridPane.add(willkommen, 1, 4, 6, 1);
-		gridPane.add(start,7, 4);
 	}
 
 	public Scene getScene() {	
