@@ -63,6 +63,7 @@ public class Trainingsbildschirm implements View {
 		
 		textStyle(frage);
 		textStyle(lösung);
+		textStyle(fehlermeldung);
 		
 		buttonStyle(bestätigen);
 		buttonStyle(weiter);
@@ -71,7 +72,7 @@ public class Trainingsbildschirm implements View {
 		HBox hbox1 = new HBox(antwort, bestätigen);
 		HBox hbox2 = new HBox(weiter, ende);
 		HBox hbox3 = new HBox(fehlermeldung);
-		hboxStyle(hbox1);hboxStyle(hbox2);
+		hboxStyle(hbox1);hboxStyle(hbox2);hboxStyle(hbox3);
 		VBox vbox1 = new VBox(frage, hbox1, lösung, hbox2, hbox3);
 		vboxStyle(vbox1);
 		
