@@ -158,7 +158,7 @@ Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel vi.
 Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
 Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
 
-Somit sah der Releasplan für die Storys 1 und 2 wie folgt aus:
+Somit sah der Releasplan für die Sprints 1 und 2 wie folgt aus:
 | **Sprint 1** |   **Sprint 2**  |
 |--------------|-----------------|
 | 1. Programm starten | 2. Vokabeln zufällig auswählen |
