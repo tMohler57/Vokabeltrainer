@@ -26,7 +26,7 @@ public class Trainingsbildschirm implements View {
 	public Trainingsbildschirm(EventHandler<ActionEvent> trainingBeenden) {
 		wörtli.textdateiEinlesen();
 		
-		Text frage = new Text(), lösung = new Text();
+		Text frage = new Text(), lösung = new Text(), fehlermeldung = new Text();
 		TextField antwort = new TextField();
 		Button weiter = new Button("Weiter"), ende = new Button("Beenden"), bestätigen = new Button("Bestätigen");
 		
@@ -37,8 +37,9 @@ public class Trainingsbildschirm implements View {
 				trainingBeenden.handle(event);
 			}
 			antwort.clear();
+			antwort.setDisable(false);
 			lösung.setText(null);
-			bestätigen.setVisible(true);
+			bestätigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
 			frage.setText("Was heißt '" + wörtli.getWort().get(index).getVokabel() + "' auf französisch?");
@@ -46,7 +47,14 @@ public class Trainingsbildschirm implements View {
 		weiter.getOnAction().handle(null);
 		
 		bestätigen.setOnAction(event -> {
-			bestätigen.setVisible(false);
+			String eingabe = antwort.getText();
+			if (!eingabe.matches(".*[a-zA-Z].*")) {
+				fehlermeldung.setText("Die Eingabe ist ungültig!");
+				return;
+			}
+			fehlermeldung.setText(null);
+			antwort.setDisable(true);
+			bestätigen.setDisable(true);
 			weiter.setVisible(true);
 			ende.setVisible(true);
 			lösung.setText("Die richtige Lösung ist '" + wörtli.getWort().get(index).getUebersetzung() + "'.");
@@ -55,6 +63,7 @@ public class Trainingsbildschirm implements View {
 		
 		textStyle(frage);
 		textStyle(lösung);
+		textStyle(fehlermeldung);
 		
 		buttonStyle(bestätigen);
 		buttonStyle(weiter);
@@ -62,8 +71,9 @@ public class Trainingsbildschirm implements View {
 		
 		HBox hbox1 = new HBox(antwort, bestätigen);
 		HBox hbox2 = new HBox(weiter, ende);
-		hboxStyle(hbox1);hboxStyle(hbox2);
-		VBox vbox1 = new VBox(frage, hbox1, lösung, hbox2);
+		HBox hbox3 = new HBox(fehlermeldung);
+		hboxStyle(hbox1);hboxStyle(hbox2);hboxStyle(hbox3);
+		VBox vbox1 = new VBox(frage, hbox1, lösung, hbox2, hbox3);
 		vboxStyle(vbox1);
 		
 		scene = new Scene(vbox1, 1000, 500);
