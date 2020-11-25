@@ -1,5 +1,8 @@
 package com.vokabeltrainer;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.BiConsumer;
 
 import javafx.geometry.Pos;
@@ -13,16 +16,20 @@ import javafx.scene.text.Text;
 
 public class Trainingsbildschirm implements View {
 
-	//private final GridPane gridPane = new GridPane();
 	private final Scene scene;
 	private SetVokabeln wörtli = new SetVokabeln();
 	private int index = 0;
 	private int countKorrekt = 0;
 	private int countGesamt = 0;
+	private List<Vokabel> aktuelleVokabeln, falscheVokabeln;
 
-	//public Trainingsbildschirm(EventHandler<ActionEvent> trainingBeenden) {
+	// BiConsumer gibt zwei Integer mit, imgegensatz zu EventHandler<ActionEvent> 
 	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
 		wörtli.textdateiEinlesen();
+		
+		aktuelleVokabeln = wörtli.getWort();
+		falscheVokabeln = new ArrayList<>();
+		Collections.shuffle(aktuelleVokabeln);
 		
 		Text frage = new Text(), lösung = new Text(), geprüfteEingabe = new Text();
 		TextField antwort = new TextField();
@@ -31,8 +38,16 @@ public class Trainingsbildschirm implements View {
 		ende.setOnAction(action -> trainingBeenden.accept(countKorrekt, countGesamt));
 		
 		weiter.setOnAction(event -> {
-			if (index >= wörtli.getWort().size()) {
-				trainingBeenden.accept(countKorrekt, countGesamt);
+			if (index >= aktuelleVokabeln.size()) {
+				aktuelleVokabeln = falscheVokabeln;
+				falscheVokabeln = new ArrayList<>();
+				Collections.shuffle(aktuelleVokabeln);
+				index = 0;
+				
+				if (aktuelleVokabeln.isEmpty()) {
+					trainingBeenden.accept(countKorrekt, countGesamt);
+					return;
+				}
 			}
 			antwort.clear();
 			antwort.setDisable(false);
@@ -41,7 +56,7 @@ public class Trainingsbildschirm implements View {
 			bestätigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
-			frage.setText("Was heißt '" + wörtli.getWort().get(index).getVokabel() + "' auf französisch?");
+			frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf französisch?");
 		});
 		weiter.getOnAction().handle(null);
 		
@@ -56,16 +71,16 @@ public class Trainingsbildschirm implements View {
 			bestätigen.setDisable(true);
 			weiter.setVisible(true);
 			ende.setVisible(true);
-			lösung.setText("Die richtige Lösung ist '" + wörtli.getWort().get(index).getUebersetzung() + "'.");
-			if (eingabe.trim().equals(wörtli.getWort().get(index).getUebersetzung())) {
+			lösung.setText("Die richtige Lösung ist '" + aktuelleVokabeln.get(index).getUebersetzung() + "'.");
+			if (eingabe.trim().equals(aktuelleVokabeln.get(index).getUebersetzung())) {
 				geprüfteEingabe.setText("Ihre Antwort ist richtig.");
 				countKorrekt++;
 			}
 			else {
 				geprüfteEingabe.setText("Ihre Antwort ist falsch.");
+				falscheVokabeln.add(aktuelleVokabeln.get(index));
 			}
 			countGesamt++;
-			System.out.println(countGesamt + " " + countKorrekt);
 			index++;
 		});
 		
@@ -112,13 +127,5 @@ public class Trainingsbildschirm implements View {
 	public Scene getScene() {
 		return scene;
 	}
-
-	public SetVokabeln getWörtli() {
-		return wörtli;
-	}
-
-	public int getIndex() {
-		return index;
-	}	
 
 }

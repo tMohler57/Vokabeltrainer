@@ -11,7 +11,7 @@ public class SetVokabeln {
 	List <Vokabel> wort = new ArrayList <Vokabel>();
 	
 	public void textdateiEinlesen() {
-		try (FileReader f = new FileReader("src/main/java/com/vokabeltrainer/tiere.txt")){
+		try (FileReader f = new FileReader("src/main/java/com/vokabeltrainer/tiere - short.txt")){
 			char[] c = new char[10000000];
 			f.read(c);
 			String s = new String(c);
@@ -22,7 +22,8 @@ public class SetVokabeln {
 			
 			}
 			
-			Collections.shuffle(wort);
+			// verschoben nach Trainingsbildschirm
+			// Collections.shuffle(wort);
 
 		} catch(IOException e) {
 			System.err.println("Fehler beim Einlesen der Datei.");
