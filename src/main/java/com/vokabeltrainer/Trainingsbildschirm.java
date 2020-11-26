@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
 public class Trainingsbildschirm implements View {
 
 	private final Scene scene;
-	private SetVokabeln wörtli = new SetVokabeln();
+	private SetVokabeln woertli = new SetVokabeln();
 	private int index = 0;
 	private int countKorrekt = 0;
 	private int countGesamt = 0;
@@ -25,15 +25,15 @@ public class Trainingsbildschirm implements View {
 
 	// BiConsumer gibt zwei Integer mit, imgegensatz zu EventHandler<ActionEvent> 
 	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
-		wörtli.textdateiEinlesen();
+		woertli.textdateiEinlesen();
 		
-		aktuelleVokabeln = wörtli.getWort();
+		aktuelleVokabeln = woertli.getWort();
 		falscheVokabeln = new ArrayList<>();
 		Collections.shuffle(aktuelleVokabeln);
 		
-		Text frage = new Text(), lösung = new Text(), geprüfteEingabe = new Text();
+		Text frage = new Text(), loesung = new Text(), gepruefteEingabe = new Text();
 		TextField antwort = new TextField();
-		Button weiter = new Button("Weiter"), ende = new Button("Beenden"), bestätigen = new Button("Bestätigen");
+		Button weiter = new Button("Weiter"), ende = new Button("Beenden"), bestaetigen = new Button("Bestätigen");
 		
 		ende.setOnAction(action -> trainingBeenden.accept(countKorrekt, countGesamt));
 		
@@ -51,33 +51,33 @@ public class Trainingsbildschirm implements View {
 			}
 			antwort.clear();
 			antwort.setDisable(false);
-			lösung.setText(null);
-			geprüfteEingabe.setText(null);
-			bestätigen.setDisable(false);
+			loesung.setText(null);
+			gepruefteEingabe.setText(null);
+			bestaetigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
 			frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf französisch?");
 		});
 		weiter.getOnAction().handle(null);
 		
-		bestätigen.setOnAction(event -> {
+		bestaetigen.setOnAction(event -> {
 			String eingabe = antwort.getText();
 			if (!eingabe.matches(".*[a-zA-Z].*")) {
-				geprüfteEingabe.setText("Die Eingabe ist ungültig!");
+				gepruefteEingabe.setText("Die Eingabe ist ungültig!");
 				return;
 			}
-			geprüfteEingabe.setText(null);
+			gepruefteEingabe.setText(null);
 			antwort.setDisable(true);
-			bestätigen.setDisable(true);
+			bestaetigen.setDisable(true);
 			weiter.setVisible(true);
 			ende.setVisible(true);
-			lösung.setText("Die richtige Lösung ist '" + aktuelleVokabeln.get(index).getUebersetzung() + "'.");
+			loesung.setText("Die richtige Lösung ist '" + aktuelleVokabeln.get(index).getUebersetzung() + "'.");
 			if (eingabe.trim().equals(aktuelleVokabeln.get(index).getUebersetzung())) {
-				geprüfteEingabe.setText("Ihre Antwort ist richtig.");
+				gepruefteEingabe.setText("Ihre Antwort ist richtig.");
 				countKorrekt++;
 			}
 			else {
-				geprüfteEingabe.setText("Ihre Antwort ist falsch.");
+				gepruefteEingabe.setText("Ihre Antwort ist falsch.");
 				falscheVokabeln.add(aktuelleVokabeln.get(index));
 			}
 			countGesamt++;
@@ -85,18 +85,18 @@ public class Trainingsbildschirm implements View {
 		});
 		
 		textStyle(frage);
-		textStyle(lösung);
-		textStyle(geprüfteEingabe);
+		textStyle(loesung);
+		textStyle(gepruefteEingabe);
 		
-		buttonStyle(bestätigen);
+		buttonStyle(bestaetigen);
 		buttonStyle(weiter);
 		buttonStyle(ende);
 		
-		HBox hbox1 = new HBox(antwort, bestätigen);
+		HBox hbox1 = new HBox(antwort, bestaetigen);
 		HBox hbox2 = new HBox(weiter, ende);
-		HBox hbox3 = new HBox(geprüfteEingabe);
+		HBox hbox3 = new HBox(gepruefteEingabe);
 		hboxStyle(hbox1);hboxStyle(hbox2);hboxStyle(hbox3);
-		VBox vbox1 = new VBox(frage, hbox1, lösung, hbox2, hbox3);
+		VBox vbox1 = new VBox(frage, hbox1, loesung, hbox2, hbox3);
 		vboxStyle(vbox1);
 		
 		scene = new Scene(vbox1, 1000, 500);
@@ -127,5 +127,6 @@ public class Trainingsbildschirm implements View {
 	public Scene getScene() {
 		return scene;
 	}
+
 
 }

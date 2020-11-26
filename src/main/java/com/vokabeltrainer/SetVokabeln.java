@@ -9,9 +9,12 @@ import java.util.Vector;
 
 public class SetVokabeln {
 	List <Vokabel> wort = new ArrayList <Vokabel>();
-	
+	String topic;
+	String file = "src/main/java/com/vokabeltrainer/tiere - short.txt";
+
 	public void textdateiEinlesen() {
-		try (FileReader f = new FileReader("src/main/java/com/vokabeltrainer/tiere - short.txt")){
+//		file = themaWahl(topic);
+		try (FileReader f = new FileReader(file)){
 			char[] c = new char[10000000];
 			f.read(c);
 			String s = new String(c);
@@ -19,9 +22,9 @@ public class SetVokabeln {
 
 			for(int i = 0; i < result.length; i+=2) {
 				wort.add(new Vokabel(result[i].trim(), result[i + 1].trim()));
-			
+
 			}
-			
+
 			// verschoben nach Trainingsbildschirm
 			// Collections.shuffle(wort);
 
@@ -34,4 +37,14 @@ public class SetVokabeln {
 	public List<Vokabel> getWort() {
 		return wort;
 	}
+
+//	public String themaWahl(String topic) {
+//
+//		if(topic.getThema() == "Tiere") {
+//			return "src/main/java/com/vokabeltrainer/tiere - short.txt";
+//		}
+//		else if(topic.getThema() == "Essen") {
+//			return "src/main/java/com/vokabeltrainer/essen - short.txt";
+//		}
+//	}
 }
