@@ -43,23 +43,23 @@ public class Startbildschirm implements View {
 			}
 		});
 
-		textStyle(willkommen);
+		willkommen.setFont(new Font("Arial", 30));
 		textStyle(themaText);
 		textStyle(fehlermeldung);
 		buttonStyle(start);
 		buttonStyle(themaButton);
 		gridpaneStyle(gridPane);
 
-		gridPane.add(willkommen, 1, 2, 6, 1);
-		gridPane.add(start, 7, 2, 2, 1);
-		gridPane.add(themaText, 1, 4, 3, 1);
-		gridPane.add(themaDrop, 5, 4);
-		gridPane.add(themaButton, 7, 4, 2, 1);
+		gridPane.add(willkommen, 1, 1, 6, 1);
+		gridPane.add(start, 7, 8, 2, 1);
+		gridPane.add(themaText, 1, 3, 3, 1);
+		gridPane.add(themaDrop, 4, 3, 2, 1);
+		gridPane.add(themaButton, 7, 3, 2, 1);
 		gridPane.add(fehlermeldung, 0, 10, 5, 1);
 	}
 
 	public void textStyle(Text text) {
-		text.setFont(new Font("Arial", 30));
+		text.setFont(new Font("Arial", 22));
 	}
 
 	public void buttonStyle(Button button) {
@@ -91,6 +91,12 @@ public class Startbildschirm implements View {
 						);
 
 		final ComboBox<String> comboBox = new ComboBox<String>(thema);
+		
+		comboBox.setPromptText("Thema wählen");
+		comboBox.setMinWidth(150);
+		comboBox.setMinHeight(50);
+		comboBox.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		comboBox.getStyle();
 
 		return comboBox;
 	}
