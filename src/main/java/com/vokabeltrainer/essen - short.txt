@@ -1,0 +1,5 @@
+das Brot;le pain
+das Wasser;l'eau
+der Reis;le riz
+der Käse;le fromage
+der Saft;le jus
