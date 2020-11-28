@@ -3,17 +3,13 @@ package com.vokabeltrainer;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
 
 public class SetVokabeln {
 	List <Vokabel> wort = new ArrayList <Vokabel>();
-	String topic;
-	String file = "src/main/java/com/vokabeltrainer/tiere - short.txt";
 
-	public void textdateiEinlesen() {
-//		file = themaWahl(topic);
+	public void textdateiEinlesen(String thema) {
+		String file = themaWahl(thema);
 		try (FileReader f = new FileReader(file)){
 			char[] c = new char[10000000];
 			f.read(c);
@@ -38,13 +34,15 @@ public class SetVokabeln {
 		return wort;
 	}
 
-//	public String themaWahl(String topic) {
-//
-//		if(topic.getThema() == "Tiere") {
-//			return "src/main/java/com/vokabeltrainer/tiere - short.txt";
-//		}
-//		else if(topic.getThema() == "Essen") {
-//			return "src/main/java/com/vokabeltrainer/essen - short.txt";
-//		}
-//	}
+	public String themaWahl(String thema) {
+		switch (thema) {
+		case "Tiere":
+			return "src/main/java/com/vokabeltrainer/tiere - short.txt";
+		case "Essen":
+			return "src/main/java/com/vokabeltrainer/essen - short.txt";
+		default:
+			throw new IllegalArgumentException("Es wurde kein gültiges Thema gewählt.");
+		}
+		
+	}
 }

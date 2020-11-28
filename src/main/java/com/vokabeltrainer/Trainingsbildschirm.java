@@ -17,23 +17,24 @@ import javafx.scene.text.Text;
 public class Trainingsbildschirm implements View {
 
 	private final Scene scene;
-	private SetVokabeln woertli = new SetVokabeln();
 	private int index = 0;
 	private int countKorrekt = 0;
 	private int countGesamt = 0;
 	private List<Vokabel> aktuelleVokabeln, falscheVokabeln;
-
-	// BiConsumer gibt zwei Integer mit, imgegensatz zu EventHandler<ActionEvent> 
-	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
-		woertli.textdateiEinlesen();
-		
+	private Button weiter = new Button("Weiter");
+	
+	public void setWoertli(SetVokabeln woertli) {
 		aktuelleVokabeln = woertli.getWort();
 		falscheVokabeln = new ArrayList<>();
 		Collections.shuffle(aktuelleVokabeln);
-		
+		weiter.getOnAction().handle(null);
+	}
+
+	// BiConsumer gibt zwei Integer mit, imgegensatz zu EventHandler<ActionEvent> 
+	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
 		Text frage = new Text(), loesung = new Text(), gepruefteEingabe = new Text();
 		TextField antwort = new TextField();
-		Button weiter = new Button("Weiter"), ende = new Button("Beenden"), bestaetigen = new Button("Bestätigen");
+		Button ende = new Button("Beenden"), bestaetigen = new Button("Bestätigen");
 		
 		ende.setOnAction(action -> trainingBeenden.accept(countKorrekt, countGesamt));
 		
@@ -58,7 +59,6 @@ public class Trainingsbildschirm implements View {
 			ende.setVisible(false);
 			frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf französisch?");
 		});
-		weiter.getOnAction().handle(null);
 		
 		bestaetigen.setOnAction(event -> {
 			String eingabe = antwort.getText();

@@ -1,5 +1,7 @@
 package com.vokabeltrainer;
 
+import java.util.function.Consumer;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,11 +9,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -20,21 +20,25 @@ public class Startbildschirm implements View {
 	private GridPane gridPane = new GridPane();
 	private String thema = null;
 
-	public Startbildschirm(EventHandler<ActionEvent> startEvent) {
+	public Startbildschirm(Consumer<SetVokabeln> startEvent) {
 		Text willkommen = new Text("Willkommen zum Vokabeltraining!");
 		Button start = new Button("Start");
-		start.setOnAction(startEvent);
+		start.setOnAction(event -> {
+			SetVokabeln loadSet = new SetVokabeln();
+			loadSet.textdateiEinlesen(thema);
+			startEvent.accept(loadSet);
+		});
 
 		Text themaText = new Text("Wählen Sie ein Thema: ");
 		ComboBox<String> themaDrop = themaDropdownStyle();
-		Button themaButton = new Button("Thema wählen");
 		Text fehlermeldung = new Text("");
 
-		themaButton.setOnAction(new EventHandler <ActionEvent>() {			
+		themaDrop.setOnAction(new EventHandler <ActionEvent>() {			
 			@Override
 			public void handle(ActionEvent event) {
-				if (themaDrop.getValue() != null && !themaDrop.getValue().isEmpty()) {
-					setThema(themaDrop.getValue()); 
+				String choiceThema = themaDrop.getValue();
+				if (choiceThema != null && !choiceThema.isEmpty()) {
+					thema = choiceThema;
 					fehlermeldung.setText("");
 				}
 				else {
@@ -47,29 +51,27 @@ public class Startbildschirm implements View {
 		textStyle(themaText);
 		textStyle(fehlermeldung);
 		buttonStyle(start);
-		buttonStyle(themaButton);
 		gridpaneStyle(gridPane);
 
 		gridPane.add(willkommen, 1, 1, 6, 1);
 		gridPane.add(start, 7, 8, 2, 1);
 		gridPane.add(themaText, 1, 3, 3, 1);
 		gridPane.add(themaDrop, 4, 3, 2, 1);
-		gridPane.add(themaButton, 7, 3, 2, 1);
 		gridPane.add(fehlermeldung, 0, 10, 5, 1);
 	}
 
-	public void textStyle(Text text) {
+	private void textStyle(Text text) {
 		text.setFont(new Font("Arial", 22));
 	}
 
-	public void buttonStyle(Button button) {
+	private void buttonStyle(Button button) {
 		button.setMinWidth(150);
 		button.setMinHeight(50);
 		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		button.getStyle();
 	}
 
-	public void gridpaneStyle(GridPane gridPane) {
+	private void gridpaneStyle(GridPane gridPane) {
 		gridPane.setStyle("-fx-background-color: #F7819F");
 		gridPane.setHgap(10);
 		gridPane.setHgap(10);
@@ -83,7 +85,7 @@ public class Startbildschirm implements View {
 		}
 	}
 
-	public ComboBox<String> themaDropdownStyle() {
+	private ComboBox<String> themaDropdownStyle() {
 		ObservableList<String> thema = 
 				FXCollections.observableArrayList(
 						"Tiere",
@@ -99,14 +101,6 @@ public class Startbildschirm implements View {
 		comboBox.getStyle();
 
 		return comboBox;
-	}
-
-	public String getThema() {
-		return thema;
-	}
-
-	public void setThema(String thema) {
-		this.thema = thema;
 	}
 
 	public Scene getScene() {	
