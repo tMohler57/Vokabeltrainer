@@ -103,23 +103,23 @@ public class Trainingsbildschirm implements View {
 		
 	}
 	
-	public void buttonStyle(Button button) {
+	private void buttonStyle(Button button) {
 		button.setMinWidth(115);
 		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		button.getStyle();
 	}
 	
-	public void textStyle(Text text) {
+	private void textStyle(Text text) {
 		text.setStyle("-fx-background-color: #F7819F");	
 		text.setFont(new Font("Arial", 20));
 	}
 	
-	public void vboxStyle(VBox vbox) {
+	private void vboxStyle(VBox vbox) {
 		vbox.setStyle("-fx-background-color: #F7819F");
 		vbox.setAlignment(Pos.CENTER);
 	}
 	
-	public void hboxStyle(HBox hbox) {
+	private void hboxStyle(HBox hbox) {
 		hbox.setAlignment(Pos.CENTER);
 	}
 	
