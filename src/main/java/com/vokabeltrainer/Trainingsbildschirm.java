@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.BiConsumer;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -74,11 +75,13 @@ public class Trainingsbildschirm implements View {
 			loesung.setText("Die richtige Lösung ist '" + aktuelleVokabeln.get(index).getUebersetzung() + "'.");
 			if (eingabe.trim().equals(aktuelleVokabeln.get(index).getUebersetzung())) {
 				gepruefteEingabe.setText("Ihre Antwort ist richtig.");
+				loesung.setVisible(false);
 				countKorrekt++;
 			}
 			else {
-				gepruefteEingabe.setText("Ihre Antwort ist falsch.");
+				gepruefteEingabe.setText("Ihre Antwort ist leider falsch.");
 				falscheVokabeln.add(aktuelleVokabeln.get(index));
+				loesung.setVisible(true);
 			}
 			countGesamt++;
 			index++;
@@ -92,11 +95,13 @@ public class Trainingsbildschirm implements View {
 		buttonStyle(weiter);
 		buttonStyle(ende);
 		
-		HBox hbox1 = new HBox(antwort, bestaetigen);
-		HBox hbox2 = new HBox(weiter, ende);
-		HBox hbox3 = new HBox(gepruefteEingabe);
-		hboxStyle(hbox1);hboxStyle(hbox2);hboxStyle(hbox3);
-		VBox vbox1 = new VBox(frage, hbox1, loesung, hbox2, hbox3);
+		HBox hbox1 = new HBox(15,antwort, bestaetigen);
+		HBox hbox2 = new HBox(90, weiter, ende);
+		HBox hbox3 = new HBox(15, gepruefteEingabe);
+		hboxStyle(hbox1);
+		hboxStyle(hbox2);
+		hboxStyle(hbox3);
+		VBox vbox1 = new VBox(frage, hbox1, hbox3, loesung, hbox2);
 		vboxStyle(vbox1);
 		
 		scene = new Scene(vbox1, 1000, 500);
@@ -117,10 +122,13 @@ public class Trainingsbildschirm implements View {
 	private void vboxStyle(VBox vbox) {
 		vbox.setStyle("-fx-background-color: #F7819F");
 		vbox.setAlignment(Pos.CENTER);
+		vbox.setPadding(new Insets(10,20,20,20));
+		vbox.setSpacing(15);
 	}
 	
 	private void hboxStyle(HBox hbox) {
 		hbox.setAlignment(Pos.CENTER);
+		hbox.setPadding(new Insets(10,20,20,20));
 	}
 	
 	@Override

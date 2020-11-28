@@ -39,10 +39,11 @@ public class Startbildschirm implements View {
 				String choiceThema = themaDrop.getValue();
 				if (choiceThema != null && !choiceThema.isEmpty()) {
 					thema = choiceThema;
-					fehlermeldung.setText("");
+					fehlermeldung.setVisible(false);
 				}
 				else {
-					fehlermeldung.setText("Sie haben kein Thema ausgewählt!"); 
+					fehlermeldung.setText("Sie haben kein Thema ausgewählt!");
+					fehlermeldung.setVisible(true);
 				}	
 			}
 		});
@@ -56,8 +57,8 @@ public class Startbildschirm implements View {
 		gridPane.add(willkommen, 1, 1, 6, 1);
 		gridPane.add(start, 7, 8, 2, 1);
 		gridPane.add(themaText, 1, 3, 3, 1);
-		gridPane.add(themaDrop, 4, 3, 2, 1);
-		gridPane.add(fehlermeldung, 0, 10, 5, 1);
+		gridPane.add(themaDrop, 7, 3, 2, 1);
+		gridPane.add(fehlermeldung, 1, 9, 5, 1);
 	}
 
 	private void textStyle(Text text) {
@@ -65,7 +66,7 @@ public class Startbildschirm implements View {
 	}
 
 	private void buttonStyle(Button button) {
-		button.setMinWidth(150);
+		button.setMinWidth(190);
 		button.setMinHeight(50);
 		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		button.getStyle();
@@ -95,7 +96,7 @@ public class Startbildschirm implements View {
 		final ComboBox<String> comboBox = new ComboBox<String>(thema);
 		
 		comboBox.setPromptText("Thema wählen");
-		comboBox.setMinWidth(150);
+		comboBox.setMinWidth(190);
 		comboBox.setMinHeight(50);
 		comboBox.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		comboBox.getStyle();
