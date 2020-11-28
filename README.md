@@ -41,9 +41,10 @@ Tanja Mohler: Product Ownder / Entwicker
 
 ## 1. Einleitung
 Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
+Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
 
 ### i. Ziele
-Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
+Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertieften.
 
 ### ii. Randbedingungen:
 - Die Programmierung der Anwendung erfolgt in Java.
