@@ -23,6 +23,8 @@ public class Startbildschirm implements View {
 	public Startbildschirm(Consumer<SetVokabeln> startEvent) {
 		Text willkommen = new Text("Willkommen zum Vokabeltraining!");
 		Button start = new Button("Start");
+		start.setDisable(true);
+		start.setVisible(false);
 		start.setOnAction(event -> {
 			SetVokabeln loadSet = new SetVokabeln();
 			loadSet.textdateiEinlesen(thema);
@@ -31,7 +33,8 @@ public class Startbildschirm implements View {
 
 		Text themaText = new Text("Wählen Sie ein Thema: ");
 		ComboBox<String> themaDrop = themaDropdownStyle();
-		Text fehlermeldung = new Text("");
+		Text fehlermeldung = new Text("Sie haben kein Thema ausgewählt!");
+		fehlermeldung.setVisible(false);
 
 		themaDrop.setOnAction(new EventHandler <ActionEvent>() {			
 			@Override
@@ -40,9 +43,10 @@ public class Startbildschirm implements View {
 				if (choiceThema != null && !choiceThema.isEmpty()) {
 					thema = choiceThema;
 					fehlermeldung.setVisible(false);
+					start.setDisable(false);
+					start.setVisible(true);
 				}
-				else {
-					fehlermeldung.setText("Sie haben kein Thema ausgewählt!");
+				else {		
 					fehlermeldung.setVisible(true);
 				}	
 			}
