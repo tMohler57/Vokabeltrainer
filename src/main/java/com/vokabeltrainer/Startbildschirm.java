@@ -33,8 +33,6 @@ public class Startbildschirm implements View {
 
 		Text themaText = new Text("Wählen Sie ein Thema: ");
 		ComboBox<String> themaDrop = themaDropdownStyle();
-		Text fehlermeldung = new Text("Sie haben kein Thema ausgewählt!");
-		fehlermeldung.setVisible(false);
 
 		themaDrop.setOnAction(new EventHandler <ActionEvent>() {			
 			@Override
@@ -42,19 +40,18 @@ public class Startbildschirm implements View {
 				String choiceThema = themaDrop.getValue();
 				if (choiceThema != null && !choiceThema.isEmpty()) {
 					thema = choiceThema;
-					fehlermeldung.setVisible(false);
 					start.setDisable(false);
 					start.setVisible(true);
 				}
 				else {		
-					fehlermeldung.setVisible(true);
+					start.setDisable(true);
+					start.setVisible(false);
 				}	
 			}
 		});
 
 		willkommen.setFont(new Font("Arial", 30));
 		textStyle(themaText);
-		textStyle(fehlermeldung);
 		buttonStyle(start);
 		gridpaneStyle(gridPane);
 
@@ -62,7 +59,6 @@ public class Startbildschirm implements View {
 		gridPane.add(start, 7, 8, 2, 1);
 		gridPane.add(themaText, 1, 3, 3, 1);
 		gridPane.add(themaDrop, 7, 3, 2, 1);
-		gridPane.add(fehlermeldung, 1, 9, 5, 1);
 	}
 
 	private void textStyle(Text text) {
