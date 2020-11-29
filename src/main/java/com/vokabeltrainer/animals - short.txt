@@ -1,0 +1,5 @@
+Fisch;fish
+Hund;dog
+Katze;cat
+Maus;mouse
+Kaninchen;rabbit

@@ -19,6 +19,9 @@ public class Startbildschirm implements View {
 
 	private GridPane gridPane = new GridPane();
 	private String thema = null;
+	private String sprache = null;
+	private boolean themaGewaehlt = false;
+	private boolean spracheGewaehlt = false;
 
 	public Startbildschirm(Consumer<SetVokabeln> startEvent) {
 		Text willkommen = new Text("Willkommen zum Vokabeltraining!");
@@ -27,12 +30,14 @@ public class Startbildschirm implements View {
 		start.setVisible(false);
 		start.setOnAction(event -> {
 			SetVokabeln loadSet = new SetVokabeln();
-			loadSet.textdateiEinlesen(thema);
+			loadSet.textdateiEinlesen(thema, sprache);
 			startEvent.accept(loadSet);
 		});
 
 		Text themaText = new Text("Wählen Sie ein Thema: ");
-		ComboBox<String> themaDrop = themaDropdownStyle();
+		ComboBox<String> themaDrop = themaDropdown();
+		Text spracheText = new Text("Wählen Sie eine Sprache: ");
+		ComboBox<String> spracheDrop = spracheDropdown();
 
 		themaDrop.setOnAction(new EventHandler <ActionEvent>() {			
 			@Override
@@ -40,18 +45,33 @@ public class Startbildschirm implements View {
 				String choiceThema = themaDrop.getValue();
 				if (choiceThema != null && !choiceThema.isEmpty()) {
 					thema = choiceThema;
-					start.setDisable(false);
-					start.setVisible(true);
+					themaGewaehlt = true;
+					if(spracheGewaehlt == true) {
+						start.setDisable(false);
+						start.setVisible(true);
+					}
 				}
-				else {		
-					start.setDisable(true);
-					start.setVisible(false);
+			}
+		});
+
+		spracheDrop.setOnAction(new EventHandler <ActionEvent>() {			
+			@Override
+			public void handle(ActionEvent event) {
+				String choiceSprache = spracheDrop.getValue();
+				if (choiceSprache != null && !choiceSprache.isEmpty()) {
+					sprache = choiceSprache;
+					spracheGewaehlt = true;
+					if(themaGewaehlt == true) {
+						start.setDisable(false);
+						start.setVisible(true);
+					}
 				}	
 			}
 		});
 
 		willkommen.setFont(new Font("Arial", 30));
 		textStyle(themaText);
+		textStyle(spracheText);
 		buttonStyle(start);
 		gridpaneStyle(gridPane);
 
@@ -59,6 +79,8 @@ public class Startbildschirm implements View {
 		gridPane.add(start, 7, 8, 2, 1);
 		gridPane.add(themaText, 1, 3, 3, 1);
 		gridPane.add(themaDrop, 7, 3, 2, 1);
+		gridPane.add(spracheText, 1, 5, 3, 1);
+		gridPane.add(spracheDrop, 7, 5, 2, 1);
 	}
 
 	private void textStyle(Text text) {
@@ -85,8 +107,16 @@ public class Startbildschirm implements View {
 			gridPane.getRowConstraints().add(rowConstraints);
 		}
 	}
+	
+	private void dropdownStyle(ComboBox<String> comboBox) {
+		comboBox.setPromptText("Thema wählen");
+		comboBox.setMinWidth(190);
+		comboBox.setMinHeight(50);
+		comboBox.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		comboBox.getStyle();
+	}
 
-	private ComboBox<String> themaDropdownStyle() {
+	private ComboBox<String> themaDropdown() {
 		ObservableList<String> thema = 
 				FXCollections.observableArrayList(
 						"Tiere",
@@ -94,18 +124,25 @@ public class Startbildschirm implements View {
 						);
 
 		final ComboBox<String> comboBox = new ComboBox<String>(thema);
+		dropdownStyle(comboBox);
 		
-		comboBox.setPromptText("Thema wählen");
-		comboBox.setMinWidth(190);
-		comboBox.setMinHeight(50);
-		comboBox.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
-		comboBox.getStyle();
+		return comboBox;
+	}
+	
+	private ComboBox<String> spracheDropdown() {
+		ObservableList<String> sprache = 
+				FXCollections.observableArrayList(
+						"Englisch",
+						"Französisch"
+						);
 
+		final ComboBox<String> comboBox = new ComboBox<String>(sprache);
+		dropdownStyle(comboBox);
+		
 		return comboBox;
 	}
 
 	public Scene getScene() {	
 		return new Scene(gridPane, 1000, 500);
 	}
-
 }

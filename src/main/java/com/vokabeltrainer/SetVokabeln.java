@@ -8,8 +8,8 @@ import java.util.List;
 public class SetVokabeln {
 	List <Vokabel> wort = new ArrayList <Vokabel>();
 
-	public void textdateiEinlesen(String thema) {
-		String file = themaWahl(thema);
+	public void textdateiEinlesen(String thema, String sprache) {
+		String file = themaWahl(thema, sprache);
 		try (FileReader f = new FileReader(file)){
 			char[] c = new char[10000000];
 			f.read(c);
@@ -34,14 +34,26 @@ public class SetVokabeln {
 		return wort;
 	}
 
-	public String themaWahl(String thema) {
+	public String themaWahl(String thema, String sprache) {
 		switch (thema) {
 		case "Tiere":
-			return "src/main/java/com/vokabeltrainer/tiere - short.txt";
+			if(sprache == "Französisch") {
+				return "src/main/java/com/vokabeltrainer/animaux - short.txt";
+			}
+			else if(sprache == "Englisch") {
+				return "src/main/java/com/vokabeltrainer/animals - short.txt";
+			}
+			
 		case "Essen":
-			return "src/main/java/com/vokabeltrainer/essen - short.txt";
+			if(sprache == "Französisch") {
+				return "src/main/java/com/vokabeltrainer/manger - short.txt";
+			}
+			else if(sprache == "Englisch") {
+				return "src/main/java/com/vokabeltrainer/food - short.txt";
+			}
+			
 		default:
-			throw new IllegalArgumentException("Es wurde kein gültiges Thema gewählt.");
+			throw new IllegalArgumentException("Es wurde kein gültiges Thema oder keine gültige Sprache gewählt.");
 		}
 		
 	}

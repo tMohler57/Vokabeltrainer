@@ -58,7 +58,7 @@ public class Trainingsbildschirm implements View {
 			bestaetigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
-			frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf französisch?");
+			frage.setText("Was ist die Übersetzung von '" + aktuelleVokabeln.get(index).getVokabel() + "'?");
 		});
 		
 		bestaetigen.setOnAction(event -> {
