@@ -12,7 +12,7 @@ javafx {
     modules = [ 'javafx.base', 'javafx.controls', 'javafx.graphics' ]
 }
 
-mainClassName = 'com.vokabltrainer.Main'
+mainClassName = 'com.vokabeltrainer.Main'
 
 dependencies {
 	testCompile "org.testfx:testfx-core:4.0.16-alpha"
