@@ -2,8 +2,8 @@ package com.vokabeltrainer;
 
 public class Vokabel {
 	
-	String vokabel;
-	String uebersetzung;
+	private String vokabel;
+	private String uebersetzung;
 	
 	public Vokabel(String vokabel, String uebersetzung) {
 		this.vokabel = vokabel;
