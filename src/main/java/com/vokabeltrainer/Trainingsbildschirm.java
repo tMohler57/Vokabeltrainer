@@ -23,11 +23,22 @@ public class Trainingsbildschirm implements View {
 	private int countGesamt = 0;
 	private List<Vokabel> aktuelleVokabeln, falscheVokabeln;
 	private Button weiter = new Button("Weiter");
-	
+	private String sprache;
+
 	public void setWoertli(SetVokabeln woertli) {
 		aktuelleVokabeln = woertli.getWort();
 		falscheVokabeln = new ArrayList<>();
 		Collections.shuffle(aktuelleVokabeln);
+		
+		if(woertli.getFile() == "src/main/java/com/vokabeltrainer/animaux - short.txt" 
+				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/manger - short.txt") {
+			this.sprache = "Französisch";
+		}
+		else if(woertli.getFile() == "src/main/java/com/vokabeltrainer/animals - short.txt" 
+				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/food - short.txt") {
+			this.sprache = "Englisch";
+		}
+
 		weiter.getOnAction().handle(null);
 	}
 
@@ -36,16 +47,16 @@ public class Trainingsbildschirm implements View {
 		Text frage = new Text(), loesung = new Text(), gepruefteEingabe = new Text();
 		TextField antwort = new TextField();
 		Button ende = new Button("Beenden"), bestaetigen = new Button("Bestätigen");
-		
+
 		ende.setOnAction(action -> trainingBeenden.accept(countKorrekt, countGesamt));
-		
+
 		weiter.setOnAction(event -> {
 			if (index >= aktuelleVokabeln.size()) {
 				aktuelleVokabeln = falscheVokabeln;
 				falscheVokabeln = new ArrayList<>();
 				Collections.shuffle(aktuelleVokabeln);
 				index = 0;
-				
+
 				if (aktuelleVokabeln.isEmpty()) {
 					trainingBeenden.accept(countKorrekt, countGesamt);
 					return;
@@ -58,9 +69,17 @@ public class Trainingsbildschirm implements View {
 			bestaetigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
-			frage.setText("Was ist die Übersetzung von '" + aktuelleVokabeln.get(index).getVokabel() + "'?");
+			switch(sprache) {
+			case "Französisch":
+				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf französisch?");
+				break;
+			case "Englisch":
+				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf englisch?");
+				break;
+			
+			}
 		});
-		
+
 		bestaetigen.setOnAction(event -> {
 			String eingabe = antwort.getText();
 			if (!eingabe.matches(".*[a-zA-Z].*")) {
@@ -86,15 +105,15 @@ public class Trainingsbildschirm implements View {
 			countGesamt++;
 			index++;
 		});
-		
+
 		textStyle(frage);
 		textStyle(loesung);
 		textStyle(gepruefteEingabe);
-		
+
 		buttonStyle(bestaetigen);
 		buttonStyle(weiter);
 		buttonStyle(ende);
-		
+
 		HBox hbox1 = new HBox(15,antwort, bestaetigen);
 		HBox hbox2 = new HBox(90, weiter, ende);
 		HBox hbox3 = new HBox(15, gepruefteEingabe);
@@ -103,34 +122,34 @@ public class Trainingsbildschirm implements View {
 		hboxStyle(hbox3);
 		VBox vbox1 = new VBox(frage, hbox1, hbox3, loesung, hbox2);
 		vboxStyle(vbox1);
-		
+
 		scene = new Scene(vbox1, 1000, 500);
-		
+
 	}
-	
+
 	private void buttonStyle(Button button) {
 		button.setMinWidth(115);
 		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		button.getStyle();
 	}
-	
+
 	private void textStyle(Text text) {
 		text.setStyle("-fx-background-color: #F7819F");	
 		text.setFont(new Font("Arial", 20));
 	}
-	
+
 	private void vboxStyle(VBox vbox) {
 		vbox.setStyle("-fx-background-color: #F7819F");
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setPadding(new Insets(10,20,20,20));
 		vbox.setSpacing(15);
 	}
-	
+
 	private void hboxStyle(HBox hbox) {
 		hbox.setAlignment(Pos.CENTER);
 		hbox.setPadding(new Insets(10,20,20,20));
 	}
-	
+
 	@Override
 	public Scene getScene() {
 		return scene;

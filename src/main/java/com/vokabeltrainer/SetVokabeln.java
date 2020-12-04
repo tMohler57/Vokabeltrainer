@@ -7,9 +7,10 @@ import java.util.List;
 
 public class SetVokabeln {
 	List <Vokabel> wort = new ArrayList <Vokabel>();
+	String file;
 
 	public void textdateiEinlesen(String thema, String sprache) {
-		String file = themaWahl(thema, sprache);
+		file = themaWahl(thema, sprache);
 		try (FileReader f = new FileReader(file)){
 			char[] c = new char[10000000];
 			f.read(c);
@@ -32,6 +33,10 @@ public class SetVokabeln {
 
 	public List<Vokabel> getWort() {
 		return wort;
+	}
+	
+	public String getFile() {
+		return file;
 	}
 
 	public String themaWahl(String thema, String sprache) {

@@ -11,7 +11,7 @@ public class UserInterface extends Application {
 	private Trainingsbildschirm training;
 
 	public UserInterface() {
-		start = new Startbildschirm(wörtli -> {
+		start = new Startbildschirm((wörtli) -> {
 			training.setWoertli(wörtli);
 			showView(training);
 		});
