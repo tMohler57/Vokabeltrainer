@@ -1,5 +1,0 @@
-der Fisch;le poisson
-der Hund;le chien
-die Katze;le chat
-die Maus;la souris
-das Kaninchen;le lapin

@@ -11,8 +11,8 @@ public class UserInterface extends Application {
 	private Trainingsbildschirm training;
 
 	public UserInterface() {
-		start = new Startbildschirm(wörtli -> {
-			training.setWoertli(wörtli);
+		start = new Startbildschirm((woertli) -> {
+			training.setWoertli(woertli);
 			showView(training);
 		});
 		training = new Trainingsbildschirm(
@@ -20,7 +20,6 @@ public class UserInterface extends Application {
 					Platform.exit();
 					System.exit(0);
 				})));
-
 	}
 
 	@Override
