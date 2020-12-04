@@ -2,7 +2,7 @@ package com.vokabeltrainer;
 
 public enum VokabelDatei {
 	Tiere("Animaux", "Animals"),
-	Berufe("Professions-et-bureau", "Profession-and-office"),
+	Berufe("Professions-et-bureau", "Professions-and-office"),
 	Tourismus("Tourisme-et-transport", "Tourism-and-transport");
 	private final String fr, en;
 	private VokabelDatei(String fr, String en) {
@@ -10,7 +10,7 @@ public enum VokabelDatei {
 		this.en = getFilePath(en);
 	}
 	private static String getFilePath(String name) {
-		return "/src/main/resources/com/vokabeltrainer/" + name + ".txt";
+		return "/com/vokabeltrainer/" + name + ".txt";
 	}
 	public String getFile(String sprache) {
 		switch (sprache) {
