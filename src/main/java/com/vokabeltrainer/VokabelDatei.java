@@ -2,7 +2,7 @@ package com.vokabeltrainer;
 
 public enum VokabelDatei {
 	Tiere("Animaux", "Animals"),
-	Berufe("Professions-et-bureau", "Profession-and-office"),
+	Berufe("Professions-et-bureau", "Professions-and-office"),
 	Tourismus("Tourisme-et-transport", "Tourism-and-transport");
 	private final String fr, en;
 	private VokabelDatei(String fr, String en) {

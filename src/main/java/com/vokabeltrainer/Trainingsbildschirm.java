@@ -70,7 +70,7 @@ public class Trainingsbildschirm implements View {
 				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf " + sprache + "?");
 			}
 			else if(richtung == "Fremdsprache → Deutsch") {
-				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf deutsch?");
+				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf Deutsch?");
 			}
 		});
 
