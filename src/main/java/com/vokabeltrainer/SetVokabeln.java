@@ -3,18 +3,21 @@ package com.vokabeltrainer;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SetVokabeln {
 	
 	private List <Vokabel> wort = new ArrayList <Vokabel>();
 	private String file;
+	private String sprache;
 	private String richtung;
 
 	public void textdateiEinlesen(String thema, String sprache, String richtung) {
-		file = themaWahl(thema, sprache);
+		file = "./" + themaWahl(thema, sprache);
+		this.sprache = sprache;
 		this.richtung = richtung;
-		
+
 		try (FileReader f = new FileReader(file)){
 			char[] c = new char[10000000];
 			f.read(c);
@@ -44,35 +47,17 @@ public class SetVokabeln {
 		return file;
 	}
 	
+	public String getSprache() {
+		return sprache;
+	}
+
 	public String getRichtung() {
 		return richtung;
 	}
 
-	private String themaWahl(String thema, String sprache) {
-		switch (thema) {
-		case "Tiere":
-			if(sprache == "Französisch") {
-				return "src/main/java/com/vokabeltrainer/Animaux.txt";
-			}
-			else if(sprache == "Englisch") {
-				return "src/main/java/com/vokabeltrainer/Animals.txt";
-			}			
-		case "Tourismus":
-			if(sprache == "Französisch") {
-				return "src/main/java/com/vokabeltrainer/Tourisme-et-transport.txt";
-			}
-			else if(sprache == "Englisch") {
-				return "src/main/java/com/vokabeltrainer/Tourism-and-transport.txt";
-			}			
-		case "Beruf":
-			if(sprache == "Französisch") {
-				return "src/main/java/com/vokabeltrainer/Professions-et-bureau.txt";
-			}
-			else if(sprache == "Englisch") {
-				return "src/main/java/com/vokabeltrainer/Professions-and-office.txt";
-			}			
-		default:
-			throw new IllegalArgumentException("Es wurde kein gültiges Thema oder keine gültige Sprache gewählt.");
-		}		
+	public String themaWahl(String thema, String sprache) {
+		
+		return VokabelDatei.valueOf(thema).getFile(sprache);
+		
 	}
 }

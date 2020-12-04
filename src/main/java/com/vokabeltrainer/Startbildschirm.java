@@ -134,7 +134,6 @@ public class Startbildschirm implements View {
 	}
 	
 	private void dropdownStyle(ComboBox<String> comboBox) {
-		comboBox.setPromptText("Thema wählen");
 		comboBox.setMinWidth(190);
 		comboBox.setMinHeight(50);
 		comboBox.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
@@ -142,15 +141,12 @@ public class Startbildschirm implements View {
 	}
 
 	private ComboBox<String> themaDropdown() {
-		ObservableList<String> thema = 
-				FXCollections.observableArrayList(
-						"Tiere",
-						"Tourismus",
-						"Beruf"
-						);
-
+		ObservableList<String> thema = FXCollections.observableArrayList();
+		for (VokabelDatei v : VokabelDatei.values()) thema.add(v.name());
+		
 		final ComboBox<String> comboBox = new ComboBox<String>(thema);
 		dropdownStyle(comboBox);
+		comboBox.setPromptText("Thema wählen");
 		
 		return comboBox;
 	}
@@ -164,6 +160,7 @@ public class Startbildschirm implements View {
 
 		final ComboBox<String> comboBox = new ComboBox<String>(sprache);
 		dropdownStyle(comboBox);
+		comboBox.setPromptText("Sprache wählen");
 		
 		return comboBox;
 	}

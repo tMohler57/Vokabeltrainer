@@ -30,17 +30,10 @@ public class Trainingsbildschirm implements View {
 		aktuelleVokabeln = woertli.getWort();
 		falscheVokabeln = new ArrayList<>();
 		Collections.shuffle(aktuelleVokabeln);
-		
-		if(woertli.getFile() == "src/main/java/com/vokabeltrainer/Animaux.txt" 
-				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourisme-et-transport.txt" 
-				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-et-bureau.txt") {
-			this.sprache = "französisch";
-		}
-		else if(woertli.getFile() == "src/main/java/com/vokabeltrainer/Animals.txt" || 
-				woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourism-and-transport.txt" || 
-				woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-and-office.txt") {
-			this.sprache = "englisch";
-		}		
+						
+		this.richtung = woertli.getRichtung();
+
+		sprache = woertli.getSprache();
 		this.richtung = woertli.getRichtung();
 		
 		weiter.getOnAction().handle(null);

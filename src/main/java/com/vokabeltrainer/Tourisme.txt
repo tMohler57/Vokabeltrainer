@@ -1,0 +1,50 @@
+der Verkehr;la circulation
+das Auto;la voiture
+das Motorrad;la moto
+der Roller;le scooter
+das Taxi;le taxi
+fahren;conduire
+der Führerschein;le permis de conduire
+das Fahrrad;la bicyclette
+die Strecke;la route
+sich befinden;se trouver
+vor(wärts)fahren;avancer
+rückwärts fahren;reculer
+wenden;faire demi-tour
+die Ampel;le feu
+das Verkehrsschild;le panneau
+(an)halten;s'arrêter
+über die Strasse gehen;traverser
+parken;garer
+das Benzin;l'essence
+der Diesel;le gazole
+die Tankstelle;la station-service
+verbrauchen;consommer
+der Reifen;le pneu
+das Fahrzeug;le véhicule
+der Lastwagen;le camion
+der Wohnwagen;la caravane
+die Abkürzung;le raccourci
+der Umweg;le détour
+die Umleitung;la déviation
+der Stau;l'embouteillage
+blockieren;bloquer
+die Kurve;le virage
+abbiegen;tourner
+die Bremse;le frein
+bremsen;freiner
+blinken;mettre son clignotant
+das Rad;la roue
+das Navi;le GPS
+eine Panne haben;tomber en panne
+die Einbahnstrasse;le sens unique
+das Autokennzeichen;le numéro d'immatriculation
+das Nummernschild;la plaque d'immatriculation
+die Geschwindigkeitsüberschreitung;l'excès de vitesse
+der Strafzettel;l'amende
+der Sicherheitsgurt;la ceinture de sécurité
+vorgeschrieben;obligatoire
+einparken;faire un créneau
+der Rastplatz;l'aire de repos
+die Maut;le péage
+das E-Bike;le vélo à assistance électrique
