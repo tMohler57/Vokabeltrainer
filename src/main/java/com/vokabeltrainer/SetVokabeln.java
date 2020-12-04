@@ -22,10 +22,10 @@ public class SetVokabeln {
 			String [] result = s.split(";|\n");		
 
 			for(int i = 0; i < result.length; i+=2) {
-				if (richtung == "Deutsch --> Fremdsprache") {
+				if (richtung == "Deutsch → Fremdsprache") {
 					wort.add(new Vokabel(result[i].trim(), result[i + 1].trim()));
 				}
-				else if (richtung == "Fremdsprache --> Deutsch") {
+				else if (richtung == "Fremdsprache → Deutsch") {
 					wort.add(new Vokabel(result[i + 1].trim(), result[i].trim()));
 				}
 			}			

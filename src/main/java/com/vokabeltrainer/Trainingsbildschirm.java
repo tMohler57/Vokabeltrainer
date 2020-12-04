@@ -73,10 +73,10 @@ public class Trainingsbildschirm implements View {
 			bestaetigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
-			if(richtung == "Deutsch --> Fremdsprache") {
+			if(richtung == "Deutsch → Fremdsprache") {
 				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf " + sprache + "?");
 			}
-			else if(richtung == "Fremdsprache --> Deutsch") {
+			else if(richtung == "Fremdsprache → Deutsch") {
 				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf deutsch?");
 			}
 		});

@@ -171,8 +171,8 @@ public class Startbildschirm implements View {
 	private ComboBox<String> richtungDropdown() {
 		ObservableList<String> richtung = 
 				FXCollections.observableArrayList(
-						"Deutsch --> Fremdsprache",
-						"Fremdsprache --> Deutsch"
+						"Deutsch → Fremdsprache",
+						"Fremdsprache → Deutsch"
 						);
 
 		final ComboBox<String> comboBox = new ComboBox<String>(richtung);
