@@ -35,9 +35,9 @@ public class Trainingsbildschirm implements View {
 				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-et-bureau.txt") {
 			this.sprache = "französisch";
 		}
-		else if(woertli.getFile() == "src/main/java/com/vokabeltrainer/Animals.txt" 
-				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourism-and-transport.txt" 
-				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-and-office.txt") {
+		else if(woertli.getFile() == "src/main/java/com/vokabeltrainer/Animals.txt" || 
+				woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourism-and-transport.txt" || 
+				woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-and-office.txt") {
 			this.sprache = "englisch";
 		}
 
