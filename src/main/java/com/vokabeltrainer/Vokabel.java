@@ -1,6 +1,7 @@
 package com.vokabeltrainer;
 
 public class Vokabel {
+	
 	String vokabel;
 	String uebersetzung;
 	
@@ -22,5 +23,4 @@ public class Vokabel {
 	public void setUebersetzung(String uebersetzung) {
 		this.uebersetzung = uebersetzung;
 	}
-
 }

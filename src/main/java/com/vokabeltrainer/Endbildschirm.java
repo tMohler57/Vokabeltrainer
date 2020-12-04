@@ -37,7 +37,7 @@ public class Endbildschirm implements View {
 		gridPane.add(wiedersehen, 1, 2, 7, 1);
 		gridPane.add(count, 2, 4, 6, 1);
 		gridPane.add(feedback, 2, 5, 6, 1);
-		gridPane.add(beenden, 6, 6, 3, 1);
+		gridPane.add(beenden, 6, 7, 3, 1);
 	}
 	
 	public void textStyle(Text text) {

@@ -7,16 +7,19 @@ import javafx.stage.Stage;
 public class UserInterface extends Application {
 
 	private Stage stage = null;
-	private View start, training, kontrolle, ende;
+	private View start;
+	private Trainingsbildschirm training;
 
 	public UserInterface() {
-		start = new Startbildschirm(startButton -> showView(training));
+		start = new Startbildschirm((woertli) -> {
+			training.setWoertli(woertli);
+			showView(training);
+		});
 		training = new Trainingsbildschirm(
 				(korrekt, gesamt) -> showView(new Endbildschirm(korrekt, gesamt, beendenButton -> {
 					Platform.exit();
 					System.exit(0);
 				})));
-
 	}
 
 	@Override
