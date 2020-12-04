@@ -46,18 +46,18 @@ public class Endbildschirm implements View {
 		gridPane.add(beenden, 6, 7, 3, 1);
 	}
 	
-	public void textStyle(Text text) {
+	private void textStyle(Text text) {
 		text.setFont(new Font("Arial", 30));
 	}
 	
-	public void buttonStyle(Button button) {
+	private void buttonStyle(Button button) {
 		button.setMinWidth(115);
 		button.setMinHeight(50);
 		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		button.getStyle();
 	}
 	
-	public void gridpaneStyle(GridPane gridPane) {
+	private void gridpaneStyle(GridPane gridPane) {
 		gridPane.setStyle("-fx-background-color: #F7819F");
 		gridPane.setHgap(10);
 		gridPane.setHgap(10);

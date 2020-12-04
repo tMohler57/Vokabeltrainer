@@ -48,7 +48,7 @@ public class SetVokabeln {
 		return richtung;
 	}
 
-	public String themaWahl(String thema, String sprache) {
+	private String themaWahl(String thema, String sprache) {
 		switch (thema) {
 		case "Tiere":
 			if(sprache == "Französisch") {
