@@ -90,7 +90,8 @@ public class Startbildschirm implements View {
 		ObservableList<String> thema = 
 				FXCollections.observableArrayList(
 						"Tiere",
-						"Essen"
+						"Beruf",
+						"Tourismus"
 						);
 
 		final ComboBox<String> comboBox = new ComboBox<String>(thema);

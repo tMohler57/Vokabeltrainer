@@ -37,9 +37,11 @@ public class SetVokabeln {
 	public String themaWahl(String thema) {
 		switch (thema) {
 		case "Tiere":
-			return "src/main/java/com/vokabeltrainer/tiere - short.txt";
-		case "Essen":
-			return "src/main/java/com/vokabeltrainer/essen - short.txt";
+			return "src/main/java/com/vokabeltrainer/Animaux.txt";
+		case "Beruf":
+			return "src/main/java/com/vokabeltrainer/Profession.txt";
+		case "Tourismus":
+			return "src/main/java/com/vokabeltrainer/Tourisme.txt";
 		default:
 			throw new IllegalArgumentException("Es wurde kein gültiges Thema gewählt.");
 		}
