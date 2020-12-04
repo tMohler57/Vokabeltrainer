@@ -22,29 +22,29 @@ Tanja Mohler: Product Ownder / Entwicker
 1. [Releaseplan mit den Ausbaustufen](#releaseplan)
 1. [Dokumentation Sprint 1](#dokumentationSprint1)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
    1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+   1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
    1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
+   1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 3](#dokumentationSprint3)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Anreicherung der User Stories für die Umsetzung](#anreicherung)
    1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
-
+   1. [Erfahrungen und Anpassungen](#zusammenfassung)
 
 ## 1. Einleitung
 Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
+Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
 
 ### i. Ziele
-Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
+Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertieften.
 
 ### ii. Randbedingungen:
 - Die Programmierung der Anwendung erfolgt in Java.
@@ -65,7 +65,7 @@ Buildanleitung unabhängig vom Betriebssystem:
 ## 3. Kurze Bedienungsanleitung
 
 
-## 4. User Stories
+## 4. User Stories und Anreicherung der User Stories für die Umsetzung
 | **Titel** |   **User Stories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
 |:-----:|------|:-:|:-:|-----|
 | 1. Programm starten | Als Nutzer möchte ich das Programm starten können, um mit dem Vokabeltraining beginnen zu können. | 1 | 2 | Angenommen das Programm ist bereit, gestartet zu werden, wenn der Start-Button gedrückt wird, dann startet das Programm. |
@@ -111,23 +111,148 @@ Velocity von 16 Storypoints pro Sprint
 | 1 | Label erstellen | 15' |
 | 2 | Die Vokabel an der Stelle der Zufallszahl des Arrays "vokabeln" mithilfe des Labels ausgeben | 20' |
 
-### ii. Anreicherung der User Stories für die Umsetzung
-### iii. UML Package, Klassen- und Sequenzdiagramm
-### iv. Dokumentation wichtiger Code Snippets
-### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+#### User Story 4 - Übersetzung eingeben (15')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Textfeld erstellen | 15' |
 
+
+#### User Story 5 - Eingabe bestätigen (1h 45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Prüfen, ob Eingabe erlaut ist | 25' |
+| 2 | Label erstellen | 15' |
+| 3 | Auf dem Label eine Fehlermeldung ausgeben, falls die Eingabe nicht erlaubt ist | 10' |
+| 4 | Ins Textfeld eingegebenen Text einlesen und auf einer String-Variable “eingabe” speichern | 10' |
+| 5 | Button erstellen | 15' |
+| 6 | Action Handler programmieren | 30' |
+
+#### User Story 7 - Korrekte Übersetzung anzeigen (25')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Label erstellen | 15' |
+| 2 | Auf dem Label die passende Variable "uebersetzung ausgeben | 10' |
+
+#### User Story 8 - Programm beenden (45')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Button erstellen | 15' |
+| 2 | Action Handler programmieren | 30' |
+
+Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel vi.
+
+#### User Story 14 -Initialisierung (3h 50')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Grundstruktur des Programms erstellen (z.B. Klassen, Unterklassen, Main-Methode, usw.) | 2h |
+| 2 | layout des Programmfensters erstellen | 1h |
+| 3 | Erste Textdatei schreiben | 30' |
+| 4 | Textdatei einlesen | 20' |
+
+### ii. UML Package, Klassen- und Sequenzdiagramm
+### iii. Dokumentation wichtiger Code Snippets
+### iv. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### v. Erfahrungen und Anpassungen
+Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
+Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
+
+Somit sah der Releasplan für die Sprints 1 und 2 wie folgt aus:
+| **Sprint 1** |   **Sprint 2**  |
+|--------------|-----------------|
+| 1. Programm starten | 2. Vokabeln zufällig auswählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |
+| 5. Eingabe bestätigen | 10. Thema wählen |
+| 7. Korrekte Übersetzung anzeigen |  |
+| **8. Programm beenden** |  |
+| 14. Initialisierung |  |
+
+Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint 2 14 Story Points.
 
 ## 7. Dokumentation Sprint 2
 ### i. Taskliste für die Umsetzung der User Story
-### ii. Anreicherung der User Stories für die Umsetzung
-### iii. UML Package, Klassen- und Sequenzdiagramm
-### iv. Dokumentation wichtiger Code Snippets
-### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+#### User Story 2 - Vokabeln zufällig auswählen (35')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Eine Zufallszahl ermitteln, abhängig von der Anzahl der in der eingelesenen Textdatei vorhandenen Vokabeln | 20' |
+| 2 | Die Vokabeln auf einem String-Array “vokabeln” speichern | 15' |
 
+#### User Story 6 - Überseztung prüfen (1h)
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Übersetzung aus der Textdatei einlesen und auf einem String-Array “uebersetzung” speichern | 15' |
+| 2 | Prüfen, ob die Variablen “eingabe” und “uebersetzung” an der Stelle der zufallszahl gleich sind mit der Equals-Methode | 20' |
+| 3 | Label erstellen | 15' |
+| 4 | Auf dem Label ausgeben, ob die Eingabe richtig oder falsch war | 10' |
+
+#### User Story 9 - Überseztung prüfen (1h 10')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Integer-Variable “countKorrekt” erstellen und auf 0 setzen | 5' |
+| 2 | Den auf der Variable “countKorrekt” gespeicherten Wert bei jeder richtigen Antwort um 1 erhöhen | 10' |
+| 3 | Integer-Variable “countGesamt” erstellen und auf 0 setzen | 5' |
+| 4 | Den auf der Variable “countGesamt” gespeicherten Wert bei jeder richtigen und falschen Antwort um 1 erhöhen | 10' |
+| 5 | Double-Variable “erfolgsquote” erstellen | 5' |
+| 6 | Erfolgsquote in Prozent berechnen und auf der Variable “erfolgsquote” speichern | 10' |
+| 7 | Label erstellen | 15' |
+| 8 | Die auf den Variablen “countKorrekt”, “countGesamt” und “erfolgsquote” gespeicherten Werte auf dem Label ausgeben | 10' |
+
+#### User Story 10 - Thema wählen (3h 5')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Neue Textdateien schreiben | 1h 30' |
+| 2 | Die neuen Textdateien einlesen können | 20' |
+| 3 | So viele Buttons wie Textdateien erstellen / Dropdown-Menu erstellen | 30' |
+| 4 | Je nach gewähltem Thema zugehörige Textdatei einlesen | 20' |
+| 5 | Label erstellen | 15' |
+| 6 | Das gewählte Thema auf dem Label ausgeben | 10' |
+
+#### User Story 13 - Wiederholen schwieriger Vokabeln (1h 5')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | do-while-Schleife erstellen | 25' |
+| 2 | Array vom Typ boolean erstellen und zu jeder Vokabel | 15' |
+| 3 | do-while-Schleife erst beenden, wenn alle Vokabeln als richtig abgespeichert wurden | 10' |
+| 4 | Nur Vokabeln abfragen, die als falsch abgespeichert sind | 15' |
+
+### ii. UML Package, Klassen- und Sequenzdiagramm
+### iii. Dokumentation wichtiger Code Snippets
+### iv. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### v. Erfahrungen und Anpassungen
+Während der Bearbeitung des zweiten Sprints wurde die User Story 13 aus Sprint 3 vorgezogen und ebenfalls erledigt.
+
+Somit sah der Releasplan wie folgt aus:
+| **Sprint 1** |   **Sprint 2**  |   **Sprint 3**  |
+|--------------|-----------------|-----------------|
+| 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrihtung wählen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
+| 5. Eingabe bestätigen | 10. Thema wählen |  |
+| 7. Korrekte Übersetzung anzeigen | **13. Wiederholen schwieriger Vokabeln** | |
+| **8. Programm beenden** |  |  |
+| 14. Initialisierung |  |  |
 
 ## 8. Dokumentation Sprint 3
 ### i. Taskliste für die Umsetzung der User Story
-### ii. Anreicherung der User Stories für die Umsetzung
-### iii. UML Package, Klassen- und Sequenzdiagramm
-### iv. Dokumentation wichtiger Code Snippets
-### v. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+#### User Story 11 - Sprache wählen (3h 5')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Neue Textdateien schreiben | 1h 30' |
+| 2 | Die neuen Textdateien einlesen können | 20' |
+| 3 | So viele Buttons wie Sprachen erstellen / Dropdown-Menu erstellen | 30' |
+| 4 | Je nach gewählter Sprache zugehörige Textdatei einlesen | 20' |
+| 5 | Label erstellen | 15' |
+| 6 | Die gewählte Sprache auf dem Label ausgeben | 10' |
+
+#### User Story 12 - Übersetzungsrichtung wählen (1h 10')
+| **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
+|:--------:|:--------------------|:---------------------:|
+| 1 | Zwei Buttons erstellen / Dropdown-Menu | 30' |
+| 2 | Label erstellen | 15' |
+| 3 | Die gewählte Übersetzungsrichtung auf dem Label ausgeben | 10' |
+| 4 | Je nach gewählter Übersetzungsrichtung, die auf den Variablen “vokabel” und “uebersetzung” gespeicherten Strings miteinander vertauschen | 15' |
+
+### ii. UML Package, Klassen- und Sequenzdiagramm
+### iii. Dokumentation wichtiger Code Snippets
+### iv. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### v. Erfahrungen und Anpassungen

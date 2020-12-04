@@ -37,7 +37,7 @@ der Pinguin;le manchot
 der Papagei;le perroquet
 die Krähe;la corneille
 die Eule;la chouette
-das Huhn;le poule
+das Huhn;la poule
 der Thunfisch;le thon
 das Seepferdchen;l'hippocampe
 die Qualle;la méduse
@@ -47,4 +47,4 @@ die Wespe;la guêpe
 die Raupe;la chenille
 die Laus;le pou
 die Kakerlake;la blatte
-der hamster;le hamster
+der Hamster;le hamster
