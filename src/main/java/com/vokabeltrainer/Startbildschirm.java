@@ -117,13 +117,9 @@ public class Startbildschirm implements View {
 	}
 
 	private ComboBox<String> themaDropdown() {
-		ObservableList<String> thema = 
-				FXCollections.observableArrayList(
-						"Tiere",
-						"Tourismus",
-						"Beruf"
-						);
-
+		ObservableList<String> thema = FXCollections.observableArrayList();
+		for (VokabelDatei v : VokabelDatei.values()) thema.add(v.name());
+		
 		final ComboBox<String> comboBox = new ComboBox<String>(thema);
 		dropdownStyle(comboBox);
 		comboBox.setPromptText("Thema wählen");

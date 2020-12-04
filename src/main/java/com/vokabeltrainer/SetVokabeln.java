@@ -46,7 +46,6 @@ public class SetVokabeln {
 	public String themaWahl(String thema, String sprache) {
 		
 		return VokabelDatei.valueOf(thema).getFile(sprache);
-		//for (VokabelDatei v : VokabelDatei.values()) array.add(v.name());
 		
 	}
 }
