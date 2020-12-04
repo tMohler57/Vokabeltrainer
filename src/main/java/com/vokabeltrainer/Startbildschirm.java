@@ -21,8 +21,10 @@ public class Startbildschirm implements View {
 	private GridPane gridPane = new GridPane();
 	private String thema = null;
 	private String sprache = null;
+	private String richtung = null;
 	private boolean themaGewaehlt = false;
 	private boolean spracheGewaehlt = false;
+	private boolean richtungGewaehlt = false;
 
 	public Startbildschirm(Consumer<SetVokabeln> startEvent) {
 		Text willkommen = new Text("Willkommen zum Vokabeltraining!");
@@ -31,7 +33,7 @@ public class Startbildschirm implements View {
 		start.setVisible(false);
 		start.setOnAction(event -> {
 			SetVokabeln loadSet = new SetVokabeln();
-			loadSet.textdateiEinlesen(thema, sprache);
+			loadSet.textdateiEinlesen(thema, sprache, richtung);
 			startEvent.accept(loadSet);
 		});
 
@@ -39,6 +41,8 @@ public class Startbildschirm implements View {
 		ComboBox<String> themaDrop = themaDropdown();
 		Text spracheText = new Text("Wählen Sie eine Sprache: ");
 		ComboBox<String> spracheDrop = spracheDropdown();
+		Text richtungText = new Text("Wählen Sie die Übersetzungsrichtung: ");
+		ComboBox<String> richtungDrop = richtungDropdown();
 
 		themaDrop.setOnAction(new EventHandler <ActionEvent>() {			
 			@Override
@@ -47,7 +51,7 @@ public class Startbildschirm implements View {
 				if (choiceThema != null && !choiceThema.isEmpty()) {
 					thema = choiceThema;
 					themaGewaehlt = true;
-					if(spracheGewaehlt == true) {
+					if(spracheGewaehlt == true && richtungGewaehlt == true) {
 						start.setDisable(false);
 						start.setVisible(true);
 					}
@@ -62,7 +66,22 @@ public class Startbildschirm implements View {
 				if (choiceSprache != null && !choiceSprache.isEmpty()) {
 					sprache = choiceSprache;
 					spracheGewaehlt = true;
-					if(themaGewaehlt == true) {
+					if(themaGewaehlt == true && richtungGewaehlt) {
+						start.setDisable(false);
+						start.setVisible(true);
+					}
+				}	
+			}
+		});
+		
+		richtungDrop.setOnAction(new EventHandler <ActionEvent>() {			
+			@Override
+			public void handle(ActionEvent event) {
+				String choiceRichtung = richtungDrop.getValue();
+				if (choiceRichtung != null && !choiceRichtung.isEmpty()) {
+					richtung = choiceRichtung;
+					richtungGewaehlt = true;
+					if(themaGewaehlt == true && spracheGewaehlt == true) {
 						start.setDisable(false);
 						start.setVisible(true);
 					}
@@ -73,15 +92,18 @@ public class Startbildschirm implements View {
 		willkommen.setFont(new Font("Arial", 30));
 		textStyle(themaText);
 		textStyle(spracheText);
+		textStyle(richtungText);
 		buttonStyle(start);
 		gridpaneStyle(gridPane);
 
 		gridPane.add(willkommen, 1, 1, 6, 1);
-		gridPane.add(start, 7, 8, 2, 1);
+		gridPane.add(start, 7, 9, 2, 1);
 		gridPane.add(themaText, 1, 3, 3, 1);
 		gridPane.add(themaDrop, 7, 3, 2, 1);
 		gridPane.add(spracheText, 1, 5, 3, 1);
 		gridPane.add(spracheDrop, 7, 5, 2, 1);
+		gridPane.add(richtungText, 1, 7, 3, 1);
+		gridPane.add(richtungDrop, 7, 7, 2, 1);
 	}
 
 	private void textStyle(Text text) {
@@ -103,8 +125,10 @@ public class Startbildschirm implements View {
 		columnConstraints.setPercentWidth(10);
 		RowConstraints rowConstraints = new RowConstraints();
 		rowConstraints.setPercentHeight(20);
-		for (int i = 0; i < 10; i++) {
-			gridPane.getColumnConstraints().add(columnConstraints);
+		for (int i = 0; i < 11; i++) {
+			if (i < 10) {
+				gridPane.getColumnConstraints().add(columnConstraints);
+			}
 			gridPane.getRowConstraints().add(rowConstraints);
 		}
 	}
@@ -139,6 +163,19 @@ public class Startbildschirm implements View {
 						);
 
 		final ComboBox<String> comboBox = new ComboBox<String>(sprache);
+		dropdownStyle(comboBox);
+		
+		return comboBox;
+	}
+	
+	private ComboBox<String> richtungDropdown() {
+		ObservableList<String> richtung = 
+				FXCollections.observableArrayList(
+						"Deutsch --> Fremdsprache",
+						"Fremdsprache --> Deutsch"
+						);
+
+		final ComboBox<String> comboBox = new ComboBox<String>(richtung);
 		dropdownStyle(comboBox);
 		
 		return comboBox;

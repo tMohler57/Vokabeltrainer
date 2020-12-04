@@ -19,10 +19,14 @@ public class Endbildschirm implements View {
 		Text wiedersehen = new Text("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
 		Text count = new Text();
 		Text feedback = new Text();
+		Text glueckwunsch = new Text();
 		
 		double erfolgsquote = ( (double)korrekt / (double)gesamt ) * 100;
 		count.setText("Sie haben " + korrekt + " von " + gesamt + " Vokabeln richtig übersetzt.");
-		feedback.setText("Damit haben Sie eine Erfolgsquote von " + String.format("%,.2f", erfolgsquote) + "%");
+		feedback.setText("Damit liegt Ihre Erfolgsquote bei " + String.format("%,.2f", erfolgsquote) + "%.");
+		if (erfolgsquote >= 50.00) {
+			glueckwunsch.setText("Herzlichen Glückwunsch!");
+		}
 		
 		Button beenden = new Button("Programm beenden");
 		beenden.setOnAction(startEvent);
@@ -30,6 +34,7 @@ public class Endbildschirm implements View {
 		textStyle(wiedersehen);
 		textStyle(feedback);
 		textStyle(count);
+		textStyle(glueckwunsch);
 		buttonStyle(beenden);
 		beenden.setMinWidth(100);
 		gridpaneStyle(gridPane);
@@ -37,6 +42,7 @@ public class Endbildschirm implements View {
 		gridPane.add(wiedersehen, 1, 2, 7, 1);
 		gridPane.add(count, 2, 4, 6, 1);
 		gridPane.add(feedback, 2, 5, 6, 1);
+		gridPane.add(glueckwunsch, 2, 6, 6, 1);
 		gridPane.add(beenden, 6, 7, 3, 1);
 	}
 	

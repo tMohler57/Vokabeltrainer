@@ -7,11 +7,14 @@ import java.util.List;
 
 public class SetVokabeln {
 	
-	List <Vokabel> wort = new ArrayList <Vokabel>();
-	String file;
+	private List <Vokabel> wort = new ArrayList <Vokabel>();
+	private String file;
+	private String richtung;
 
-	public void textdateiEinlesen(String thema, String sprache) {
+	public void textdateiEinlesen(String thema, String sprache, String richtung) {
 		file = themaWahl(thema, sprache);
+		this.richtung = richtung;
+		
 		try (FileReader f = new FileReader(file)){
 			char[] c = new char[10000000];
 			f.read(c);
@@ -19,7 +22,12 @@ public class SetVokabeln {
 			String [] result = s.split(";|\n");		
 
 			for(int i = 0; i < result.length; i+=2) {
-				wort.add(new Vokabel(result[i].trim(), result[i + 1].trim()));
+				if (richtung == "Deutsch --> Fremdsprache") {
+					wort.add(new Vokabel(result[i].trim(), result[i + 1].trim()));
+				}
+				else if (richtung == "Fremdsprache --> Deutsch") {
+					wort.add(new Vokabel(result[i + 1].trim(), result[i].trim()));
+				}
 			}			
 		} 
 		catch(IOException e) {
@@ -34,6 +42,10 @@ public class SetVokabeln {
 	
 	public String getFile() {
 		return file;
+	}
+	
+	public String getRichtung() {
+		return richtung;
 	}
 
 	public String themaWahl(String thema, String sprache) {

@@ -24,6 +24,7 @@ public class Trainingsbildschirm implements View {
 	private List<Vokabel> aktuelleVokabeln, falscheVokabeln;
 	private Button weiter = new Button("Weiter");
 	private String sprache;
+	private String richtung;
 
 	public void setWoertli(SetVokabeln woertli) {
 		aktuelleVokabeln = woertli.getWort();
@@ -39,8 +40,9 @@ public class Trainingsbildschirm implements View {
 				woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourism-and-transport.txt" || 
 				woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-and-office.txt") {
 			this.sprache = "englisch";
-		}
-
+		}		
+		this.richtung = woertli.getRichtung();
+		
 		weiter.getOnAction().handle(null);
 	}
 
@@ -71,7 +73,12 @@ public class Trainingsbildschirm implements View {
 			bestaetigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
-			frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf " + sprache + "?");
+			if(richtung == "Deutsch --> Fremdsprache") {
+				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf " + sprache + "?");
+			}
+			else if(richtung == "Fremdsprache --> Deutsch") {
+				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf deutsch?");
+			}
 		});
 
 		bestaetigen.setOnAction(event -> {
