@@ -1,0 +1,50 @@
+Anstellung;employment
+Arbeitgeber;employer
+Arbeitnehmer;employee
+Experte;expert
+Beschäftigung;occupation
+Arbeitslosigkeit;unemployment
+Bewerbung;application
+Karriere;career
+Entlassung;layoff
+Kündigung;dismissal
+Vorstellungsgespräch;job interview
+Chance;chance
+Bewerbungsschreiben;letter of application
+Lebenslauf;curriculum vitae
+Stellenanzeige;job advertisement
+Berufserfahrung;work experience
+Anfänger;beginner
+Kompetenz;competence
+Büro;office
+Kopie;copy
+Visitenkarte;business card
+Unterlagen;documents
+Akte;file
+Korrespondenz;correspondence
+Notiz;note
+Papier;paper
+Blatt;sheet
+Stift;pen
+Füller;fountain pen
+Kugelschreiber;ballpoint pen
+Termin;appointment
+Liste;list
+Schere;scissors
+Lineal;ruler
+Radiergummi;ereaser
+Notizblock;notepad
+Kartei;index
+Karteikarte;index card
+Fotokopie;photocopy
+Kalender;calendar
+Besprechung;meeting
+Tabelle;table
+Präsentation;presentation
+Overheadprojektor;overhead projector
+Beamer;projector
+Taschenrechner;calculator
+Klebstoff;glue
+Büroklammer;paper clip
+Papierkorb;wastepaper basket
+Locher;hole punch

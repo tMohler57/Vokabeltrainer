@@ -1,5 +1,0 @@
-Brot;bread
-Wasser;water
-Reis;rice
-Käse;cheese
-Saft;juice

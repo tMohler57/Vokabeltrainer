@@ -30,19 +30,21 @@ public class Trainingsbildschirm implements View {
 		falscheVokabeln = new ArrayList<>();
 		Collections.shuffle(aktuelleVokabeln);
 		
-		if(woertli.getFile() == "src/main/java/com/vokabeltrainer/animaux - short.txt" 
-				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/manger - short.txt") {
-			this.sprache = "Französisch";
+		if(woertli.getFile() == "src/main/java/com/vokabeltrainer/Animaux.txt" 
+				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourisme-et-transport.txt" 
+				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-et-bureau.txt") {
+			this.sprache = "französisch";
 		}
-		else if(woertli.getFile() == "src/main/java/com/vokabeltrainer/animals - short.txt" 
-				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/food - short.txt") {
-			this.sprache = "Englisch";
+		else if(woertli.getFile() == "src/main/java/com/vokabeltrainer/Animals.txt" 
+				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Tourism-and-transport.txt" 
+				|| woertli.getFile() == "src/main/java/com/vokabeltrainer/Professions-and-office.txt") {
+			this.sprache = "englisch";
 		}
 
 		weiter.getOnAction().handle(null);
 	}
 
-	// BiConsumer gibt zwei Integer mit, imgegensatz zu EventHandler<ActionEvent> 
+	// BiConsumer gibt zwei Integer mit, im Gegensatz zu EventHandler<ActionEvent> 
 	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
 		Text frage = new Text(), loesung = new Text(), gepruefteEingabe = new Text();
 		TextField antwort = new TextField();
@@ -69,15 +71,7 @@ public class Trainingsbildschirm implements View {
 			bestaetigen.setDisable(false);
 			weiter.setVisible(false);
 			ende.setVisible(false);
-			switch(sprache) {
-			case "Französisch":
-				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf französisch?");
-				break;
-			case "Englisch":
-				frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf englisch?");
-				break;
-			
-			}
+			frage.setText("Was heißt '" + aktuelleVokabeln.get(index).getVokabel() + "' auf " + sprache + "?");
 		});
 
 		bestaetigen.setOnAction(event -> {
@@ -92,6 +86,7 @@ public class Trainingsbildschirm implements View {
 			weiter.setVisible(true);
 			ende.setVisible(true);
 			loesung.setText("Die richtige Lösung ist '" + aktuelleVokabeln.get(index).getUebersetzung() + "'.");
+			
 			if (eingabe.trim().equals(aktuelleVokabeln.get(index).getUebersetzung())) {
 				gepruefteEingabe.setText("Ihre Antwort ist richtig.");
 				loesung.setVisible(false);
@@ -124,7 +119,6 @@ public class Trainingsbildschirm implements View {
 		vboxStyle(vbox1);
 
 		scene = new Scene(vbox1, 1000, 500);
-
 	}
 
 	private void buttonStyle(Button button) {
@@ -154,6 +148,4 @@ public class Trainingsbildschirm implements View {
 	public Scene getScene() {
 		return scene;
 	}
-
-
 }

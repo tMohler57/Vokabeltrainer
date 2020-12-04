@@ -20,7 +20,6 @@ public class UserInterface extends Application {
 					Platform.exit();
 					System.exit(0);
 				})));
-
 	}
 
 	@Override
