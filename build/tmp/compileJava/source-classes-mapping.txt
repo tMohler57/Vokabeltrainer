@@ -1,0 +1,16 @@
+com/vokabeltrainer/View.java
+ com.vokabeltrainer.View
+com/vokabeltrainer/Main.java
+ com.vokabeltrainer.Main
+com/vokabeltrainer/Vokabel.java
+ com.vokabeltrainer.Vokabel
+com/vokabeltrainer/Startbildschirm.java
+ com.vokabeltrainer.Startbildschirm
+com/vokabeltrainer/Trainingsbildschirm.java
+ com.vokabeltrainer.Trainingsbildschirm
+com/vokabeltrainer/UserInterface.java
+ com.vokabeltrainer.UserInterface
+com/vokabeltrainer/Endbildschirm.java
+ com.vokabeltrainer.Endbildschirm
+com/vokabeltrainer/SetVokabeln.java
+ com.vokabeltrainer.SetVokabeln
