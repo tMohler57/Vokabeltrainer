@@ -1,8 +1,7 @@
-package com.vokabeltrainer;
+package com.vokabeltrainer.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -12,6 +11,9 @@ import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
+import com.vokabeltrainer.model.Vokabel;
+import com.vokabeltrainer.model.VokabelModel;
+
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -19,15 +21,22 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 @ExtendWith(ApplicationExtension.class)
-public class StartbildschirmTest {
+public class StartControllerTest {
 	
-	private SetVokabeln woertli;
+	private VokabelModel model;
+	private int gestartet;
 
 	@Start
 	public void start(Stage stage) {
-		woertli = null;
-		Startbildschirm startbildschirm = new Startbildschirm(woertli -> this.woertli = woertli);
-		stage.setScene(startbildschirm.getScene());
+		model = new VokabelModel();
+		gestartet = 0;
+		new StartController(model, stage) {
+			@Override
+			void weiter() {
+				model.ladeDatei();
+				gestartet++;
+			}
+		};
 		stage.show();
 	}
 	
@@ -37,14 +46,18 @@ public class StartbildschirmTest {
 		selectFromDropdown(robo, "#themaDropdown", "Tourismus");
 		assertFalse(startButton.isVisible());
 		selectFromDropdown(robo, "#spracheDropdown", "Englisch");
+		assertFalse(startButton.isVisible());
+		selectFromDropdown(robo, "#richtungDropdown", "Deutsch -> Fremdsprache");
 		assertTrue(startButton.isVisible());
 		selectFromDropdown(robo, "#themaDropdown", "Tiere");
 		selectFromDropdown(robo, "#spracheDropdown", "Französisch");
 		assertTrue(startButton.isVisible());
+		assertEquals(0, gestartet);
 		robo.clickOn(startButton);
-		assertNotNull(woertli);
-		assertEquals("Französisch", woertli.getSprache());
-		Vokabel v = woertli.getWort().get(0);
+		assertEquals(1, gestartet);
+		assertTrue(0 < model.getAktuelleVokabeln().size());
+		assertEquals("Französisch", model.getSprache());
+		Vokabel v = model.getAktuelleVokabeln().get(0);
 		assertEquals("der Fisch", v.getVokabel());
 		assertEquals("le poisson", v.getUebersetzung());
 	}

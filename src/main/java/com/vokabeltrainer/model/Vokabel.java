@@ -1,4 +1,4 @@
-package com.vokabeltrainer;
+package com.vokabeltrainer.model;
 
 public class Vokabel {
 	
@@ -13,14 +13,8 @@ public class Vokabel {
 	public String getVokabel() {
 		return vokabel;
 	}
-	public void setVokabel(String vokabel) {
-		this.vokabel = vokabel;
-	}
 	
 	public String getUebersetzung() {
 		return uebersetzung;
-	}
-	public void setUebersetzung(String uebersetzung) {
-		this.uebersetzung = uebersetzung;
 	}
 }
