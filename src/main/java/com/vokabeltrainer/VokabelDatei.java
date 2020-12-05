@@ -10,7 +10,7 @@ public enum VokabelDatei {
 		this.en = getFilePath(en);
 	}
 	private static String getFilePath(String name) {
-		return "/src/main/resources/com/vokabeltrainer/" + name + ".txt";
+		return "/com/vokabeltrainer/" + name + ".txt";
 	}
 	public String getFile(String sprache) {
 		switch (sprache) {

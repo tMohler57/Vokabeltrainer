@@ -1,10 +1,11 @@
 package com.vokabeltrainer;
 
+import java.util.Locale;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -15,21 +16,25 @@ public class Endbildschirm implements View {
 	
 	private GridPane gridPane = new GridPane();
 	
-	public Endbildschirm(int korrekt, int gesamt, EventHandler<ActionEvent> startEvent) {
+	public Endbildschirm(int korrekt, int gesamt, EventHandler<ActionEvent> programmBeenden) {
 		Text wiedersehen = new Text("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
 		Text count = new Text();
+		count.setId("countAusgabe");
 		Text feedback = new Text();
 		Text glueckwunsch = new Text();
+
+		feedback.setId("feedbackAusgabe");
 		
 		double erfolgsquote = ( (double)korrekt / (double)gesamt ) * 100;
 		count.setText("Sie haben " + korrekt + " von " + gesamt + " Vokabeln richtig übersetzt.");
-		feedback.setText("Damit liegt Ihre Erfolgsquote bei " + String.format("%,.2f", erfolgsquote) + "%.");
+		feedback.setText("Damit haben Sie eine Erfolgsquote von " + String.format(Locale.ENGLISH, "%.2f", erfolgsquote) + "%");
 		if (erfolgsquote >= 50.00) {
 			glueckwunsch.setText("Herzlichen Glückwunsch!");
 		}
 		
 		Button beenden = new Button("Programm beenden");
-		beenden.setOnAction(startEvent);
+		beenden.setId("beendenButton");
+		beenden.setOnAction(programmBeenden);
 		
 		textStyle(wiedersehen);
 		textStyle(feedback);

@@ -1,6 +1,5 @@
 package com.vokabeltrainer;
 
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import javafx.collections.FXCollections;
@@ -29,6 +28,7 @@ public class Startbildschirm implements View {
 	public Startbildschirm(Consumer<SetVokabeln> startEvent) {
 		Text willkommen = new Text("Willkommen zum Vokabeltraining!");
 		Button start = new Button("Start");
+		start.setId("startButton");
 		start.setDisable(true);
 		start.setVisible(false);
 		start.setOnAction(event -> {
@@ -39,8 +39,11 @@ public class Startbildschirm implements View {
 
 		Text themaText = new Text("Wählen Sie ein Thema: ");
 		ComboBox<String> themaDrop = themaDropdown();
+		themaDrop.setId("themaDropdown");
 		Text spracheText = new Text("Wählen Sie eine Sprache: ");
 		ComboBox<String> spracheDrop = spracheDropdown();
+		spracheDrop.setId("spracheDropdown");
+
 		Text richtungText = new Text("Wählen Sie die Übersetzungsrichtung: ");
 		ComboBox<String> richtungDrop = richtungDropdown();
 
@@ -51,6 +54,7 @@ public class Startbildschirm implements View {
 				if (choiceThema != null && !choiceThema.isEmpty()) {
 					thema = choiceThema;
 					themaGewaehlt = true;
+
 					if(spracheGewaehlt == true && richtungGewaehlt == true) {
 						start.setDisable(false);
 						start.setVisible(true);
@@ -82,6 +86,7 @@ public class Startbildschirm implements View {
 					richtung = choiceRichtung;
 					richtungGewaehlt = true;
 					if(themaGewaehlt == true && spracheGewaehlt == true) {
+
 						start.setDisable(false);
 						start.setVisible(true);
 					}

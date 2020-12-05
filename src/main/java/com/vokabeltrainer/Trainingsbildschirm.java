@@ -27,20 +27,24 @@ public class Trainingsbildschirm implements View {
 	private String richtung;
 
 	public void setWoertli(SetVokabeln woertli) {
-		aktuelleVokabeln = woertli.getWort();
-		falscheVokabeln = new ArrayList<>();
-		Collections.shuffle(aktuelleVokabeln);
-						
-		this.richtung = woertli.getRichtung();
 
+		falscheVokabeln = woertli.getWort();
+		aktuelleVokabeln = new ArrayList<>();
+		index = 1;
+		
+		this.richtung = woertli.getRichtung();
 		sprache = woertli.getSprache();
 		this.richtung = woertli.getRichtung();
-		
+
 		weiter.getOnAction().handle(null);
+	}
+	
+	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
+		this(true, trainingBeenden);
 	}
 
 	// BiConsumer gibt zwei Integer mit, im Gegensatz zu EventHandler<ActionEvent> 
-	public Trainingsbildschirm(BiConsumer<Integer,Integer> trainingBeenden) {
+	Trainingsbildschirm(boolean shuffle, BiConsumer<Integer,Integer> trainingBeenden) {
 		Text frage = new Text(), loesung = new Text(), gepruefteEingabe = new Text();
 		TextField antwort = new TextField();
 		Button ende = new Button("Beenden"), bestaetigen = new Button("Bestätigen");
@@ -49,15 +53,14 @@ public class Trainingsbildschirm implements View {
 
 		weiter.setOnAction(event -> {
 			if (index >= aktuelleVokabeln.size()) {
-				aktuelleVokabeln = falscheVokabeln;
-				falscheVokabeln = new ArrayList<>();
-				Collections.shuffle(aktuelleVokabeln);
-				index = 0;
-
-				if (aktuelleVokabeln.isEmpty()) {
+				if (falscheVokabeln.isEmpty()) {
 					trainingBeenden.accept(countKorrekt, countGesamt);
 					return;
 				}
+				aktuelleVokabeln = falscheVokabeln;
+				falscheVokabeln = new ArrayList<>();
+				if(shuffle) Collections.shuffle(aktuelleVokabeln);
+				index = 0;
 			}
 			antwort.clear();
 			antwort.setDisable(false);
