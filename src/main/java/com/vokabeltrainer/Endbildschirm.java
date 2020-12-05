@@ -1,5 +1,7 @@
 package com.vokabeltrainer;
 
+import java.util.Locale;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -23,7 +25,7 @@ public class Endbildschirm implements View {
 		
 		double erfolgsquote = ( (double)korrekt / (double)gesamt ) * 100;
 		count.setText("Sie haben " + korrekt + " von " + gesamt + " Vokabeln richtig übersetzt.");
-		feedback.setText("Damit haben Sie eine Erfolgsquote von " + String.format("%,.2f", erfolgsquote) + "%");
+		feedback.setText("Damit haben Sie eine Erfolgsquote von " + String.format(Locale.ENGLISH, "%.2f", erfolgsquote) + "%");
 		
 		Button beenden = new Button("Programm beenden");
 		beenden.setId("beendenButton");

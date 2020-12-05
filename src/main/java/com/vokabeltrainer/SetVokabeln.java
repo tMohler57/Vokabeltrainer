@@ -31,7 +31,7 @@ public class SetVokabeln {
 	}
 	
 	private void datenEinlesen(String datei) {
-		try (BufferedReader in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(datei)))) {
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(datei), "UTF-8"))) {
 			String zeile;
 			while ((zeile = in.readLine())!=null) {
 				String[] woerter = zeile.split(";");
