@@ -8,10 +8,10 @@ public class SetVokabelnTest {
 	
 	@Test
 	public void testDateiEinlesen() {
-		SetVokabeln wörtli = new SetVokabeln();
-		wörtli.textdateiEinlesen("Tiere", "Englisch");
-		assertEquals("Englisch", wörtli.getSprache());
-		Vokabel ersteVokabel = wörtli.getWort().get(0);
+		SetVokabeln woertli = new SetVokabeln();
+		woertli.textdateiEinlesen("Tiere", "Englisch");
+		assertEquals("Englisch", woertli.getSprache());
+		Vokabel ersteVokabel = woertli.getWort().get(0);
 		assertEquals("Fisch", ersteVokabel.getVokabel());
 		assertEquals("fish", ersteVokabel.getUebersetzung());
 	}

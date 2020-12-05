@@ -34,8 +34,8 @@ public class SetVokabeln {
 		try (BufferedReader in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(datei)))) {
 			String zeile;
 			while ((zeile = in.readLine())!=null) {
-				String[] wörter = zeile.split(";");
-				wort.add(new Vokabel(wörter[0].trim(), wörter[1].trim()));
+				String[] woerter = zeile.split(";");
+				wort.add(new Vokabel(woerter[0].trim(), woerter[1].trim()));
 			}
 
 		} catch (IOException e) {

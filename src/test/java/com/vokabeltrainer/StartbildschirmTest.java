@@ -21,12 +21,12 @@ import javafx.stage.Stage;
 @ExtendWith(ApplicationExtension.class)
 public class StartbildschirmTest {
 	
-	private SetVokabeln wörtli;
+	private SetVokabeln woertli;
 
 	@Start
 	public void start(Stage stage) {
-		wörtli = null;
-		Startbildschirm startbildschirm = new Startbildschirm(wörtli -> this.wörtli = wörtli);
+		woertli = null;
+		Startbildschirm startbildschirm = new Startbildschirm(woertli -> this.woertli = woertli);
 		stage.setScene(startbildschirm.getScene());
 		stage.show();
 	}
@@ -42,9 +42,9 @@ public class StartbildschirmTest {
 		selectFromDropdown(robo, "#spracheDropdown", "Französisch");
 		assertTrue(startButton.isVisible());
 		robo.clickOn(startButton);
-		assertNotNull(wörtli);
-		assertEquals("Französisch", wörtli.getSprache());
-		Vokabel v = wörtli.getWort().get(0);
+		assertNotNull(woertli);
+		assertEquals("Französisch", woertli.getSprache());
+		Vokabel v = woertli.getWort().get(0);
 		assertEquals("der Fisch", v.getVokabel());
 		assertEquals("le poisson", v.getUebersetzung());
 	}
