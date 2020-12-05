@@ -47,7 +47,8 @@ public class SetVokabeln {
 			} else {
 				while ((zeile = in.readLine()) != null) {
 					String[] woerter = zeile.split(";");
-					wort.add(new Vokabel(woerter[1].trim(), woerter[0].trim()));
+					String uebersetzung = woerter[0].trim();
+					wort.add(new Vokabel(woerter[1].trim(), uebersetzung));
 				}
 			}
 
