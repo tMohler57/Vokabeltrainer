@@ -34,6 +34,8 @@ public class TrainingsView extends View {
 		antwort = new TextField();
 		
 		bestaetigenButton = createButton("bestätigenButton", "Bestätigen");
+		bestaetigenButton.setMinWidth(100);
+		bestaetigenButton.setMinHeight(30);
 		bestaetigenButton.setOnAction(event-> bestaetigen.accept(antwort.getText()));
 		weiterButton = createButton("weiterButton", "Weiter");
 		weiterButton.setOnAction(event -> weiter.run());
@@ -83,22 +85,19 @@ public class TrainingsView extends View {
 	@Override
 	protected Button createButton(String id, String text) {
 		Button button = super.createButton(id, text);
-		button.setMinWidth(115);
-		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		return button;
 	}
 
 	@Override
 	protected Text createText(String text) {
 		Text t = super.createText(text);
-		t.setStyle("-fx-background-color: #F7819F");	
 		t.setFont(new Font("Arial", 20));
 		return t;
 	}
 
 	protected VBox createVBox(Node... children) {
 		VBox vbox = new VBox(children);
-		vbox.setStyle("-fx-background-color: #F7819F");
+		vbox.setStyle("-fx-background-color: #48d1CC");
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setPadding(new Insets(10,20,20,20));
 		vbox.setSpacing(15);

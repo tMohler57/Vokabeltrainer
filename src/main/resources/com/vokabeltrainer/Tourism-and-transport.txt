@@ -33,7 +33,7 @@ Kurve;curve
 abbiegen;to turn
 Bremse;brake
 bremsen;to brake
-blinken;mettre son clignotant
+blinken;to signal
 Rad;wheel
 Navi;satnav
 Panne haben;to break down

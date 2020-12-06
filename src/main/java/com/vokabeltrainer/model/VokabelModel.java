@@ -6,7 +6,7 @@ import java.util.List;
 
 public class VokabelModel {
 
-	private final List<String> verfuegbareSprachen = Arrays.asList("Englisch","Französisch");
+	private final List<String> verfuegbareSprachen = Arrays.asList("Englisch", "Französisch");
 
 	private int countKorrekt = 0;
 	private int countGesamt = 0;

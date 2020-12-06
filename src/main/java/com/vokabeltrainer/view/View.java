@@ -19,9 +19,10 @@ public abstract class View {
 	protected Button createButton(String id, String text) {
 		Button button = new Button(text);
 		button.setId(id);
-		button.setMinWidth(190);
+		button.setMinWidth(115);
 		button.setMinHeight(50);
-		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		button.setStyle("-fx-background-color: #008080; -fx-text-fill:  #FFFFFF; -fx-font-size: 1.3em; -fx-border-color: #FFFFFF; -fx-border-width: 2px");
+		button.getStyle();
 		return button;
 	}
 	

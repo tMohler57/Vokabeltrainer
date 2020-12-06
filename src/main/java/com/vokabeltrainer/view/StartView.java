@@ -30,6 +30,7 @@ public class StartView extends View {
 		willkommen.setFont(new Font("Arial", 30));
 
 		start = createButton("startButton", "Start");
+		start.setMinWidth(250);
 		start.setDisable(true);
 		start.setVisible(false);
 		start.setOnAction(event -> startEvent.run());
@@ -47,13 +48,13 @@ public class StartView extends View {
 		
 		GridPane gridPane = createGridPane();
 		gridPane.add(willkommen, 1, 1, 6, 1);
-		gridPane.add(start, 7, 9, 2, 1);
+		gridPane.add(start, 6, 9, 2, 1);
 		gridPane.add(themaText, 1, 3, 3, 1);
-		gridPane.add(themaDrop, 7, 3, 2, 1);
+		gridPane.add(themaDrop, 6, 3, 2, 1);
 		gridPane.add(spracheText, 1, 5, 3, 1);
-		gridPane.add(spracheDrop, 7, 5, 2, 1);
+		gridPane.add(spracheDrop, 6, 5, 2, 1);
 		gridPane.add(richtungText, 1, 7, 3, 1);
-		gridPane.add(richtungDrop, 7, 7, 2, 1);
+		gridPane.add(richtungDrop, 6, 7, 2, 1);
 		
 		scene = new Scene(gridPane, 1000, 500);
 	}
@@ -79,9 +80,9 @@ public class StartView extends View {
 
 	protected GridPane createGridPane() {
 		GridPane gridPane = new GridPane();
-		gridPane.setStyle("-fx-background-color: #F7819F");
+		gridPane.setStyle("-fx-background-color: #48d1CC");
 		gridPane.setHgap(10);
-		gridPane.setHgap(10);
+		gridPane.setVgap(10);
 		ColumnConstraints columnConstraints = new ColumnConstraints();
 		columnConstraints.setPercentWidth(10);
 		RowConstraints rowConstraints = new RowConstraints();
@@ -102,7 +103,7 @@ public class StartView extends View {
 		drop.setOnAction(action -> event.run());
 		drop.setMinWidth(250);
 		drop.setMinHeight(50);
-		drop.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		drop.setStyle("-fx-background-color: #D3d3d3; -fx-font-size: 1.3em; -fx-border-color: #FFFFFF; -fx-border-width: 2px");
 		return drop;
 	}
 

@@ -23,5 +23,4 @@ public class EndController extends Controller<EndView> {
 		Platform.exit();
 		System.exit(0);
 	}
-
 }
