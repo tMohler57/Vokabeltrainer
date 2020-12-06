@@ -21,7 +21,7 @@ public class StartController extends Controller<StartView>{
 		new TrainingsController(model, stage);
 	}
 	
-	private void dropdown() {
+	void dropdown() {
 		model.setThema(view.getThema());
 		model.setSprache(view.getSprache());
 		model.setRichtungUmkehren(view.isRichtungUmkehren());

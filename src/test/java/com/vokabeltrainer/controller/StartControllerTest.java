@@ -2,8 +2,10 @@ package com.vokabeltrainer.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,78 +13,108 @@ import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
+import com.vokabeltrainer.model.Thema;
 import com.vokabeltrainer.model.Vokabel;
 import com.vokabeltrainer.model.VokabelModel;
+import com.vokabeltrainer.view.StartView;
 
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 @ExtendWith(ApplicationExtension.class)
 public class StartControllerTest {
 	
-	private VokabelModel model;
-	private int gestartet;
+	private Stage mockStage;
+	private VokabelModel mockModel;
+	private StartView mockView;
+	private StartController controller;
+	
+	private Thema thema;
+	private String sprache;
+	private Boolean umkehren;
+	
+	private int enableCalled;
+	private Boolean lastEnabled;
+	private int dateiGeladen;
 
 	@Start
 	public void start(Stage stage) {
-		model = new VokabelModel();
-		gestartet = 0;
-		new StartController(model, stage) {
+		mockStage = stage;
+		mockModel = new VokabelModel() {
+			
 			@Override
-			void weiter() {
-				model.ladeDatei();
-				gestartet++;
+			public void ladeDatei() {
+				getAktuelleVokabeln().add(new Vokabel("Der Test", "Le Unit-Test"));
+				dateiGeladen++;
 			}
 		};
-		stage.show();
+		mockModel.setSprache("Englisch");
+		mockView = new StartView(mockModel, () -> {}, () -> {}) {
+			
+			@Override
+			public Thema getThema() {
+				return thema;
+			}
+			
+			@Override
+			public String getSprache() {
+				return sprache;
+			}
+			
+			@Override
+			public Boolean isRichtungUmkehren() {
+				return umkehren;
+			}
+			
+			@Override
+			public void enableStartButton(boolean enabled) {
+				enableCalled++;
+				lastEnabled = enabled;
+			}
+		};
+		controller = new StartController(mockModel, stage) {
+			
+			@Override
+			protected StartView createView() {
+				return mockView;
+			}
+			
+		};
+		enableCalled = 0;
+		lastEnabled = null;
+		dateiGeladen = 0;
 	}
 	
 	@Test
-	public void test(FxRobot robo) {
-		Button startButton = robo.lookup("#startButton").queryButton();
-		selectFromDropdown(robo, "#themaDropdown", "Tourismus");
-		assertFalse(startButton.isVisible());
-		selectFromDropdown(robo, "#spracheDropdown", "Englisch");
-		assertFalse(startButton.isVisible());
-		selectFromDropdown(robo, "#richtungDropdown", "Deutsch -> Fremdsprache");
-		assertTrue(startButton.isVisible());
-		selectFromDropdown(robo, "#themaDropdown", "Tiere");
-		selectFromDropdown(robo, "#spracheDropdown", "Französisch");
-		assertTrue(startButton.isVisible());
-		assertEquals(0, gestartet);
-		robo.clickOn(startButton);
-		assertEquals(1, gestartet);
-		assertTrue(0 < model.getAktuelleVokabeln().size());
-		assertEquals("Französisch", model.getSprache());
-		Vokabel v = model.getAktuelleVokabeln().get(0);
-		assertEquals("der Fisch", v.getVokabel());
-		assertEquals("le poisson", v.getUebersetzung());
+	public void testConstructor(FxRobot robo) {
+		robo.interact(() -> controller = new StartController(mockModel, mockStage));
+		assertTrue(controller.view instanceof StartView);
 	}
 	
-	// https://stackoverflow.com/questions/3369794/how-to-read-a-file-from-jar-in-java#3370096
-	private void selectFromDropdown(FxRobot robo, String comboBoxId, String itemToSelect) {
-	    ComboBox<String> actualComboBox = robo.lookup(comboBoxId).queryComboBox();
-	    for (Node child : actualComboBox.getChildrenUnmodifiable()) {
-	        if (child.getStyleClass().contains("arrow-button")) {
-	            Node arrowRegion = ((Pane) child).getChildren().get(0);
-	            robo.clickOn(arrowRegion);
-	            sleep(100);
-	            robo.clickOn(itemToSelect);
-	            return;
-	        }
-	    }
-	    fail("Couldn't find an arrow-button.");
+	@Test
+	public void testDropdown() {
+		thema = Thema.Tiere;
+		sprache = "Französisch";
+		umkehren = null;
+		controller.dropdown();
+		assertSame(thema, mockModel.getThema());
+		assertSame(sprache, mockModel.getSprache());
+		assertNull(mockModel.isRichtungUmkehren());
+		assertEquals(1, enableCalled);
+		assertFalse(lastEnabled);
+		
+		umkehren = true;
+		controller.dropdown();
+		assertTrue(mockModel.isRichtungUmkehren());
+		assertEquals(2, enableCalled);
+		assertTrue(lastEnabled);
+		
+		assertEquals(0, dateiGeladen);
 	}
 	
-	private void sleep(long millis) {
-		try {
-			Thread.sleep(millis);
-		}
-		catch (InterruptedException iexc) {
-			throw new RuntimeException(iexc);
-		}
+	@Test
+	public void testWeiter(FxRobot robo) {
+		robo.interact(() -> controller.weiter());
+		assertEquals(1, dateiGeladen);
+		assertNotSame(mockView.getScene(), mockStage.getScene());
 	}
 }

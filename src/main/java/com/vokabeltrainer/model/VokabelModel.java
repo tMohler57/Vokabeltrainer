@@ -10,15 +10,16 @@ public class VokabelModel {
 
 	private int countKorrekt = 0;
 	private int countGesamt = 0;
-	private List<Vokabel> aktuelleVokabeln = null, falscheVokabeln = null;
+	private final List<Vokabel> aktuelleVokabeln = new ArrayList<>(), falscheVokabeln = new ArrayList<>();
 	private Boolean richtungUmkehren = false;
 	private Thema thema = null;
 	private String sprache = null;
 	private int index = 0;
 
 	public void ladeDatei() {
-		aktuelleVokabeln = thema.datenEinlesen(sprache, richtungUmkehren);
-		falscheVokabeln = new ArrayList<>(aktuelleVokabeln.size());
+		aktuelleVokabeln.clear();
+		aktuelleVokabeln.addAll(thema.datenEinlesen(sprache, richtungUmkehren));
+		falscheVokabeln.clear();
 	}
 	
 	public List<String> getVerfuegbareSprachen() {

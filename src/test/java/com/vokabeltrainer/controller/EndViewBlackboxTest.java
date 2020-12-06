@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 @ExtendWith(ApplicationExtension.class)
-public class EndControllerTest {
+public class EndViewBlackboxTest {
 
 	private int wurdeBenutzt;
 
@@ -45,16 +45,6 @@ public class EndControllerTest {
 		assertNotNull(beenden);
 		assertEquals(0, wurdeBenutzt);
 		robo.clickOn(beenden);
-		sleep(1000);
 		assertEquals(1, wurdeBenutzt);
-	}
-	
-	private void sleep(long millis) {
-		try {
-			Thread.sleep(millis);
-		}
-		catch (InterruptedException iexc) {
-			throw new RuntimeException(iexc);
-		}
 	}
 }
