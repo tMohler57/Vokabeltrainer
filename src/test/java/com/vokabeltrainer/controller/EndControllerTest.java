@@ -1,7 +1,6 @@
 package com.vokabeltrainer.controller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,52 +8,54 @@ import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
+import com.vokabeltrainer.model.Thema;
+import com.vokabeltrainer.model.Vokabel;
 import com.vokabeltrainer.model.VokabelModel;
+import com.vokabeltrainer.view.EndView;
+import com.vokabeltrainer.view.StartView;
 
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 @ExtendWith(ApplicationExtension.class)
 public class EndControllerTest {
-
-	private int wurdeBenutzt;
-
+	
+	private Stage mockStage;
+	private VokabelModel mockModel;
+	private EndView mockView;
+	private EndController controller;
+	
+	private Boolean wuenscheEnabled;
+	
 	@Start
 	public void start(Stage stage) {
-		wurdeBenutzt = 0;
-		VokabelModel model = new VokabelModel();
-		model.setCountGesamt(30);
-		model.setCountKorrekt(5);
-		new EndController(model, stage) {
+		mockStage = stage;
+		mockModel = new VokabelModel();
+		mockModel.setCountGesamt(30);
+		mockModel.setCountKorrekt(21);
+		mockView = new EndView(mockModel, () -> {}, () -> {});
+				
+		controller = new EndController(mockModel, stage) {
 			
 			@Override
-			void programmBeenden() {
-				wurdeBenutzt++;
+			protected EndView createView() {
+				if (model.erfolgsquote() >= 50.00) wuenscheEnabled = true;
+				return mockView;
 			}
+			
 		};
-		stage.show();
-	}
-
-	@Test
-	public void test(FxRobot robo) {
-		assertEquals("Sie haben 5 von 30 Vokabeln richtig übersetzt.",
-				robo.lookup("#countAusgabe").queryText().getText());
-		assertEquals("Damit haben Sie eine Erfolgsquote von 16.67%",
-				robo.lookup("#feedbackAusgabe").queryText().getText());
-		Button beenden = robo.lookup("#beendenButton").queryButton();
-		assertNotNull(beenden);
-		assertEquals(0, wurdeBenutzt);
-		robo.clickOn(beenden);
-		sleep(1000);
-		assertEquals(1, wurdeBenutzt);
+		
+		wuenscheEnabled = null;
 	}
 	
-	private void sleep(long millis) {
-		try {
-			Thread.sleep(millis);
-		}
-		catch (InterruptedException iexc) {
-			throw new RuntimeException(iexc);
-		}
+	@Test
+	public void testConstructor(FxRobot robo) {
+		robo.interact(() -> controller = new EndController(mockModel, mockStage));
+		assertTrue(controller.view instanceof EndView);
 	}
+
+//	@Test
+//	public void testGlueckwuensche(Stage stage) {
+//		assertTrue(wuenscheEnabled);
+//	}
+	
 }

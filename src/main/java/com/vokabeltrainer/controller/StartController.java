@@ -25,7 +25,7 @@ public class StartController extends Controller<StartView>{
 	}
 	
 	// Auf dem Startbildschirm gibt es drei Dropdown-Menus zum Auswählen von Thema, Sprache und Übersetzungsrichtung sowie einen Start-Button.
-	private void dropdown() { 	
+	void dropdown() { 	
 		model.setThema(view.getThema());
 		model.setSprache(view.getSprache());
 		model.setRichtungUmkehren(view.isRichtungUmkehren());
