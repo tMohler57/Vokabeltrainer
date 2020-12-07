@@ -17,7 +17,7 @@ public class EndView extends View {
 	private final Scene scene;	
 	private final Text glueckwunsch;
 	
-	public EndView(VokabelModel mdl, Runnable programmBeenden) {
+	public EndView(VokabelModel mdl, Runnable programmBeenden, Runnable programmNeustarten) {
 		super(mdl);
 		
 		glueckwunsch = createText("");
@@ -32,6 +32,8 @@ public class EndView extends View {
 				
 		Button beenden = createButton("beendenButton", "Programm beenden");
 		beenden.setOnAction(event -> programmBeenden.run());
+		Button neustarten = createButton("neustartenButton", "Zurück zum Hauptmenu");
+		neustarten.setOnAction(event -> programmNeustarten.run());
 		
 		GridPane gridPane = createGridPane();		
 		gridPane.add(wiedersehen, 1, 2, 7, 1);
@@ -39,6 +41,7 @@ public class EndView extends View {
 		gridPane.add(feedback, 1, 5, 6, 1);
 		gridPane.add(glueckwunsch, 1, 6, 6, 1);
 		gridPane.add(beenden, 7, 7, 3, 1);
+		gridPane.add(neustarten, 5, 7, 3, 1);
 		
 		scene = new Scene(gridPane, 1000, 500);
 	}

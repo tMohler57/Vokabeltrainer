@@ -1,5 +1,9 @@
 package com.vokabeltrainer.controller;
 
+import java.io.IOException;
+
+import com.vokabeltrainer.Main;
+import com.vokabeltrainer.Vokabeltrainer;
 import com.vokabeltrainer.model.VokabelModel;
 import com.vokabeltrainer.view.EndView;
 
@@ -14,13 +18,18 @@ public class EndController extends Controller<EndView> {
 
 	@Override
 	protected EndView createView() {
-		EndView view = new EndView(model, this::programmBeenden);
+		EndView view = new EndView(model, this::programmBeenden, this::programmNeustarten);
 		if (model.erfolgsquote() >= 50.00) view.wuenscheGlueck();
 		return view;
 	}
-	
+
 	void programmBeenden() {
 		Platform.exit();
 		System.exit(0);
 	}
+
+	void programmNeustarten() {
+		new StartController(new VokabelModel(), stage);	
+	}
+
 }

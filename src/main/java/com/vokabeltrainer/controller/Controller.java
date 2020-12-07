@@ -15,7 +15,7 @@ public abstract class Controller<V extends View> {
 		this.model = model;
 		this.stage = stage;
 		view = createView();
-		view.showOn(stage);
+		view.showOn(stage); // Je nach 
 	}
 	
 	protected abstract V createView();

@@ -11,7 +11,7 @@ public class Vokabeltrainer extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		new StartController(new VokabelModel(), stage);
-		stage.show();
+		stage.show(); // Wird das Programm gestartet, so wird diese Stage gezeigt.
 	}
 
 	public static void main(String[] args) {
