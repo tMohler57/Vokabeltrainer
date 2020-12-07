@@ -15,8 +15,9 @@ public abstract class View {
 	protected View(VokabelModel model) {
 		this.model = model;
 	}
-
-	protected Button createButton(String id, String text) {
+	
+	// Das Grundformat der Buttons wird in dieser Methode festgelegt.
+	protected Button createButton(String id, String text) {		
 		Button button = new Button(text);
 		button.setId(id);
 		button.setMinWidth(115);
@@ -37,6 +38,7 @@ public abstract class View {
 		stage.setScene(getScene());
 	}
 	
+	// Das Grundformat der Texte wird in dieser Methode festgelegt.
 	protected Text createText(String text) {
 		Text t = new Text(text);
 		t.setFont(new Font("Arial", 22));

@@ -1,5 +1,6 @@
 package com.vokabeltrainer.model;
 
+// In dieser Klasse werden die Vokabeln und deren Übersetzungen gesetzt.
 public class Vokabel {
 	
 	private String vokabel;

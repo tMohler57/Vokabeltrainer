@@ -7,12 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum Thema {
+	// Je nach gewähltem Thema werden die Vokabeln aus einer anderen Textdatei genommen.
 	Tiere("Animaux", "Animals"), Berufe("Professions-et-bureau", "Professions-and-office"),
 	Tourismus("Tourisme-et-transport", "Tourism-and-transport");
 
 	private final String fr, en;
-
-	private Thema(String fr, String en) {
+	
+	// Je nach gewählter Sprache werden die Vokabeln aus einer anderen Textdatei genommen.
+	private Thema(String fr, String en) {	
 		this.fr = getFilePath(fr);
 		this.en = getFilePath(en);
 	}
@@ -37,6 +39,7 @@ public enum Thema {
 		} catch (IOException e) {
 			throw new RuntimeException("Datei einlesen fehlgeschlagen.", e);
 		}
-		return vokabeln;
+		// Nach dem Einlesen der Textdatei, werden die entsprechenden Vokabeln zurückgegeben.
+		return vokabeln;	
 	}
 }

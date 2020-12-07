@@ -41,12 +41,16 @@ public class TrainingsView extends View {
 		weiterButton.setOnAction(event -> weiter.run());
 		endeButton = createButton("beendenButton", "Beenden");
 		endeButton.setOnAction(action -> trainingBeenden.run());
-
+		
+		// Auf dem Trainingsbildschirm wird dem Benutzer angezeigt, welche Vokabeln er übersetzen soll. 
+		// Es gibt ein Textfeld, in welches er die Übersetzung eingeben kann.
+		// Seine Eingabe kann er mit einem Button bestätigen.
+		// Nach dem die richtige Übersetzung angezeigt wurde, kann der Benutzer entweder eine weitere Vokabel übersetzen oder das Programm beenden.
 		HBox hbox1 = createHBox(15, antwort, bestaetigenButton);
 		HBox hbox2 = createHBox(90, weiterButton, endeButton);
 		HBox hbox3 = createHBox(15, gepruefteEingabe);
 		VBox vbox1 = createVBox(frage, hbox1, hbox3, loesung, hbox2);
-
+		
 		scene = new Scene(vbox1, 1000, 500);
 		
 		nextVokabel();

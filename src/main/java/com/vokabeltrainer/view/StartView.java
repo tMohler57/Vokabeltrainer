@@ -46,6 +46,8 @@ public class StartView extends View {
 		richtungDrop = createComboBox("richtungDropdown", "Richtung wählen",
 				Arrays.asList("Deutsch -> Fremdsprache", "Fremdsprache -> Deutsch"), dropdownEvent);
 		
+		// Auf dem Startbildschirm wird der Benutzer aufgefordet, ein Thema, eine Sprache und eine Übersetzungsrichtung zu wählen. 
+		// Sobald er dies getan hat, erscheint ein Button, mit dem das Programm gestartet werden kann.
 		GridPane gridPane = createGridPane();
 		gridPane.add(willkommen, 1, 1, 6, 1);
 		gridPane.add(start, 6, 9, 2, 1);

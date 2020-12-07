@@ -32,7 +32,7 @@ Termin;appointment
 Liste;list
 Schere;scissors
 Lineal;ruler
-Radiergummi;ereaser
+Radiergummi;eraser
 Notizblock;notepad
 Kartei;index
 Karteikarte;index card

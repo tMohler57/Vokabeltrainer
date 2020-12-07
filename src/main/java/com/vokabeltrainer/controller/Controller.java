@@ -14,8 +14,9 @@ public abstract class Controller<V extends View> {
 	protected Controller(VokabelModel model, Stage stage) {
 		this.model = model;
 		this.stage = stage;
+		// Die Ansichten der verschiedenen Bildschirme werden angezeigt.
 		view = createView();
-		view.showOn(stage); // Je nach 
+		view.showOn(stage); 		
 	}
 	
 	protected abstract V createView();

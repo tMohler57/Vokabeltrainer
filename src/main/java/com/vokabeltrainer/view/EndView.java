@@ -35,6 +35,8 @@ public class EndView extends View {
 		Button neustarten = createButton("neustartenButton", "Zurück zum Hauptmenu");
 		neustarten.setOnAction(event -> programmNeustarten.run());
 		
+		// Auf dem Endbildschirm erscheint ein Text, der dem Benutzer seine Erfolgsquote anzeigt. 
+		// Es gibt einen Button, mit dem das Training neugestartet wird, und einen, mit dem es beendet wird.
 		GridPane gridPane = createGridPane();		
 		gridPane.add(wiedersehen, 1, 2, 7, 1);
 		gridPane.add(count, 1, 4, 6, 1);
