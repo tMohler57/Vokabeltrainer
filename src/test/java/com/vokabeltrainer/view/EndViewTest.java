@@ -1,4 +1,4 @@
-package com.vokabeltrainer.controller;
+package com.vokabeltrainer.view;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -15,36 +15,33 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 @ExtendWith(ApplicationExtension.class)
-public class EndViewBlackboxTest {
-
-	private int wurdeBenutzt;
-
+public class EndViewTest {
+	
+	private EndView view;
+	private int beendet;
+	
 	@Start
 	public void start(Stage stage) {
-		wurdeBenutzt = 0;
+		beendet = 0;
 		VokabelModel model = new VokabelModel();
 		model.setCountGesamt(30);
 		model.setCountKorrekt(5);
-		new EndController(model, stage) {
-			
-			@Override
-			void programmBeenden() {
-				wurdeBenutzt++;
-			}
-		};
+		view = new EndView(model, () -> beendet++);
+		view.showOn(stage);
 		stage.show();
 	}
-
+	
 	@Test
 	public void test(FxRobot robo) {
+		assertEquals(0, beendet);
 		assertEquals("Sie haben 5 von 30 Vokabeln richtig übersetzt.",
 				robo.lookup("#countAusgabe").queryText().getText());
 		assertEquals("Damit haben Sie eine Erfolgsquote von 16.67%",
 				robo.lookup("#feedbackAusgabe").queryText().getText());
 		Button beenden = robo.lookup("#beendenButton").queryButton();
 		assertNotNull(beenden);
-		assertEquals(0, wurdeBenutzt);
 		robo.clickOn(beenden);
-		assertEquals(1, wurdeBenutzt);
+		assertEquals(1, beendet);
 	}
+
 }
