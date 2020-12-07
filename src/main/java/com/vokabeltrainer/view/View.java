@@ -21,7 +21,7 @@ public abstract class View {
 		button.setId(id);
 		button.setMinWidth(115);
 		button.setMinHeight(50);
-		button.setStyle("-fx-background-color: #008080; -fx-text-fill:  #FFFFFF; -fx-font-size: 1.3em; -fx-border-color: #FFFFFF; -fx-border-width: 2px");
+		button.setStyle("-fx-background-color: #008080; -fx-text-fill: #FFFFFF; -fx-font-size: 1.3em; -fx-border-color: #FFFFFF; -fx-border-width: 2px");
 		button.getStyle();
 		return button;
 	}
