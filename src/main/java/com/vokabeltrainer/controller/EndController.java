@@ -1,9 +1,5 @@
 package com.vokabeltrainer.controller;
 
-import java.io.IOException;
-
-import com.vokabeltrainer.Main;
-import com.vokabeltrainer.Vokabeltrainer;
 import com.vokabeltrainer.model.VokabelModel;
 import com.vokabeltrainer.view.EndView;
 
