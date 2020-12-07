@@ -14,11 +14,10 @@ import javafx.scene.text.Text;
 
 public class EndView extends View {
 	
-	private final Scene scene;
-	
+	private final Scene scene;	
 	private final Text glueckwunsch;
 	
-	public EndView(VokabelModel mdl, Runnable programmBeenden) {
+	public EndView(VokabelModel mdl, Runnable programmBeenden, Runnable programmNeustarten) {
 		super(mdl);
 		
 		glueckwunsch = createText("");
@@ -33,13 +32,18 @@ public class EndView extends View {
 				
 		Button beenden = createButton("beendenButton", "Programm beenden");
 		beenden.setOnAction(event -> programmBeenden.run());
+		Button neustarten = createButton("neustartenButton", "Zurück zum Hauptmenu");
+		neustarten.setOnAction(event -> programmNeustarten.run());
 		
+		// Auf dem Endbildschirm erscheint ein Text, der dem Benutzer seine Erfolgsquote anzeigt. 
+		// Es gibt einen Button, mit dem das Training neugestartet wird, und einen, mit dem es beendet wird.
 		GridPane gridPane = createGridPane();		
 		gridPane.add(wiedersehen, 1, 2, 7, 1);
-		gridPane.add(count, 2, 4, 6, 1);
-		gridPane.add(feedback, 2, 5, 6, 1);
-		gridPane.add(glueckwunsch, 2, 6, 6, 1);
-		gridPane.add(beenden, 6, 7, 3, 1);
+		gridPane.add(count, 1, 4, 6, 1);
+		gridPane.add(feedback, 1, 5, 6, 1);
+		gridPane.add(glueckwunsch, 1, 6, 6, 1);
+		gridPane.add(beenden, 7, 7, 3, 1);
+		gridPane.add(neustarten, 5, 7, 3, 1);
 		
 		scene = new Scene(gridPane, 1000, 500);
 	}
@@ -58,15 +62,14 @@ public class EndView extends View {
 	@Override
 	protected Button createButton(String id, String text) {
 		Button button = super.createButton(id, text);
-		button.setMinWidth(115);
 		return button;
 	}
 	
 	protected GridPane createGridPane() {
 		GridPane gridPane = new GridPane();
-		gridPane.setStyle("-fx-background-color: #F7819F");
+		gridPane.setStyle("-fx-background-color: #48d1CC");
 		gridPane.setHgap(10);
-		gridPane.setHgap(10);
+		gridPane.setVgap(10);
 		ColumnConstraints columnConstraints = new ColumnConstraints();
 		columnConstraints.setPercentWidth(10);
 		RowConstraints rowConstraints = new RowConstraints();
@@ -82,5 +85,4 @@ public class EndView extends View {
 	public Scene getScene() {
 		return scene;
 	}
-
 }

@@ -5,8 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class VokabelModel {
-
-	private final List<String> verfuegbareSprachen = Arrays.asList("Englisch","Französisch");
+	
+	// Die Sprachen Englisch und Französisch stehen dem Benutzer zur Verfügung.
+	private final List<String> verfuegbareSprachen = Arrays.asList("Englisch", "Französisch");
 
 	private int countKorrekt = 0;
 	private int countGesamt = 0;
@@ -30,8 +31,9 @@ public class VokabelModel {
 		return richtungUmkehren;
 	}
 	
+	// Errechnen der Erfolgsquote
 	public double erfolgsquote() {
-		return ( (double)countKorrekt / (double)countGesamt ) * 100;
+		return ( (double)countKorrekt / (double)countGesamt ) * 100;	
 	}
 
 	public void setRichtungUmkehren(Boolean richtungUmkehren) {

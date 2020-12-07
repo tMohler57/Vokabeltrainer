@@ -34,17 +34,23 @@ public class TrainingsView extends View {
 		antwort = new TextField();
 		
 		bestaetigenButton = createButton("bestätigenButton", "Bestätigen");
+		bestaetigenButton.setMinWidth(100);
+		bestaetigenButton.setMinHeight(30);
 		bestaetigenButton.setOnAction(event-> bestaetigen.accept(antwort.getText()));
 		weiterButton = createButton("weiterButton", "Weiter");
 		weiterButton.setOnAction(event -> weiter.run());
 		endeButton = createButton("beendenButton", "Beenden");
 		endeButton.setOnAction(action -> trainingBeenden.run());
-
+		
+		// Auf dem Trainingsbildschirm wird dem Benutzer angezeigt, welche Vokabeln er übersetzen soll. 
+		// Es gibt ein Textfeld, in welches er die Übersetzung eingeben kann.
+		// Seine Eingabe kann er mit einem Button bestätigen.
+		// Nach dem die richtige Übersetzung angezeigt wurde, kann der Benutzer entweder eine weitere Vokabel übersetzen oder das Programm beenden.
 		HBox hbox1 = createHBox(15, antwort, bestaetigenButton);
 		HBox hbox2 = createHBox(90, weiterButton, endeButton);
 		HBox hbox3 = createHBox(15, gepruefteEingabe);
 		VBox vbox1 = createVBox(frage, hbox1, hbox3, loesung, hbox2);
-
+		
 		scene = new Scene(vbox1, 1000, 500);
 		
 		nextVokabel();
@@ -83,22 +89,19 @@ public class TrainingsView extends View {
 	@Override
 	protected Button createButton(String id, String text) {
 		Button button = super.createButton(id, text);
-		button.setMinWidth(115);
-		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
 		return button;
 	}
 
 	@Override
 	protected Text createText(String text) {
 		Text t = super.createText(text);
-		t.setStyle("-fx-background-color: #F7819F");	
 		t.setFont(new Font("Arial", 20));
 		return t;
 	}
 
 	protected VBox createVBox(Node... children) {
 		VBox vbox = new VBox(children);
-		vbox.setStyle("-fx-background-color: #F7819F");
+		vbox.setStyle("-fx-background-color: #48d1CC");
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setPadding(new Insets(10,20,20,20));
 		vbox.setSpacing(15);

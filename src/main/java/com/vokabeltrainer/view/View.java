@@ -15,13 +15,15 @@ public abstract class View {
 	protected View(VokabelModel model) {
 		this.model = model;
 	}
-
-	protected Button createButton(String id, String text) {
+	
+	// Das Grundformat der Buttons wird in dieser Methode festgelegt.
+	protected Button createButton(String id, String text) {		
 		Button button = new Button(text);
 		button.setId(id);
-		button.setMinWidth(190);
+		button.setMinWidth(115);
 		button.setMinHeight(50);
-		button.setStyle("-fx-background-color: #FAAC58; -fx-text-fill: #610B0B; -fx-font-size: 1.3em; -fx-border-color: #B40404; -fx-border-width: 2px;");
+		button.setStyle("-fx-background-color: #008080; -fx-text-fill: #FFFFFF; -fx-font-size: 1.3em; -fx-border-color: #FFFFFF; -fx-border-width: 2px");
+		button.getStyle();
 		return button;
 	}
 	
@@ -36,6 +38,7 @@ public abstract class View {
 		stage.setScene(getScene());
 	}
 	
+	// Das Grundformat der Texte wird in dieser Methode festgelegt.
 	protected Text createText(String text) {
 		Text t = new Text(text);
 		t.setFont(new Font("Arial", 22));

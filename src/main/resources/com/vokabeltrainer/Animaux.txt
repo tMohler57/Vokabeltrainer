@@ -27,10 +27,10 @@ der Löwe;le lion
 der Hase;le lièvre
 die Giraffe;la girafe
 das Flusspferd;l'hippopotame
-das Faultier;le paresseuc
+das Faultier;le paresseux
 das Eichhörnchen;l'écureuil
 der Bär;l'ours
-der Strauß;l'autruche
+der Strauss;l'autruche
 der Spatz;le moineau
 der Schwan;le cygne
 der Pinguin;le manchot

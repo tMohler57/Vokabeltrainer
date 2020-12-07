@@ -19,14 +19,16 @@ public class EndViewTest {
 	
 	private EndView view;
 	private int beendet;
+	private int weiter;
 	
 	@Start
 	public void start(Stage stage) {
 		beendet = 0;
+		weiter = 0;
 		VokabelModel model = new VokabelModel();
 		model.setCountGesamt(30);
 		model.setCountKorrekt(5);
-		view = new EndView(model, () -> beendet++);
+		view = new EndView(model, () -> beendet++, () -> weiter++);
 		view.showOn(stage);
 		stage.show();
 	}

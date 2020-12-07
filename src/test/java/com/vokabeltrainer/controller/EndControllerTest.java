@@ -32,7 +32,7 @@ public class EndControllerTest {
 		mockModel = new VokabelModel();
 		mockModel.setCountGesamt(30);
 		mockModel.setCountKorrekt(21);
-		mockView = new EndView(mockModel, () -> {});
+		mockView = new EndView(mockModel, () -> {}, () -> {});
 				
 		controller = new EndController(mockModel, stage) {
 			

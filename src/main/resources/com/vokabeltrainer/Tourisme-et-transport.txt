@@ -8,12 +8,12 @@ der Führerschein;le permis de conduire
 das Fahrrad;la bicyclette
 die Strecke;la route
 sich befinden;se trouver
-vor(wärts) fahren;avancer
+vorwärts fahren;avancer
 rückwärts fahren;reculer
 wenden;faire demi-tour
 die Ampel;le feu
 das Verkehrsschild;le panneau
-(an)halten;s'arrêter
+anhalten;s'arrêter
 über die Strasse gehen;traverser
 parken;garer
 das Benzin;l'essence

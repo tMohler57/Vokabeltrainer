@@ -8,12 +8,12 @@ Führerschein;driving license
 Fahrrad;bicycle
 Strecke;route
 sich befinden;to be located
-vor(wärts) fahren;to drive forwards
+vorwärts fahren;to drive forwards
 rückwärts fahren;to drive backwards
 wenden;to turn
-Ampel;traffic lights
+Ampeln;traffic lights
 Verkehrsschild;traffic sign
-(an)halten;to stop
+anhalten;to stop
 über die Strasse gehen;to cross the road
 parken;to park
 Benzin;petrol
@@ -33,7 +33,7 @@ Kurve;curve
 abbiegen;to turn
 Bremse;brake
 bremsen;to brake
-blinken;mettre son clignotant
+blinken;to signal
 Rad;wheel
 Navi;satnav
 Panne haben;to break down

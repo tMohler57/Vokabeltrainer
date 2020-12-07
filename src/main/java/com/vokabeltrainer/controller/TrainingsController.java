@@ -10,23 +10,27 @@ import com.vokabeltrainer.view.TrainingsView;
 import javafx.stage.Stage;
 
 public class TrainingsController extends Controller<TrainingsView> {
-
-	protected TrainingsController(VokabelModel model, Stage stage) {
+	
+	// Konstruktor des TrainingsControllers
+	protected TrainingsController(VokabelModel model, Stage stage) {	
 		super(model, stage);
 	}
-
+	
+	// Das Layout des Trainingsbildschirms ist in der Klasse TrainingsView definiert und wird hier aufgerufen.
 	@Override
-	protected TrainingsView createView() {
+	protected TrainingsView createView() {		
 		shuffle();
 		return new TrainingsView(model, this::bestaetigen, this::weiter, this::beenden);
 	}
 
 	private void bestaetigen(String eingabe) {
+		// Die Eingabe ist ungültig, wenn das Textfeld leer ist.
 		if (!eingabe.matches(".*[a-zA-Z].*")) {
-			view.eingabeUngueltig();
+			view.eingabeUngueltig();	
 			return;
 		}
 		
+		//Es wird geprüft, ob die eingegebene Übersetzung richtig ist.
 		boolean richtig = eingabe.trim().equals(model.getAktuelleVokabeln().get(model.getIndex()).getUebersetzung());
 		view.antwortAnzeigen(richtig);
 		
@@ -42,8 +46,9 @@ public class TrainingsController extends Controller<TrainingsView> {
 	private void weiter() {
 		List<Vokabel> aktuell = model.getAktuelleVokabeln(), falsch = model.getFalscheVokabeln();
 		if (model.getIndex() >= aktuell.size()) {
+			// Wenn alle Vokabeln einmal richtig übersetzt wurden, wird das Vokabeltraining beendet.
 			if (falsch.isEmpty()) {
-				beenden();
+				beenden();	
 				return;
 			}
 			
@@ -56,12 +61,13 @@ public class TrainingsController extends Controller<TrainingsView> {
 		
 		view.nextVokabel();
 	}
-
+	// Wird der Beenden-Button gedrückt oder wurden alle Vokabeln richtig beantwortet, so wechselt das Programm vom Trainingsbildschirm zum Endbildschirm.
 	private void beenden() {
-		new EndController(model, stage);
+		new EndController(model, stage);	
 	}
-
+	
+	// Die Vokabeln werden in einer zufälligen Reihenfolge abgefragt.
 	void shuffle() {
-		Collections.shuffle(model.getAktuelleVokabeln());
+		Collections.shuffle(model.getAktuelleVokabeln());	
 	}
 }

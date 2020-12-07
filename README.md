@@ -63,6 +63,23 @@ Buildanleitung unabhängig vom Betriebssystem:
 
 
 ## 3. Kurze Bedienungsanleitung
+Folgend wird beschrieben, wie die Anwendung funktioniert.
+- Anwendung gemäss Build-Anleitung starten.
+- Es öffnet sich das Startfenster.
+- Wählen Sie ein Thema, eine Sprache und die gewünschte Übersetzungsrichtung per Drop Down Menü aus.
+- Sobald Sie eine Auswahl für die drei Variablen getroffen haben, können Sie das Vokabeltraining mittels "Start" beginnen.
+- Sie werden nun aufgefordert, ein gegebenes Wort zu übersetzen.
+- Geben Sie die Übersetzung in das Eingabefeld ein.
+- Wenn Sie die Eingabe abgeschlossen haben, drücken Sie auf den Button "Bestätigen". (Beachten Sie, dass das Eingabefeld nicht leer bleiben darf!)
+  - Ist Ihre Eingabe richtig, wird Ihnen dies angezeigt. Sie können weiterfahren.
+  - Ist Ihre Eingabe falsch, werden Sie darauf aufmerksam gemacht und es wird Ihnen die richtige Antwort angezeigt. Sie können weiterfahren.
+- Wenn Sie mit dem Training weiterfahren wollen, drücken Sie auf "Weiter".
+  - Nun können Sie die Eingabe wie zuvor durchführen.
+- Wenn Sie das Training beenden wollen, drücken Sie auf "Beenden".
+  - Ihnen wird nun angezeigt, wie viele Vokabeln Sie geübt haben und wie viele Sie richtig beantwortet haben. Dies wird Ihnen auch als Prozentsatz angezeigt.
+  - Sie können das Programm nun mit "Programm beenden" beenden oder das Training mit "Zurück zum Hauptmenü" wiederholen.
+
+(Jedes Thema enthält 50 Wörter. Falsch eingegebene Wörter werden wiederholt. Wenn Sie also alle 50 Vokabeln richtig haben, gelangen Sie automatisch zum Endbildschirm.)
 
 
 ## 4. User Stories und Anreicherung der User Stories für die Umsetzung

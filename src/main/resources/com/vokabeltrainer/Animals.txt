@@ -30,7 +30,7 @@ Flusspferd;hippopotamus
 Faultier;sloth
 Eichhörnchen;squirrel
 Bär;bear
-Strauß;ostrich
+Strauss;ostrich
 Spatz;sparrow
 Schwan;swan
 Pinguin;penguin
