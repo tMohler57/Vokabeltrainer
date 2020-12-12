@@ -153,7 +153,7 @@ Velocity von 16 Storypoints pro Sprint
 #### User Story 5 - Eingabe bestätigen (1h 45')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
 |:--------:|:--------------------|:---------------------:|
-| 1 | Prüfen, ob Eingabe erlaut ist | 25' |
+| 1 | Prüfen, ob Eingabe erlaubt ist | 25' |
 | 2 | Label erstellen | 15' |
 | 3 | Auf dem Label eine Fehlermeldung ausgeben, falls die Eingabe nicht erlaubt ist | 10' |
 | 4 | Ins Textfeld eingegebenen Text einlesen und auf einer String-Variable “eingabe” speichern | 10' |
@@ -183,6 +183,26 @@ Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel iii.
 | 4 | Textdatei einlesen | 20' |
 
 ### ii. Dokumentation wichtiger Code Snippets
+private void bestaetigen(String eingabe) {
+		// Die Eingabe ist ungültig, wenn das Textfeld leer ist oder nur aus Sonderzeichen besteht.
+		if (!eingabe.matches(".*[a-zA-Z].*")) {
+			view.eingabeUngueltig();	
+			return;
+		}
+		
+		// Es wird geprüft, ob die eingegebene Übersetzung richtig ist.
+		boolean richtig = eingabe.trim().equals(model.getAktuelleVokabeln().get(model.getIndex()).getUebersetzung());
+		view.antwortAnzeigen(richtig);
+		
+		List<Vokabel> aktuell = model.getAktuelleVokabeln(), falsch = model.getFalscheVokabeln();
+		
+		if(richtig) model.setCountKorrekt(model.getCountKorrekt() + 1);
+		else falsch.add(aktuell.get(model.getIndex()));
+		
+		model.setCountGesamt(model.getCountGesamt() + 1);
+		model.setIndex(model.getIndex() + 1);;
+	}
+
 ### iii. Erfahrungen und Anpassungen
 Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
 Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
