@@ -317,6 +317,7 @@ In dieser Methode wird zunächts geprüft ob die Eingabe ins Textfeld gültig is
 		model.setIndex(model.getIndex() + 1);
 	}
 
+
 Dieser Code Snippet zeigt einen Teil der Umsetzung von User Storys 10 und 11. Er ist im Enum 'Themen' zu finden.
 Das Enum 'Thema' wurde erstellt, um die Themen und Sprachen den Textfiles zuzuordnen. Dies dient dazu, nicht zu jedem Textfile den ganzen Pfad eingeben zu müssen. Diese Funktion übernimmt die Methode 'getFilePath()'.
 
@@ -336,6 +337,7 @@ Das Enum 'Thema' wurde erstellt, um die Themen und Sprachen den Textfiles zuzuor
 		return "/com/vokabeltrainer/" + name + ".txt";
 	}
 
+
 Dieser Code Snippet ist in der Klasse 'TrainingsView' zu finden. Er representiert unter anderem einen Teil der User Story 3, sowie der User Storys 7 und 12.
 'nextVokabel()' entfernt die vorhergegangenen Anzeigen und Eingaben und bereitet den Bildschirm für die nächste Vokabel vor. Dies wird mit Hilfe von entfernen bzw. anzeigen von verschiedener Buttons und Texten erreicht. Anschliessend wird direkt auch die nächste Vokabel angezeigt, dazu muss die Sprache mit der Methode 'isRichtungUmkehren()' aus der Klasse 'VokabelModel' ermittelt werden.
 
@@ -351,7 +353,8 @@ Dieser Code Snippet ist in der Klasse 'TrainingsView' zu finden. Er representier
 		String sprache = model.isRichtungUmkehren() ? "Deutsch" : model.getSprache(); 
 		frage.setText("Was heißt '" + model.getAktuelleVokabeln().get(model.getIndex()).getVokabel() + "' auf " + sprache + "?");
 	}
-	
+
+
 Mit Hilfe dieses Code Snippets werden Drop Down Menüs erstellt. Die Methode befindet sich in der Klasse 'StartView' und wird für die User Storys 10, 11 und 12 jeweils einmal aufgerufen. Zunächst wird die Funktion des Drop Down Menüs festgelegt, bevor es formatiert wird.
 
 	protected ComboBox<String> createComboBox(String id, String prompt, List<String> items, Runnable event) {
