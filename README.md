@@ -70,8 +70,8 @@ Buildanleitung für Java Umgebung:
 - Zum Starten der Benutzeroberfläche muss die Datei Main.java mit "Run" ausgeführt werden.
 
 <img src="images/UTF-8.JPG" width="300" >
-Bild 1
-\
+Bild 1<br/><br/>
+
 <img src="images/Import.JPG" width="300" >
 Bild 2
 
