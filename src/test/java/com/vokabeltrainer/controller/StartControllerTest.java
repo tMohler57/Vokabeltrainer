@@ -113,8 +113,10 @@ public class StartControllerTest {
 	
 	@Test
 	public void testWeiter(FxRobot robo) {
+		assertSame(mockView.getScene(), mockStage.getScene());
 		robo.interact(() -> controller.weiter());
 		assertEquals(1, dateiGeladen);
+		// Testet das StartView von der Stage entfernt wurde
 		assertNotSame(mockView.getScene(), mockStage.getScene());
 	}
 }

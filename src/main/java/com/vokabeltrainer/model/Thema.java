@@ -22,14 +22,18 @@ public enum Thema {
 	private static String getFilePath(String name) {
 		return "/com/vokabeltrainer/" + name + ".txt";
 	}
-
+	
 	public List<Vokabel> datenEinlesen(String sprache, boolean richtungUmkehren) {
 		String datei = sprache.equals("Französisch") ? fr : en;
+		return Thema.dateiEinlesen(datei, richtungUmkehren);
+	}
+
+	public static List<Vokabel> dateiEinlesen(String datei, boolean richtungUmkehren) {
 		int index_vokabel = richtungUmkehren ? 1 : 0;
 		int index_uebersetzung = 1 - index_vokabel;
 		List<Vokabel> vokabeln = new ArrayList<>();
 		try (BufferedReader in = new BufferedReader(
-				new InputStreamReader(getClass().getResourceAsStream(datei), "UTF-8"))) {
+				new InputStreamReader(Thema.class.getResourceAsStream(datei), "UTF-8"))) {
 			String zeile;
 			while ((zeile = in.readLine()) != null) {
 				String[] woerter = zeile.split(";");

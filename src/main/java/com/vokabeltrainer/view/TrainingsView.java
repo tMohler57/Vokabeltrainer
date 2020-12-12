@@ -26,14 +26,18 @@ public class TrainingsView extends View {
 		this(true, mdl, bestaetigen, weiter, trainingBeenden);
 	}
 
-	TrainingsView(boolean shuffle, VokabelModel mdl, Consumer<String> bestaetigen, Runnable weiter, Runnable trainingBeenden) {
+	public TrainingsView(boolean shuffle, VokabelModel mdl, Consumer<String> bestaetigen, Runnable weiter, Runnable trainingBeenden) {
 		super(mdl);
 		frage = createText("");
+		frage.setId("frage");
 		loesung = createText("");
+		loesung.setId("loesung");
 		gepruefteEingabe = createText("");
+		gepruefteEingabe.setId("gepruefteEingabe");
 		antwort = new TextField();
+		antwort.setId("antwort");
 		
-		bestaetigenButton = createButton("bestätigenButton", "Bestätigen");
+		bestaetigenButton = createButton("bestaetigenButton", "Bestätigen");
 		bestaetigenButton.setMinWidth(100);
 		bestaetigenButton.setMinHeight(30);
 		bestaetigenButton.setOnAction(event-> bestaetigen.accept(antwort.getText()));
@@ -66,7 +70,7 @@ public class TrainingsView extends View {
 		endeButton.setVisible(false);
 		
 		String sprache = model.isRichtungUmkehren() ? "Deutsch" : model.getSprache(); 
-		frage.setText("Was heißt '" + model.getAktuelleVokabeln().get(model.getIndex()).getVokabel() + "' auf " + sprache + "?");
+		frage.setText("Was heisst '" + model.getAktuelleVokabeln().get(model.getIndex()).getVokabel() + "' auf " + sprache + "?");
 	}
 	
 	public void eingabeUngueltig() {

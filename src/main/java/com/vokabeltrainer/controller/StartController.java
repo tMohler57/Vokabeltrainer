@@ -20,7 +20,8 @@ public class StartController extends Controller<StartView>{
 	
 	// Wird der Start-Button gedrückt, so wechselt das Programm vom Startbildschirm zum Trainingsbildschirm.
 	void weiter() {
-		model.ladeDatei();		new TrainingsController(model, stage); 
+		model.ladeDatei();		
+		new TrainingsController(model, stage); 
 		
 	}
 	
