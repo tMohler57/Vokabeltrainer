@@ -24,16 +24,14 @@ Tanja Mohler: Product Ownder / Entwicker
 1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
 1. [Dokumentation Sprint 1](#dokumentationSprint1)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 3](#dokumentationSprint3)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Dokumentation wichtiger Code Snippets](#snippets)
    1. [Erfahrungen und Anpassungen](#zusammenfassung)
+1. [Dokumentation wichtiger Code Snippets](#snippets)
 
 ## 1. Einleitung
 Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
@@ -172,7 +170,7 @@ Velocity von 16 Storypoints pro Sprint
 | 1 | Button erstellen | 15' |
 | 2 | Action Handler programmieren | 30' |
 
-Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel iii.
+Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel ii.
 
 #### User Story 14 -Initialisierung (3h 50')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
@@ -182,28 +180,7 @@ Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel iii.
 | 3 | Erste Textdatei schreiben | 30' |
 | 4 | Textdatei einlesen | 20' |
 
-### ii. Dokumentation wichtiger Code Snippets
-private void bestaetigen(String eingabe) {
-		// Die Eingabe ist ungültig, wenn das Textfeld leer ist oder nur aus Sonderzeichen besteht.
-		if (!eingabe.matches(".*[a-zA-Z].*")) {
-			view.eingabeUngueltig();	
-			return;
-		}
-		
-		// Es wird geprüft, ob die eingegebene Übersetzung richtig ist.
-		boolean richtig = eingabe.trim().equals(model.getAktuelleVokabeln().get(model.getIndex()).getUebersetzung());
-		view.antwortAnzeigen(richtig);
-		
-		List<Vokabel> aktuell = model.getAktuelleVokabeln(), falsch = model.getFalscheVokabeln();
-		
-		if(richtig) model.setCountKorrekt(model.getCountKorrekt() + 1);
-		else falsch.add(aktuell.get(model.getIndex()));
-		
-		model.setCountGesamt(model.getCountGesamt() + 1);
-		model.setIndex(model.getIndex() + 1);;
-	}
-
-### iii. Erfahrungen und Anpassungen
+### ii. Erfahrungen und Anpassungen
 Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
 Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
 
@@ -266,8 +243,7 @@ Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint
 | 3 | do-while-Schleife erst beenden, wenn alle Vokabeln als richtig abgespeichert wurden | 10' |
 | 4 | Nur Vokabeln abfragen, die als falsch abgespeichert sind | 15' |
 
-### ii. Dokumentation wichtiger Code Snippets
-### iii. Erfahrungen und Anpassungen
+### ii. Erfahrungen und Anpassungen
 Bereits während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
 Deshalb wurde die User Story 13 vorgezogen und bereits im Sprint 2 bearbeitet.
 
@@ -302,8 +278,7 @@ Somit sah der Releasplan wie folgt aus:
 | 3 | Die gewählte Übersetzungsrichtung auf dem Label ausgeben | 10' |
 | 4 | Je nach gewählter Übersetzungsrichtung, die auf den Variablen “vokabel” und “uebersetzung” gespeicherten Strings miteinander vertauschen | 15' |
 
-### ii. Dokumentation wichtiger Code Snippets
-### iii. Erfahrungen und Anpassungen
+### ii. Erfahrungen und Anpassungen
 Während der Arbeit ist klar geworden, dass eine gewisse Flexibilität unentbehrlich ist. In Sprint 1 und 2 haben wir Storys vorgezogen, da es besser zum Workflow passte. Dies war dank Agilem Planning möglich.
 Aufgrund der vorgegangenen Änderungen, mussten in Sprint 3 nurnoch zwei User Storys bearbeitet werden.
 
@@ -317,3 +292,26 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 | 7. Korrekte Übersetzung anzeigen | **13. Wiederholen schwieriger Vokabeln** | |
 | **8. Programm beenden** |  |  |
 | 14. Initialisierung |  |  |
+
+## 11. Dokumentation wichtiger Code Snippets
+<?
+private void bestaetigen(String eingabe) {
+		// Die Eingabe ist ungültig, wenn das Textfeld leer ist oder nur aus Sonderzeichen besteht.
+		if (!eingabe.matches(".*[a-zA-Z].*")) {
+			view.eingabeUngueltig();	
+			return;
+		}
+		
+		//Es wird geprüft, ob die eingegebene Übersetzung richtig ist.
+		boolean richtig = eingabe.trim().equals(model.getAktuelleVokabeln().get(model.getIndex()).getUebersetzung());
+		view.antwortAnzeigen(richtig);
+		
+		List<Vokabel> aktuell = model.getAktuelleVokabeln(), falsch = model.getFalscheVokabeln();
+		
+		if(richtig) model.setCountKorrekt(model.getCountKorrekt() + 1);
+		else falsch.add(aktuell.get(model.getIndex()));
+		
+		model.setCountGesamt(model.getCountGesamt() + 1);
+		model.setIndex(model.getIndex() + 1);;
+	}
+?>
