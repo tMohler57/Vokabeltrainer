@@ -71,7 +71,7 @@ Buildanleitung für Java Umgebung:
 
 <img src="images/UTF-8.JPG" width="300" >
 Bild 1
-
+\
 <img src="images/Import.JPG" width="300" >
 Bild 2
 
