@@ -294,15 +294,17 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 | 14. Initialisierung |  |  |
 
 ## 11. Dokumentation wichtiger Code Snippets
-<?php
-private void bestaetigen(String eingabe) {
+Dieser Code Snippet zeigt einen Teil der Umsetzung von User Storys 5 und 9. Er ist in der Klasse 'TrainingsController' zu finden.
+In dieser Methode wird zunächts geprüft ob die Eingabe ins Textfeld gültig ist. Im Weiteren wird geprüft ob die eingegeben Übersetzung im Textfeld korrekt ist. Falls die Übersetzung richtig ist, wird die Methode 'antwortAnzeigen()' der Klasse 'View' aufgerufen und die richtige Übersetzung angezeigt. Zusätzlich wird die Klasse 'VokabelModel' aktualisiert. Der Zähler der korrekten und gesamten Vokabeln wird aktualisiert, um später die Erfolgsquote berechnen zu können.
+
+	private void bestaetigen(String eingabe) {
 		// Die Eingabe ist ungültig, wenn das Textfeld leer ist oder nur aus Sonderzeichen besteht.
 		if (!eingabe.matches(".*[a-zA-Z].*")) {
 			view.eingabeUngueltig();	
 			return;
 		}
 		
-		//Es wird geprüft, ob die eingegebene Übersetzung richtig ist.
+		// Es wird geprüft, ob die eingegebene Übersetzung richtig ist.
 		boolean richtig = eingabe.trim().equals(model.getAktuelleVokabeln().get(model.getIndex()).getUebersetzung());
 		view.antwortAnzeigen(richtig);
 		
@@ -312,6 +314,53 @@ private void bestaetigen(String eingabe) {
 		else falsch.add(aktuell.get(model.getIndex()));
 		
 		model.setCountGesamt(model.getCountGesamt() + 1);
-		model.setIndex(model.getIndex() + 1);;
+		model.setIndex(model.getIndex() + 1);
 	}
-?>
+
+Dieser Code Snippet zeigt einen Teil der Umsetzung von User Storys 10 und 11. Er ist im Enum 'Themen' zu finden.
+Das Enum 'Thema' wurde erstellt, um die Themen und Sprachen den Textfiles zuzuordnen. Dies dient dazu, nicht zu jedem Textfile den ganzen Pfad eingeben zu müssen. Diese Funktion übernimmt die Methode 'getFilePath()'.
+
+	// Je nach gewähltem Thema werden die Vokabeln aus einer anderen Textdatei genommen.
+	Tiere("Animaux", "Animals"), Berufe("Professions-et-bureau", "Professions-and-office"),
+	Tourismus("Tourisme-et-transport", "Tourism-and-transport");
+
+	private final String fr, en;
+	
+	// Je nach gewählter Sprache werden die Vokabeln aus einer anderen Textdatei genommen.
+	private Thema(String fr, String en) {	
+		this.fr = getFilePath(fr);
+		this.en = getFilePath(en);
+	}
+
+	private static String getFilePath(String name) {
+		return "/com/vokabeltrainer/" + name + ".txt";
+	}
+
+Dieser Code Snippet ist in der Klasse 'TrainingsView' zu finden. Er representiert unter anderem einen Teil der User Story 3, sowie der User Storys 7 und 12.
+'nextVokabel()' entfernt die vorhergegangenen Anzeigen und Eingaben und bereitet den Bildschirm für die nächste Vokabel vor. Dies wird mit Hilfe von entfernen bzw. anzeigen von verschiedener Buttons und Texten erreicht. Anschliessend wird direkt auch die nächste Vokabel angezeigt, dazu muss die Sprache mit der Methode 'isRichtungUmkehren()' aus der Klasse 'VokabelModel' ermittelt werden.
+
+	public void nextVokabel() {
+		antwort.clear();
+		antwort.setDisable(false);
+		loesung.setText(null);
+		gepruefteEingabe.setText(null);
+		bestaetigenButton.setDisable(false);
+		weiterButton.setVisible(false);
+		endeButton.setVisible(false);
+		
+		String sprache = model.isRichtungUmkehren() ? "Deutsch" : model.getSprache(); 
+		frage.setText("Was heißt '" + model.getAktuelleVokabeln().get(model.getIndex()).getVokabel() + "' auf " + sprache + "?");
+	}
+	
+Mit Hilfe dieses Code Snippets werden Drop Down Menüs erstellt. Die Methode befindet sich in der Klasse 'StartView' und wird für die User Storys 10, 11 und 12 jeweils einmal aufgerufen. Zunächst wird die Funktion des Drop Down Menüs festgelegt, bevor es formatiert wird.
+
+	protected ComboBox<String> createComboBox(String id, String prompt, List<String> items, Runnable event) {
+		ComboBox<String> drop = new ComboBox<String>(FXCollections.observableList(items));
+		drop.setId(id);
+		drop.setPromptText(prompt);
+		drop.setOnAction(action -> event.run());
+		drop.setMinWidth(250);
+		drop.setMinHeight(50);
+		drop.setStyle("-fx-background-color: #D3d3d3; -fx-font-size: 1.3em; -fx-border-color: #FFFFFF; -fx-border-width: 2px");
+		return drop;
+	}
