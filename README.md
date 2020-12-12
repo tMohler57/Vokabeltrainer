@@ -57,7 +57,7 @@ Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studi
 
 ## 2. Build-Anleitung
 Buildanleitung mit Git-Bash:
-- Ornder Pfad wählen mit dem Befehl "cd"
+- Ordner Pfad wählen mit dem Befehl "cd"
 - Repository von Git herunterladen mit "git clone https://github.com/tMohler57/Vokabeltrainer.git"
 - Sichergehen, dass der aktuellste Branch ausgewählt ist mit "git checkout release_3"
 - Gradle instanzieren mit "./graldew clean build" (Dabei ist zu beachten, dass der Ordenr Vokabeltrainer nicht geöffnet sein darf, da der clean Befehl sonst nicht ausgeführt werden kann. Für den build ist zu beachten, dass das Testfenster durch nichts verdeckt wird, da ansonten der Befehl build nicht korrekt ausgeführt werden kann.)
