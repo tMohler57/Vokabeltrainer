@@ -64,11 +64,16 @@ Buildanleitung manuell:
 
 Buildanleitung für Java Umgebung:
 - Sie benötigen eine Java Umgebung wie Eclipse oder IntelligiJ auf ihrem Computer.
-- Die Java Umgebung muss auf UTF-8 eingestellt sein. (Window->Preferences->General->Workspace)
-- Importieren des Gradle Projekts Vokabeltrainer (File->Import...->Existing Gradle Project)
+- Die Java Umgebung muss auf UTF-8 eingestellt sein. (Window->Preferences->General->Workspace) (Siehe Bild 1)
+- Importieren des Gradle Projekts Vokabeltrainer (File->Import...->Existing Gradle Project) (Siehe Bild 2)
 - Die .java-Dateien können per Doppelklick geöffnet werden.
 - Zum Starten der Benutzeroberfläche muss die Datei Main.java mit "Run" ausgeführt werden.
 
+<img src="images/UTF-8.JPG" width="300" >
+Bild 1
+
+<img src="images/Import.JPG" width="300" >
+Bild 2
 
 ## 3. Kurze Bedienungsanleitung
 Folgend wird beschrieben, wie die Anwendung funktioniert.
@@ -121,12 +126,40 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 
 Velocity von 16 Storypoints pro Sprint
 
-
 ## 6. UML Package, Klassen- und Sequenzdiagramm
 
+### Packagediagramm
+Mit dem Packagediagramm wird die Package Struktur dargestellt.
+
+<img src="images/Packagediagramm.jpg" width="500" >
+
+### Klassendiagramm
+Im Klassendiagramm ist die MVC-Struktur und die Beziehung zwischen den einzelnen Klassen deutlich zu erkennen.
+
+<img src="images/Klassendiagramm.jpg" width="1000" >
+
+### Sequenzdiagramm
+Das Sequenzdiagramm stellt den Ablauf des Programms dar. Erstellte Objekte sowie deren Lebensdauer werden verdeutlicht.
+
+<img src="images/Sequenzdiagramm.jpg" width="1000" >
 
 ## 7. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
+| **User Stories** |   **Getestet**  |  **Zugehörige Testklasse** |
+|:-----|:-----:|:-----:|
+| 1. Programm starten | JA | StartViewTest |
+| 2. Vokabeln zufällig auswählen | NEIN | - |
+| 3. Vokabeln anzeigen | JA | StartControllerTest |
+| 4. Übersetzung eingeben | NEIN | - |
+| 5. Eingabe bestätigen | NEIN | - |
+| 6. Übersetzung prüfen | NEIN | - |
+| 7. Korrekte Übersetzung anzeigen | JA | StartControllerTest |
+| 8. Programm beenden | JA | EndViewTest |
+| 9. Erfolgsquote | JA | EndViewTest |
+| 10. Thema wählen | JA | StartViewTest |
+| 11. Sprache wählen | JA | StartViewTest |
+| 12. Übersetzungsrichtung wählen | JA | StartViewTest |
+| 13. Wiederholen schwieriger Vokabeln | NEIN | - |
 
 ## 8. Dokumentation Sprint 1
 ### i. Taskliste für die Umsetzung der User Story
@@ -280,15 +313,16 @@ Somit sah der Releasplan wie folgt aus:
 
 ### ii. Erfahrungen und Anpassungen
 Während der Arbeit ist klar geworden, dass eine gewisse Flexibilität unentbehrlich ist. In Sprint 1 und 2 haben wir Storys vorgezogen, da es besser zum Workflow passte. Dies war dank Agilem Planning möglich.
-Aufgrund der vorgegangenen Änderungen, mussten in Sprint 3 nurnoch zwei User Storys bearbeitet werden.
+Nach dem Implementieren der Model View Controller Struktur wurde der Programmcode um einiges vereinfacht und damit übersichtlicher. Dies half dabei, sich besser im Code zurecht zu finden. 
+Aufgrund der vorgegangenen Änderungen, mussten in Sprint 3 nur noch zwei User Storys bearbeitet werden. Das war eine grosse Entlastung, da das Unit Testing sehr viel Zeit in Anspruch nahm.
 
 Der entgültige Releaseplan sah somit wie folgt aus:
 | **Sprint 1** |   **Sprint 2**  |   **Sprint 3**  |
 |--------------|-----------------|-----------------|
 | 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |
 | 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrichtung wählen |
-| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
-| 5. Eingabe bestätigen | 10. Thema wählen |  |
+| 4. Übersetzung eingeben | 9. Erfolgsquote | **UnitTesting** |
+| 5. Eingabe bestätigen | 10. Thema wählen | **Umstrukturierung zu MVC** |
 | 7. Korrekte Übersetzung anzeigen | **13. Wiederholen schwieriger Vokabeln** | |
 | **8. Programm beenden** |  |  |
 | 14. Initialisierung |  |  |
