@@ -8,11 +8,8 @@ import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
-import com.vokabeltrainer.model.Thema;
-import com.vokabeltrainer.model.Vokabel;
 import com.vokabeltrainer.model.VokabelModel;
 import com.vokabeltrainer.view.EndView;
-import com.vokabeltrainer.view.StartView;
 
 import javafx.stage.Stage;
 
@@ -33,6 +30,8 @@ public class EndControllerTest {
 		mockModel.setCountGesamt(30);
 		mockModel.setCountKorrekt(21);
 		mockView = new EndView(mockModel, () -> {}, () -> {});
+		
+		wuenscheEnabled = null;
 				
 		controller = new EndController(mockModel, stage) {
 			
@@ -44,7 +43,6 @@ public class EndControllerTest {
 			
 		};
 		
-		wuenscheEnabled = null;
 	}
 	
 	@Test
@@ -55,6 +53,7 @@ public class EndControllerTest {
 
 //	@Test
 //	public void testGlueckwuensche(Stage stage) {
+//		System.out.println(wuenscheEnabled);
 //		assertTrue(wuenscheEnabled);
 //	}
 	

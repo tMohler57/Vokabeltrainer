@@ -46,6 +46,8 @@ public class EndViewTest {
 		assertNotNull(beenden);
 		assertNotNull(weiter);
 		robo.clickOn(beenden);
+		assertEquals(0, neuGestartet);
+		assertEquals(1, beendet);
 		robo.clickOn(weiter);
 		assertEquals(1, beendet);
 		assertEquals(1, neuGestartet);
