@@ -294,7 +294,7 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 | 14. Initialisierung |  |  |
 
 ## 11. Dokumentation wichtiger Code Snippets
-<?
+<?php
 private void bestaetigen(String eingabe) {
 		// Die Eingabe ist ungültig, wenn das Textfeld leer ist oder nur aus Sonderzeichen besteht.
 		if (!eingabe.matches(".*[a-zA-Z].*")) {
