@@ -14,8 +14,8 @@ Tanja Mohler: Product Ownder / Entwicker
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#einleitung)
-   1. [Ziele](#ziele)
-   1. [Randbedingungen](#randbedingungen)
+   1. [Ziele]
+   1. [Randbedingungen]
 1. [Build-Anleitung](#build-anleitung)
 1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
 1. [User Stories](#userstories)
@@ -23,16 +23,17 @@ Tanja Mohler: Product Ownder / Entwicker
 1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
 1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
 1. [Dokumentation Sprint 1](#dokumentationSprint1)
-   1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Erfahrungen und Anpassungen](#zusammenfassung)
+   1. [Taskliste für die Umsetzung der User Story]
+   1. [Erfahrungen und Anpassungen]
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
-   1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Erfahrungen und Anpassungen](#zusammenfassung)
+   1. [Taskliste für die Umsetzung der User Story]
+   1. [Erfahrungen und Anpassungen]
 1. [Dokumentation Sprint 3](#dokumentationSprint3)
-   1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [Erfahrungen und Anpassungen](#zusammenfassung)
+   1. [Taskliste für die Umsetzung der User Story]
+   1. [Erfahrungen und Anpassungen]
 1. [Dokumentation wichtiger Code Snippets](#snippets)
 
+<a name="einleitung"/>
 ## 1. Einleitung
 Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
 Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
@@ -48,33 +49,49 @@ Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studi
 - Die Build-Automatisierung erfolgt mittels Maven.
 - Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
-
+<a name="build-anleitung"/>
 ## 2. Build-Anleitung
-Buildanleitung mit Git-Bash:
-- Ordner Pfad wählen mit dem Befehl "cd"
-- Repository von Git herunterladen mit "git clone https://github.com/tMohler57/Vokabeltrainer.git"
-- Sichergehen, dass der aktuellste Branch ausgewählt ist mit "git checkout release_3"
-- Gradle instanzieren mit "./graldew clean build" (Dabei ist zu beachten, dass der Ordenr Vokabeltrainer nicht geöffnet sein darf, da der clean Befehl sonst nicht ausgeführt werden kann. Für den build ist zu beachten, dass das Testfenster durch nichts verdeckt wird, da ansonten der Befehl build nicht korrekt ausgeführt werden kann.)
-- Programm starten mit "./gradlw run"
 
-Buildanleitung manuell:
-- Projekt herunterladen
-- Ordner mit folgendem Pfad öffnen: Vokabeltrainer/build/libs
-- Anwendung starten mit Doppelklick auf die Datei "Vokabeltrainer-all.jar"
+### Build Prozess mit Gradle
 
-Buildanleitung für Java Umgebung:
-- Sie benötigen eine Java Umgebung wie Eclipse oder IntelligiJ auf ihrem Computer.
-- Die Java Umgebung muss auf UTF-8 eingestellt sein. (Window->Preferences->General->Workspace) (Siehe Bild 1)
-- Importieren des Gradle Projekts Vokabeltrainer (File->Import...->Existing Gradle Project) (Siehe Bild 2)
-- Die .java-Dateien können per Doppelklick geöffnet werden.
-- Zum Starten der Benutzeroberfläche muss die Datei Main.java mit "Run" ausgeführt werden.
+Führen Sie folgende Befehle in der Git Bash aus, um das Projekt herunterzuladen und den Build-Vorgang einzuleiten:
 
-<img src="images/UTF-8.JPG" width="300" >
-Bild 1<br/><br/>
+	git clone https://github.com/tMohler57/Vokabeltrainer.git
+	cd Vokabeltrainer
+	git checkout release_3
+	./gradlew build
+
+Das Programm kann nun mit einem der folgenden Befehlen gestartet werden:
+
+	./gradlew run
+	java -jar ./build/libs/Vokabeltrainer-all.jar
+	
+Tests können mit diesem Befehl ausgeführt werden:
+
+	./gradlew test
+
+Für den Test ist zu beachten, dass das die sich öffnenden Fenster durch nichts verdeckt werden und die Maus nicht bewegt wird, da ansonten die automatisierten Unit Tests beeinträchtigt werden.
+Die Coverage kann unter dem Pfad "build/reports/coverage" im File "index.html" eingesehen werden. 
+
+### Projekt in Eclipse öffnen
+
+Eclipse kann den Projektordner als existierendes Gradle Projekt importieren. (File->Import...->Existing Gradle Project)
 
 <img src="images/Import.JPG" width="300" >
-Bild 2
 
+Zum Starten des Programms muss die Klasse com.vokabeltrainer.Main mit "Run" ausgeführt werden.
+
+Das Projekt wurde mit Java 11 unter Eclipse 2020-09 mit dem e(fx)clipse Plugin entwickelt.
+
+Bei Problemen mit Sonderzeichen muss der Standartzeichensatz auf UTF-8 eingestellt werden. (Window->Preferences->General->Workspace)
+
+<img src="images/UTF-8.JPG" width="300" >
+
+Falls Eclipse das Projekt nicht richtig importiert, kann dies in der Git Bash mit folgendem Befehl behoben werden:
+
+	./gradlew eclipse
+
+<a name="bedienungsanleitung"/>
 ## 3. Kurze Bedienungsanleitung
 Folgend wird beschrieben, wie die Anwendung funktioniert.
 - Anwendung gemäss Build-Anleitung starten.
@@ -94,7 +111,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 
 (Jedes Thema enthält 50 Wörter. Falsch eingegebene Wörter werden wiederholt. Wenn Sie also alle 50 Vokabeln richtig haben, gelangen Sie automatisch zum Endbildschirm.)
 
-
+<a name="ueserstories"/>
 ## 4. User Stories und Anreicherung der User Stories für die Umsetzung
 | **Titel** |   **User Stories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
 |:-----:|------|:-:|:-:|-----|
@@ -113,7 +130,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 | 13. Wiederholen schwieriger Vokabeln | Als Nutzer möchte ich Vokabeln, die ich falsch übersetzt habe, noch einmal wiederholen, um diese besser zu lernen. | 3 | 5 | Angenommen eine Übersetzung war inkorrekt, wenn der Nutzer alle zum jeweiligen Thema gehörenden Wörter einmal übersetzt hat, dann werden diese Vokabeln erneut abgefragt. |
 | 14. Initialisierung | Als Entwickler möchte ich eine Grundstruktur für mein Programm haben, um mich gut darin zurechtzufinden und alle nötigen Klassen und Dateien zur Verfügung zu haben. | 1 | 8 | Angenommen ich möchte mein Programm schreiben, wenn bereits eine Grundstruktur vorhanden ist, dann ist es einfach, den Überblick zu behalten. |
 
-
+<a name="releaseplan"/>
 ## 5. Releaseplan
 | **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
 |----|----|----|
@@ -126,6 +143,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 
 Velocity von 16 Storypoints pro Sprint
 
+<a name="klassendiagramm"/>
 ## 6. UML Package, Klassen- und Sequenzdiagramm
 
 ### Packagediagramm
@@ -143,24 +161,28 @@ Das Sequenzdiagramm stellt den Ablauf des Programms dar. Erstellte Objekte sowie
 
 <img src="images/Sequenzdiagramm.jpg" width="1000" >
 
+<a name="testfälle"/>
 ## 7. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+
+Die manuellen Testfälle fallen weg. Sie wurden ersetzt durch Unit Tests mit der TestFX Library, welche einen User simulieren kann. Die Tests funktionieren somit vollautomatisch.
 
 | **User Stories** |   **Getestet**  |  **Zugehörige Testklasse** |
 |:-----|:-----:|:-----:|
 | 1. Programm starten | JA | StartViewTest |
 | 2. Vokabeln zufällig auswählen | NEIN | - |
-| 3. Vokabeln anzeigen | JA | StartControllerTest |
-| 4. Übersetzung eingeben | NEIN | - |
-| 5. Eingabe bestätigen | NEIN | - |
-| 6. Übersetzung prüfen | NEIN | - |
-| 7. Korrekte Übersetzung anzeigen | JA | StartControllerTest |
+| 3. Vokabeln anzeigen | JA | TrainingsViewTest |
+| 4. Übersetzung eingeben | JA | TrainingsViewTest |
+| 5. Eingabe bestätigen | JA | TrainingsViewTest |
+| 6. Übersetzung prüfen | JA | TrainingsControllerTest |
+| 7. Korrekte Übersetzung anzeigen | JA | TrainingsViewTest |
 | 8. Programm beenden | JA | EndViewTest |
 | 9. Erfolgsquote | JA | EndViewTest |
 | 10. Thema wählen | JA | StartViewTest |
 | 11. Sprache wählen | JA | StartViewTest |
 | 12. Übersetzungsrichtung wählen | JA | StartViewTest |
-| 13. Wiederholen schwieriger Vokabeln | NEIN | - |
+| 13. Wiederholen schwieriger Vokabeln | JA | TrainingsControllerTest |
 
+<a name="dokumentationSprint1"/>
 ## 8. Dokumentation Sprint 1
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 1 - Programm starten (45')
@@ -230,6 +252,7 @@ Somit sah der Releasplan für die Sprints 1 und 2 wie folgt aus:
 
 Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint 2 14 Story Points.
 
+<a name="dokumentationSprint2"/>
 ## 9. Dokumentation Sprint 2
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 2 - Vokabeln zufällig auswählen (35')
@@ -291,6 +314,7 @@ Somit sah der Releasplan wie folgt aus:
 | **8. Programm beenden** |  |  |
 | 14. Initialisierung |  |  |
 
+<a name="dokumentationSprint3"/>
 ## 10. Dokumentation Sprint 3
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 11 - Sprache wählen (3h 5')
@@ -327,6 +351,7 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 | **8. Programm beenden** |  |  |
 | 14. Initialisierung |  |  |
 
+<a name="snippets"/>
 ## 11. Dokumentation wichtiger Code Snippets
 Dieser Code Snippet zeigt einen Teil der Umsetzung von User Storys 5 und 9. Er ist in der Klasse 'TrainingsController' zu finden.
 In dieser Methode wird zunächts geprüft ob die Eingabe ins Textfeld gültig ist. Im Weiteren wird geprüft ob die eingegeben Übersetzung im Textfeld korrekt ist. Falls die Übersetzung richtig ist, wird die Methode 'antwortAnzeigen()' der Klasse 'View' aufgerufen und die richtige Übersetzung angezeigt. Zusätzlich wird die Klasse 'VokabelModel' aktualisiert. Der Zähler der korrekten und gesamten Vokabeln wird aktualisiert, um später die Erfolgsquote berechnen zu können.
