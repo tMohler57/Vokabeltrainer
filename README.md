@@ -56,10 +56,24 @@ Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studi
 
 
 ## 2. Build-Anleitung
-Buildanleitung unabhängig vom Betriebssystem:
-- Sie benötigen eine Java Umgebung auf ihrem Computer.
+Buildanleitung mit Git-Bash:
+- Ornder Pfad wählen mit dem Befehl "cd"
+- Repository von Git herunterladen mit "git clone https://github.com/tMohler57/Vokabeltrainer.git"
+- Sichergehen, dass der aktuellste Branch ausgewählt ist mit "git checkout release_3"
+- Gradle instanzieren mit "./graldew clean build" (Dabei ist zu beachten, dass der Ordenr Vokabeltrainer nicht geöffnet sein darf, da der clean Befehl sonst nicht ausgeführt werden kann.)
+- Programm starten mit "./gradlw run"
+
+Buildanleitung manuell:
+- Projekt herunterladen
+- Ornder mit folgendem Pfad öffnen: Vokabeltrainer/build/libs
+- Anwendung starten mit Doppelklick auf die Datei "Vokabeltrainer-all.jar"
+
+Buildanleitung für Java Umgebung:
+- Sie benötigen eine Java Umgebung wie Eclipse oder IntelligiJ auf ihrem Computer.
+- Die Java Umgebung muss auf UTF-8 umgestellt werden. (Window->Preferences->General->Workspace)
+- Importieren des Gradle Projekts Vokabeltrainer (File->Import...->Existing Gradle Project)
 - Die .java-Dateien können per Doppelklick geöffnet werden.
-- Zum Starten der Benutzeroberfläche muss die Datei Launcher.java ausgeführt werden.
+- Zum Starten der Benutzeroberfläche muss die Datei Main.java ausgeführt werden.
 
 
 ## 3. Kurze Bedienungsanleitung
