@@ -90,7 +90,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
   - Nun können Sie die Eingabe wie zuvor durchführen.
 - Wenn Sie das Training beenden wollen, drücken Sie auf "Beenden".
   - Ihnen wird nun angezeigt, wie viele Vokabeln Sie geübt haben und wie viele Sie richtig beantwortet haben. Dies wird Ihnen auch als Prozentsatz angezeigt.
-  - Sie können das Programm nun mit "Programm beenden" beenden oder das Training mit "Zurück zum Hauptmenü" wiederholen.
+  - Sie können das Programm nun mit "Programm beenden" beenden oder das Training mit "Zurück zum Hauptmenü" wiederholen oder ein neues Training wählen.
 
 (Jedes Thema enthält 50 Wörter. Falsch eingegebene Wörter werden wiederholt. Wenn Sie also alle 50 Vokabeln richtig haben, gelangen Sie automatisch zum Endbildschirm.)
 
@@ -195,7 +195,7 @@ Das Sequenzdiagramm stellt den Ablauf des Programms dar. Erstellte Objekte sowie
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
 |:--------:|:--------------------|:---------------------:|
 | 1 | Label erstellen | 15' |
-| 2 | Auf dem Label die passende Variable "uebersetzung ausgeben | 10' |
+| 2 | Auf dem Label die passende Variable "uebersetzung" ausgeben | 10' |
 
 #### User Story 8 - Programm beenden (45')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
@@ -313,7 +313,7 @@ Somit sah der Releasplan wie folgt aus:
 
 ### ii. Erfahrungen und Anpassungen
 Während der Arbeit ist klar geworden, dass eine gewisse Flexibilität unentbehrlich ist. In Sprint 1 und 2 haben wir Storys vorgezogen, da es besser zum Workflow passte. Dies war dank Agilem Planning möglich.
-Nach dem Implementieren der Model View Controller Struktur wurde der Programmcode um einiges vereinfacht und damit übersichtlicher. Dies half dabei, sich besser im Code zurecht zu finden. 
+Nach dem Implementieren der Model View Controller Struktur wurde der Programmcode um einiges vereinfacht und damit übersichtlicher. Dies half dabei, sich besser im Code zurechtzufinden. 
 Aufgrund der vorgegangenen Änderungen, mussten in Sprint 3 nur noch zwei User Storys bearbeitet werden. Das war eine grosse Entlastung, da das Unit Testing sehr viel Zeit in Anspruch nahm.
 
 Der entgültige Releaseplan sah somit wie folgt aus:
