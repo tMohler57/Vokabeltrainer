@@ -248,13 +248,14 @@ Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint
 
 ### ii. Dokumentation wichtiger Code Snippets
 ### iii. Erfahrungen und Anpassungen
-Während der Bearbeitung des zweiten Sprints wurde die User Story 13 aus Sprint 3 vorgezogen und ebenfalls erledigt.
+Bereits während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
+Deshalb wurde die User Story 13 vorgezogen und bereits im Sprint 2 bearbeitet.
 
 Somit sah der Releasplan wie folgt aus:
 | **Sprint 1** |   **Sprint 2**  |   **Sprint 3**  |
 |--------------|-----------------|-----------------|
 | 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |
-| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrihtung wählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrichtung wählen |
 | 4. Übersetzung eingeben | 9. Erfolgsquote |  |
 | 5. Eingabe bestätigen | 10. Thema wählen |  |
 | 7. Korrekte Übersetzung anzeigen | **13. Wiederholen schwieriger Vokabeln** | |
@@ -283,3 +284,16 @@ Somit sah der Releasplan wie folgt aus:
 
 ### ii. Dokumentation wichtiger Code Snippets
 ### iii. Erfahrungen und Anpassungen
+Während der Arbeit ist klar geworden, dass eine gewisse Flexibilität unentbehrlich ist. In Sprint 1 und 2 haben wir Storys vorgezogen, da es besser zum Workflow passte. Dies war dank Agilem Planning möglich.
+Aufgrund der vorgegangenen Änderungen, mussten in Sprint 3 nurnoch zwei User Storys bearbeitet werden.
+
+Der entgültige Releaseplan sah somit wie folgt aus:
+| **Sprint 1** |   **Sprint 2**  |   **Sprint 3**  |
+|--------------|-----------------|-----------------|
+| 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |
+| 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrichtung wählen |
+| 4. Übersetzung eingeben | 9. Erfolgsquote |  |
+| 5. Eingabe bestätigen | 10. Thema wählen |  |
+| 7. Korrekte Übersetzung anzeigen | **13. Wiederholen schwieriger Vokabeln** | |
+| **8. Programm beenden** |  |  |
+| 14. Initialisierung |  |  |
