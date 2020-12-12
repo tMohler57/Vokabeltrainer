@@ -14,8 +14,8 @@ Tanja Mohler: Product Ownder / Entwicker
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#einleitung)
-   1. [Ziele]
-   1. [Randbedingungen]
+   1. Ziele
+   1. Randbedingungen
 1. [Build-Anleitung](#build-anleitung)
 1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
 1. [User Stories](#userstories)
@@ -23,17 +23,18 @@ Tanja Mohler: Product Ownder / Entwicker
 1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
 1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
 1. [Dokumentation Sprint 1](#dokumentationSprint1)
-   1. [Taskliste für die Umsetzung der User Story]
-   1. [Erfahrungen und Anpassungen]
+   1. Taskliste für die Umsetzung der User Story
+   1. Erfahrungen und Anpassungen
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
-   1. [Taskliste für die Umsetzung der User Story]
-   1. [Erfahrungen und Anpassungen]
+   1. Taskliste für die Umsetzung der User Story
+   1. Erfahrungen und Anpassungen
 1. [Dokumentation Sprint 3](#dokumentationSprint3)
-   1. [Taskliste für die Umsetzung der User Story]
-   1. [Erfahrungen und Anpassungen]
+   1. Taskliste für die Umsetzung der User Story
+   1. Erfahrungen und Anpassungen
 1. [Dokumentation wichtiger Code Snippets](#snippets)
 
 <a name="einleitung"/>
+
 ## 1. Einleitung
 Bei unserem Projekt handelt es sich um einen Vokabeltrainer. Der Nutzer möchte Vokabeln lernen, ohne den Hintergrund der Programmierung zu kennen. Er nutzt nur das ihm zur Verfügung gestellte Interface. Ihm ist wichtig, dass das Programm einfach zu bedienen ist.
 Ziel dieses Projektes ist es, dass der Nutzer seinen Wortschatz verbessern kann, in dem er sich in der Übersetzung der von uns vorgeschlagenen Vokabeln übt.
@@ -50,6 +51,7 @@ Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studi
 - Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
 <a name="build-anleitung"/>
+
 ## 2. Build-Anleitung
 
 ### Build Prozess mit Gradle
@@ -92,6 +94,7 @@ Falls Eclipse das Projekt nicht richtig importiert, kann dies in der Git Bash mi
 	./gradlew eclipse
 
 <a name="bedienungsanleitung"/>
+
 ## 3. Kurze Bedienungsanleitung
 Folgend wird beschrieben, wie die Anwendung funktioniert.
 - Anwendung gemäss Build-Anleitung starten.
@@ -112,6 +115,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 (Jedes Thema enthält 50 Wörter. Falsch eingegebene Wörter werden wiederholt. Wenn Sie also alle 50 Vokabeln richtig haben, gelangen Sie automatisch zum Endbildschirm.)
 
 <a name="ueserstories"/>
+
 ## 4. User Stories und Anreicherung der User Stories für die Umsetzung
 | **Titel** |   **User Stories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
 |:-----:|------|:-:|:-:|-----|
@@ -131,6 +135,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 | 14. Initialisierung | Als Entwickler möchte ich eine Grundstruktur für mein Programm haben, um mich gut darin zurechtzufinden und alle nötigen Klassen und Dateien zur Verfügung zu haben. | 1 | 8 | Angenommen ich möchte mein Programm schreiben, wenn bereits eine Grundstruktur vorhanden ist, dann ist es einfach, den Überblick zu behalten. |
 
 <a name="releaseplan"/>
+
 ## 5. Releaseplan
 | **Sprint 1** |   **Sprint 2**  |  **Sprint 3** |
 |----|----|----|
@@ -144,6 +149,7 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 Velocity von 16 Storypoints pro Sprint
 
 <a name="klassendiagramm"/>
+
 ## 6. UML Package, Klassen- und Sequenzdiagramm
 
 ### Packagediagramm
@@ -162,6 +168,7 @@ Das Sequenzdiagramm stellt den Ablauf des Programms dar. Erstellte Objekte sowie
 <img src="images/Sequenzdiagramm.jpg" width="1000" >
 
 <a name="testfälle"/>
+
 ## 7. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
 Die manuellen Testfälle fallen weg. Sie wurden ersetzt durch Unit Tests mit der TestFX Library, welche einen User simulieren kann. Die Tests funktionieren somit vollautomatisch.
@@ -183,6 +190,7 @@ Die manuellen Testfälle fallen weg. Sie wurden ersetzt durch Unit Tests mit der
 | 13. Wiederholen schwieriger Vokabeln | JA | TrainingsControllerTest |
 
 <a name="dokumentationSprint1"/>
+
 ## 8. Dokumentation Sprint 1
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 1 - Programm starten (45')
@@ -253,6 +261,7 @@ Somit sah der Releasplan für die Sprints 1 und 2 wie folgt aus:
 Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint 2 14 Story Points.
 
 <a name="dokumentationSprint2"/>
+
 ## 9. Dokumentation Sprint 2
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 2 - Vokabeln zufällig auswählen (35')
@@ -315,6 +324,7 @@ Somit sah der Releasplan wie folgt aus:
 | 14. Initialisierung |  |  |
 
 <a name="dokumentationSprint3"/>
+
 ## 10. Dokumentation Sprint 3
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 11 - Sprache wählen (3h 5')
@@ -352,6 +362,7 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 | 14. Initialisierung |  |  |
 
 <a name="snippets"/>
+
 ## 11. Dokumentation wichtiger Code Snippets
 Dieser Code Snippet zeigt einen Teil der Umsetzung von User Storys 5 und 9. Er ist in der Klasse 'TrainingsController' zu finden.
 In dieser Methode wird zunächts geprüft ob die Eingabe ins Textfeld gültig ist. Im Weiteren wird geprüft ob die eingegeben Übersetzung im Textfeld korrekt ist. Falls die Übersetzung richtig ist, wird die Methode 'antwortAnzeigen()' der Klasse 'View' aufgerufen und die richtige Übersetzung angezeigt. Zusätzlich wird die Klasse 'VokabelModel' aktualisiert. Der Zähler der korrekten und gesamten Vokabeln wird aktualisiert, um später die Erfolgsquote berechnen zu können.
