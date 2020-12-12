@@ -21,6 +21,7 @@ public class EndView extends View {
 		super(mdl);
 		
 		glueckwunsch = createText("");
+		glueckwunsch.setId("glueckwunschAusgabe");
 		Text wiedersehen = createText("Das Vokabeltraining wurde beendet. Auf Wiedersehen!");
 		Text count = createText("");
 		count.setId("countAusgabe");

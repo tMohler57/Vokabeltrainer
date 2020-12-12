@@ -23,7 +23,7 @@ public class TrainingsController extends Controller<TrainingsView> {
 		return new TrainingsView(model, this::bestaetigen, this::weiter, this::beenden);
 	}
 
-	private void bestaetigen(String eingabe) {
+	void bestaetigen(String eingabe) {
 		// Die Eingabe ist ungültig, wenn das Textfeld leer ist.
 		if (!eingabe.matches(".*[a-zA-Z].*")) {
 			view.eingabeUngueltig();	
@@ -43,7 +43,7 @@ public class TrainingsController extends Controller<TrainingsView> {
 		model.setIndex(model.getIndex() + 1);;
 	}
 
-	private void weiter() {
+	void weiter() {
 		List<Vokabel> aktuell = model.getAktuelleVokabeln(), falsch = model.getFalscheVokabeln();
 		if (model.getIndex() >= aktuell.size()) {
 			// Wenn alle Vokabeln einmal richtig übersetzt wurden, wird das Vokabeltraining beendet.
@@ -62,12 +62,12 @@ public class TrainingsController extends Controller<TrainingsView> {
 		view.nextVokabel();
 	}
 	// Wird der Beenden-Button gedrückt oder wurden alle Vokabeln richtig beantwortet, so wechselt das Programm vom Trainingsbildschirm zum Endbildschirm.
-	private void beenden() {
+	void beenden() {
 		new EndController(model, stage);	
 	}
 	
 	// Die Vokabeln werden in einer zufälligen Reihenfolge abgefragt.
-	void shuffle() {
+	private void shuffle() {
 		Collections.shuffle(model.getAktuelleVokabeln());	
 	}
 }
