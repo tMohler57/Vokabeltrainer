@@ -20,23 +20,19 @@ Tanja Mohler: Product Ownder / Entwicker
 1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
 1. [User Stories](#userstories)
 1. [Releaseplan mit den Ausbaustufen](#releaseplan)
+1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
+1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
 1. [Dokumentation Sprint 1](#dokumentationSprint1)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
-   1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
    1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 2](#dokumentationSprint2)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
-   1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
    1. [Erfahrungen und Anpassungen](#zusammenfassung)
 1. [Dokumentation Sprint 3](#dokumentationSprint3)
    1. [Taskliste für die Umsetzung der User Story](#taskliste)
-   1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
    1. [Dokumentation wichtiger Code Snippets](#snippets)
-   1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
    1. [Erfahrungen und Anpassungen](#zusammenfassung)
 
 ## 1. Einleitung
@@ -128,7 +124,13 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 Velocity von 16 Storypoints pro Sprint
 
 
-## 6. Dokumentation Sprint 1
+## 6. UML Package, Klassen- und Sequenzdiagramm
+
+
+## 7. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+
+
+## 8. Dokumentation Sprint 1
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 1 - Programm starten (45')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
@@ -170,7 +172,7 @@ Velocity von 16 Storypoints pro Sprint
 | 1 | Button erstellen | 15' |
 | 2 | Action Handler programmieren | 30' |
 
-Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel vi.
+Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel iii.
 
 #### User Story 14 -Initialisierung (3h 50')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
@@ -180,10 +182,8 @@ Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel vi.
 | 3 | Erste Textdatei schreiben | 30' |
 | 4 | Textdatei einlesen | 20' |
 
-### ii. UML Package, Klassen- und Sequenzdiagramm
-### iii. Dokumentation wichtiger Code Snippets
-### iv. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
-### v. Erfahrungen und Anpassungen
+### ii. Dokumentation wichtiger Code Snippets
+### iii. Erfahrungen und Anpassungen
 Während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
 Im Weiteren wurde die Story 8 aus Sprint 2 vorgezogen und bereits in Sprint 1 bearbeitet, da die Bearbeitung der Story keinen Mehraufwand darstellte und auch zur Grundstruktur passte.
 
@@ -200,7 +200,7 @@ Somit sah der Releasplan für die Sprints 1 und 2 wie folgt aus:
 
 Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint 2 14 Story Points.
 
-## 7. Dokumentation Sprint 2
+## 9. Dokumentation Sprint 2
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 2 - Vokabeln zufällig auswählen (35')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
@@ -246,10 +246,8 @@ Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint
 | 3 | do-while-Schleife erst beenden, wenn alle Vokabeln als richtig abgespeichert wurden | 10' |
 | 4 | Nur Vokabeln abfragen, die als falsch abgespeichert sind | 15' |
 
-### ii. UML Package, Klassen- und Sequenzdiagramm
-### iii. Dokumentation wichtiger Code Snippets
-### iv. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
-### v. Erfahrungen und Anpassungen
+### ii. Dokumentation wichtiger Code Snippets
+### iii. Erfahrungen und Anpassungen
 Während der Bearbeitung des zweiten Sprints wurde die User Story 13 aus Sprint 3 vorgezogen und ebenfalls erledigt.
 
 Somit sah der Releasplan wie folgt aus:
@@ -263,7 +261,7 @@ Somit sah der Releasplan wie folgt aus:
 | **8. Programm beenden** |  |  |
 | 14. Initialisierung |  |  |
 
-## 8. Dokumentation Sprint 3
+## 10. Dokumentation Sprint 3
 ### i. Taskliste für die Umsetzung der User Story
 #### User Story 11 - Sprache wählen (3h 5')
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
@@ -283,7 +281,5 @@ Somit sah der Releasplan wie folgt aus:
 | 3 | Die gewählte Übersetzungsrichtung auf dem Label ausgeben | 10' |
 | 4 | Je nach gewählter Übersetzungsrichtung, die auf den Variablen “vokabel” und “uebersetzung” gespeicherten Strings miteinander vertauschen | 15' |
 
-### ii. UML Package, Klassen- und Sequenzdiagramm
-### iii. Dokumentation wichtiger Code Snippets
-### iv. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
-### v. Erfahrungen und Anpassungen
+### ii. Dokumentation wichtiger Code Snippets
+### iii. Erfahrungen und Anpassungen
