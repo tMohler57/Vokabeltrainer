@@ -18,8 +18,8 @@ Tanja Mohler: Product Ownder / Entwicker
    1. Randbedingungen
 1. [Build-Anleitung](#build-anleitung)
 1. [Kurze Bedienungsanleitung](#bedienungsanleitung)
-1. [User Stories](#userstories)
-1. [Releaseplan mit den Ausbaustufen](#releaseplan)
+1. [User Stories und Anreicherung der User Stories für die Umsetzung](#userstories)
+1. [Releaseplan](#releaseplan)
 1. [UML Package, Klassen- und Sequenzdiagramm](#klassendiagramm)
 1. [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#testfälle)
 1. [Dokumentation Sprint 1](#dokumentationSprint1)
@@ -47,7 +47,7 @@ Im Rahmen des Moduls Software Engineering und Informatik II entwickeln wir Studi
 - Das Projekt ist auf GitHub öffentlich einsehbar.
 - Das Projekt wurde getestet.
 - Das Projekt wurde mit dem Git-Workflow Vincent Driessen erstellt.
-- Die Build-Automatisierung erfolgt mittels Maven.
+- Die Build-Automatisierung erfolgt mittels Gradle.
 - Das Projekt wurde mit der SCRUM Methode durchgeführt. Dies beinhaltet Userstories und einen Releaseplan.
 
 <a name="build-anleitung"/>
@@ -72,8 +72,8 @@ Tests können mit diesem Befehl ausgeführt werden:
 
 	./gradlew test
 
-Für den Test ist zu beachten, dass das die sich öffnenden Fenster durch nichts verdeckt werden und die Maus nicht bewegt wird, da ansonten die automatisierten Unit Tests beeinträchtigt werden.
-Die Coverage kann unter dem Pfad "build/reports/coverage" im File "index.html" eingesehen werden. 
+Für den Test ist zu beachten, dass die sich öffnenden Fenster durch nichts verdeckt werden und die Maus nicht bewegt wird, da ansonten die automatisierten Unit Tests beeinträchtigt werden.
+Die Coverage kann unter dem Pfad "build/reports/coverage" in der Datei "index.html" eingesehen werden. 
 
 ### Projekt in Eclipse öffnen
 
@@ -106,15 +106,15 @@ Folgend wird beschrieben, wie die Anwendung funktioniert.
 - Wenn Sie die Eingabe abgeschlossen haben, drücken Sie auf den Button "Bestätigen". (Beachten Sie, dass das Eingabefeld nicht leer bleiben darf!)
   - Ist Ihre Eingabe richtig, wird Ihnen dies angezeigt. Sie können weiterfahren.
   - Ist Ihre Eingabe falsch, werden Sie darauf aufmerksam gemacht und es wird Ihnen die richtige Antwort angezeigt. Sie können weiterfahren.
-- Wenn Sie mit dem Training weiterfahren wollen, drücken Sie auf "Weiter".
+- Wenn Sie das Training fortsetzten wollen, drücken Sie auf "Weiter".
   - Nun können Sie die Eingabe wie zuvor durchführen.
 - Wenn Sie das Training beenden wollen, drücken Sie auf "Beenden".
   - Ihnen wird nun angezeigt, wie viele Vokabeln Sie geübt haben und wie viele Sie richtig beantwortet haben. Dies wird Ihnen auch als Prozentsatz angezeigt.
-  - Sie können das Programm nun mit "Programm beenden" beenden oder das Training mit "Zurück zum Hauptmenü" wiederholen oder ein neues Training wählen.
+  - Sie können das Programm mit "Programm beenden" beenden oder das Training mit "Zurück zum Hauptmenü" wiederholen oder ein neues Training wählen.
 
-(Jedes Thema enthält 50 Wörter. Falsch eingegebene Wörter werden wiederholt. Wenn Sie also alle 50 Vokabeln richtig haben, gelangen Sie automatisch zum Endbildschirm.)
+Jedes Thema enthält 50 Wörter. Falsch eingegebene Wörter werden wiederholt. Wenn Sie also alle 50 Vokabeln richtig haben, gelangen Sie automatisch zum Endbildschirm.
 
-<a name="ueserstories"/>
+<a name="userstories"/>
 
 ## 4. User Stories und Anreicherung der User Stories für die Umsetzung
 | **Titel** |   **User Stories**  |  **Priorität** | **Storypoints** | **Akzeptanzkriterien** |
@@ -172,6 +172,8 @@ Das Sequenzdiagramm stellt den Ablauf des Programms dar. Erstellte Objekte sowie
 ## 7. Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
 Die manuellen Testfälle fallen weg. Sie wurden ersetzt durch Unit Tests mit der TestFX Library, welche einen User simulieren kann. Die Tests funktionieren somit vollautomatisch.
+
+In der Spalte "Zugehörige Testklasse" wird die Klasse angegeben, welche hauptsächlich für das Testen der User Story verantwortlich ist. Beim Testing werden jedoch auch noch weiter Aspekte in anderen Testklassen getestet.
 
 | **User Stories** |   **Getestet**  |  **Zugehörige Testklasse** |
 |:-----|:-----:|:-----:|
@@ -239,7 +241,7 @@ Diese Story wurde aus Sprint 2 übernommen. Siehe Kapitel ii.
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
 |:--------:|:--------------------|:---------------------:|
 | 1 | Grundstruktur des Programms erstellen (z.B. Klassen, Unterklassen, Main-Methode, usw.) | 2h |
-| 2 | layout des Programmfensters erstellen | 1h |
+| 2 | Layout des Programmfensters erstellen | 1h |
 | 3 | Erste Textdatei schreiben | 30' |
 | 4 | Textdatei einlesen | 20' |
 
@@ -304,13 +306,15 @@ Die neue Velocity von Sprint 1 beträgt somit 18 Story Points und die von Sprint
 | **Task** |   **Beschreibung**  |  **Aufwandschätzung** |
 |:--------:|:--------------------|:---------------------:|
 | 1 | do-while-Schleife erstellen | 25' |
-| 2 | Array vom Typ boolean erstellen und zu jeder Vokabel | 15' |
+| 2 | Array vom Typ boolean erstellen für jede Vokabel | 15' |
 | 3 | do-while-Schleife erst beenden, wenn alle Vokabeln als richtig abgespeichert wurden | 10' |
 | 4 | Nur Vokabeln abfragen, die als falsch abgespeichert sind | 15' |
 
 ### ii. Erfahrungen und Anpassungen
 Bereits während der Arbeit am ersten Sprint ist klar geworden, dass es nicht möglich ist, immer jede Story für sich starr abzuarbeiten. Häufig kommt es vor, dass es während der Erarbeitung eines Tasks aus einer Story Sinn macht, auch gleich einen Task einer anderen Story zu bearbeiten, da es einfach zum Workflow passt.
 Deshalb wurde die User Story 13 vorgezogen und bereits im Sprint 2 bearbeitet.
+
+Durch unsere neuen Erfahrungen mit der Objektorientierten Programmierung konnten wir gewisse Aufgaben anders lösen, als wir das noch vor einem halben Jahr getan hätten. So haben wir beispielsweise für die User Story 13 weder boolean für die Vokabeln erstellt, noch haben wir eine do-while-Schleife verwendet. Stattdessen haben wir zwei verschiedene, variable Listen mit den noch zu lernenden Vokabeln und den falsch übersetzten Vokabeln erstellt. Auf ähnliche Weise wurden weitere Tasks während der Umsetzung leicht angepasst.
 
 Somit sah der Releasplan wie folgt aus:
 | **Sprint 1** |   **Sprint 2**  |   **Sprint 3**  |
@@ -355,8 +359,8 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 |--------------|-----------------|-----------------|
 | 1. Programm starten | 2. Vokabeln zufällig auswählen | 11. Sprache wählen |
 | 3. Vokabeln anzeigen | 6. Übersetzung prüfen | 12. Übersetzungsrichtung wählen |
-| 4. Übersetzung eingeben | 9. Erfolgsquote | **UnitTesting** |
-| 5. Eingabe bestätigen | 10. Thema wählen | **Umstrukturierung zu MVC** |
+| 4. Übersetzung eingeben | 9. Erfolgsquote | **Umstrukturierung zu MVC** |
+| 5. Eingabe bestätigen | 10. Thema wählen | **UnitTesting** |
 | 7. Korrekte Übersetzung anzeigen | **13. Wiederholen schwieriger Vokabeln** | |
 | **8. Programm beenden** |  |  |
 | 14. Initialisierung |  |  |
@@ -364,7 +368,7 @@ Der entgültige Releaseplan sah somit wie folgt aus:
 <a name="snippets"/>
 
 ## 11. Dokumentation wichtiger Code Snippets
-Dieser Code Snippet zeigt einen Teil der Umsetzung von User Storys 5 und 9. Er ist in der Klasse 'TrainingsController' zu finden.
+Der erste Code Snippet zeigt einen Teil der Umsetzung von User Storys 5 und 9. Er ist in der Klasse 'TrainingsController' zu finden.
 In dieser Methode wird zunächts geprüft ob die Eingabe ins Textfeld gültig ist. Im Weiteren wird geprüft ob die eingegeben Übersetzung im Textfeld korrekt ist. Falls die Übersetzung richtig ist, wird die Methode 'antwortAnzeigen()' der Klasse 'View' aufgerufen und die richtige Übersetzung angezeigt. Zusätzlich wird die Klasse 'VokabelModel' aktualisiert. Der Zähler der korrekten und gesamten Vokabeln wird aktualisiert, um später die Erfolgsquote berechnen zu können.
 
 	private void bestaetigen(String eingabe) {
