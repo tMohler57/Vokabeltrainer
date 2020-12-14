@@ -1,0 +1,50 @@
+der Fisch;le poisson
+der Hund;le chien
+die Katze;le chat
+die Maus;la souris
+das Kaninchen;le lapin
+das Meerschweinchen;le cochon d'Inde
+die Ameise;la fourmi
+die Fliege;la mouche
+der Schmetterling;le papillon
+die Spinne;l'araignée
+der Hai;le requin
+die Schildkröte;la tortue
+der Seestern;l'étoile de mer
+der Elefant;l'éléphant
+die Ente;le canard
+das Kamel;le chameau
+die Kuh;la vache
+das Pferd;le cheval
+das Schaf;le mouton
+das Schwein;le porc
+der Vogel;l'oiseau
+der Fuchs;le renard
+das Reh;le chevreuil
+der Wolf;le loup
+das Nashorn;le rhinocéros
+der Löwe;le lion
+der Hase;le lièvre
+die Giraffe;la girafe
+das Flusspferd;l'hippopotame
+das Faultier;le paresseux
+das Eichhörnchen;l'écureuil
+der Bär;l'ours
+der Strauss;l'autruche
+der Spatz;le moineau
+der Schwan;le cygne
+der Pinguin;le manchot
+der Papagei;le perroquet
+die Krähe;la corneille
+die Eule;la chouette
+das Huhn;le poule
+der Thunfisch;le thon
+das Seepferdchen;l'hippocampe
+die Qualle;la méduse
+der Delfin;le dauphin
+der Wal;la baleine
+die Wespe;la guêpe
+die Raupe;la chenille
+die Laus;le pou
+die Kakerlake;la blatte
+der hamster;le hamster
