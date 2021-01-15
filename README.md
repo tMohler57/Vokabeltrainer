@@ -9,7 +9,7 @@ Karolina Schmidt: Oberflächen Designer / Entwickler
 
 Morgan Farnworth: Software Architect / Entwickler
 
-Tanja Mohler: Product Ownder / Entwicker
+Tanja Mohler: Product Ownder / Entwickler
 
 ## Inhaltsverzeichnis
 
